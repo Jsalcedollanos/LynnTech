@@ -29,7 +29,7 @@
               <div class="card-body">
 
                 <label for="">Titulo</label>  
-                <input value="{{$producto->titulo}}" id="titulo" name="titulo" class="form-control form-control-lg" type="text" placeholder="" tabindex="1">
+                <input value="{{$producto->nombre}}" id="nombre" name="nombre" class="form-control form-control-lg" type="text" placeholder="" tabindex="1">
                 <br>
 
                 <label for="">Cantidad</label>
@@ -37,19 +37,39 @@
                 <br>
 
                 <label for="">Valor</label>
-                <input value="{{$producto->valor}}" required id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="2">
+                <input value="{{$producto->valor}}" required id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
                 <br>
 
                 <label for="">Descripcion</label>
-                <input value="{{$producto->descripcion}}" required id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <textarea required value="{{$producto->descripcion}}" id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="4" maxlength="255">{{$producto->descripcion}}</textarea>
                 <br>
 
-               
+                <label for="">Imagen Pequeña</label>
+                <div class="input-group mb-3">
+                <input type="file" name="imagen" id="imagen" accept="image/*">
+                <p>
+                Foto de perfil del producto en lo cart <br>
+                Advertencia: Recuerda que las imagenes solo deben ser de dos tipos de 
+                  formatos (PNG) y (JPG).
+                  La medida estandar de la imagen es de 250px X 300px para una buena visualizacion.
+                </p>
+
+                <label for="">Imagen Grande</label>
+                <div class="input-group mb-3">
+                <input type="file" name="imagenGrande" id="imagenGrande" accept="image/*" tabindex="7">
+                </div>
+                <p>
+                Foto para ver los detalles del producto  <br>
+                Advertencia: Recuerda que las imagenes solo deben ser de dos tipos de 
+                  formatos (PNG) y (JPG).
+                  La medida estandar de la imagen es de 900px X 1024px para una buena visualizacion.
+                </p>
+                </div>
                   </div>
      
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary" tabindex="7">Actualizar</button>
-                  <a href="/publicidades" class="btn btn-secondary" tabindex="8">Cancelar</a>
+                  <a href="/admin" class="btn btn-secondary" tabindex="8">Cancelar</a>
                 </div>
                 
               </form>

@@ -12,15 +12,18 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
        /*  $productos = Producto::all();
         return view('producto.index')->with('productos', $productos);  */
 
-        $nombreproducto = $request->get('busqueda');
-        $producto = Producto::where('nombre','like',"%$nombre%")->paginate(5);
-        return view('producto.index',compact('producto'));
+        $nombre = $request->get('busqueda');
+        $productos = Producto::where('nombre','like',"%$nombre%")->paginate(5);
+        return view('producto.index',compact('productos'));
+
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -54,10 +57,23 @@ class ProductoController extends Controller
             $productos -> imagen = $destinationPath . $filename;
         }
 
-        
-        $productos->titulo = $request->get('titulo');
+        $request->validate([
+            'imagenGrande' => 'required|image|max:2048'
+        ]);
+        if ($request->hasfile('imagenGrande')) {
+            $file = $request->file('imagenGrande');
+            $destinationPath = 'img/featureds/';
+            $filename = time(). '-' . $file->getClientOriginalName();
+            $uplaadSuccess = $request->file('imagenGrande')->move($destinationPath, $filename);
+            $productos -> imagenGrande = $destinationPath . $filename;
+        }
+
+
+        $productos->nombre = $request->get('nombre');
         $productos->cantidad = $request->get('cantidad');
         $productos->valor = $request->get('valor');
+        $productos->categoria = $request->get('categoria');
+        $productos->color = $request ->get('color');
         $productos->descripcion = $request->get('descripcion');
         $productos->save();
         return redirect('/admin');
@@ -98,12 +114,32 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $producto = Producto::find($id);
+        $request->validate([
+            'imagen' => 'required|image|max:2048'
+        ]);
+        if ($request->hasfile('imagen')) {
+            $file = $request->file('imagen');
+            $destinationPath = 'img/featureds/';
+            $filename = time(). '-' . $file->getClientOriginalName();
+            $uplaadSuccess = $request->file('imagen')->move($destinationPath, $filename);
+            $productos -> imagen = $destinationPath . $filename;
+        }
+
+        $request->validate([
+            'imagenGrande' => 'required|image|max:2048'
+        ]);
+        if ($request->hasfile('imagenGrande')) {
+            $file = $request->file('imagenGrande');
+            $destinationPath = 'img/featureds/';
+            $filename = time(). '-' . $file->getClientOriginalName();
+            $uplaadSuccess = $request->file('imagenGrande')->move($destinationPath, $filename);
+            $productos -> imagen = $destinationPath . $filename;
+        }
+
         $producto->titulo = $request->get('titulo');
         $producto->cantidad = $request->get('cantidad');
         $producto->valor = $request->get('valor');
         $producto->descripcion = $request->get('descripcion');
-        
-
         $producto->save();
         return redirect('/productos');    
     }

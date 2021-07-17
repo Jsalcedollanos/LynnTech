@@ -254,7 +254,48 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
 
+        ['header' => 'Tienda Virtual'],
+
+
+        [
+            'text'    => 'Pagina Web',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Home',
+                    'url'  => '/home',
+                ],    
+                [
+                    'text' => 'Todo los productos',
+                    'url'  => '/tienda',
+                ], 
+                
+            ],
+        ],
+
+
+        ['header' => 'Administrar Roles'],
+
+
+        [
+            'text'    => 'Usuarios',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Roles',
+                    'url'  => '#',
+                ],    
+                [
+                    'text' => 'Ver Usuarios',
+                    'url'  => '#',
+                ], 
+                
+            ],
+        ],
+
+
         ['header' => 'Funcionalidades'],
+
 
         [
             'text'    => 'Clientes',

@@ -56,7 +56,7 @@
                 <br>
 
                 <label for="">direccion</label>
-                <input required required maxlength="40" id="direccion" name="direccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+                <input required maxlength="40" id="direccion" name="direccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
                 <br>
 
                 <label for="">valor</label>

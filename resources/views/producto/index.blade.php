@@ -16,7 +16,7 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Plublicidad" aria-label="Search">
+      <input class="form-control me-2" type="search" placeholder="Producto 'Nombre'" name="busqueda" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
   </div>
@@ -30,10 +30,12 @@
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Titulo</th>
+            <th scope="col">Nombre</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Valor</th>
             <th scope="col">Descripcion</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Color</th>
             <th scope="col">Valoracion</th>
             <th scope="col">Imagen</th>
             
@@ -43,10 +45,12 @@
             @foreach ($productos as $producto)
                 <tr>
                     <td>{{$producto->id}}</td>
-                    <td>{{$producto->titulo}}</td>
+                    <td>{{$producto->nombre}}</td>
                     <td>{{$producto->cantidad}}</td>
                     <td>{{$producto->valor}}</td>
                     <td>{{$producto->descripcion}}</td>
+                    <td>{{$producto->categoria}}</td>
+                    <td>{{$producto->color}}</td>
                     <td>{{$producto->Valoracion}}</td>
                     <td><img src="{{asset($producto->imagen)}}" alt="" class="img-fluid img-thumbnail" width="100"></td>
                     <td>   
