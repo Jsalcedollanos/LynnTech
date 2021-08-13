@@ -19,30 +19,30 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Editar Publicidad</h3>
+                <h3 class="card-title">Editar Producto</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/productos/{{$producto->id}}" method="POST">
+              <form id="UpdateProducto" name="UpdateProducto" action="{{route('producto.update')}}" method="POST">
                 @csrf
-                @method('PUT')
               <div class="card-body">
 
-                <label for="">Titulo</label>  
-                <input value="{{$producto->nombre}}" id="nombre" name="nombre" class="form-control form-control-lg" type="text" placeholder="" tabindex="1">
+                <label for="">Nombre</label>  
+                <input  id="nombre" name="nombre" class="form-control form-control-lg" type="text" placeholder="" tabindex="1">
                 <br>
 
                 <label for="">Cantidad</label>
-                <input value="{{$producto->cantidad}}" required id="cantidad" name="cantidad" class="form-control form-control-lg" type="text" placeholder="" tabindex="2">
+                <input  required id="cantidad" name="cantidad" class="form-control form-control-lg" type="text" placeholder="" tabindex="2">
                 <br>
 
                 <label for="">Valor</label>
-                <input value="{{$producto->valor}}" required id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <input  required id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
                 <br>
 
                 <label for="">Descripcion</label>
-                <textarea required value="{{$producto->descripcion}}" id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="4" maxlength="255">{{$producto->descripcion}}</textarea>
+                <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="4" maxlength="255"></textarea>
                 <br>
+                
 
                 <label for="">Imagen Pequeña</label>
                 <div class="input-group mb-3">
@@ -83,11 +83,63 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
-    <script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
+<script src="/js/validacionNumero.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+
+
+<script>
+  $(document).ready(function(){
+    $('body').on('click', '.btnEdit', function () {
+      var producto_id = $(this).attr('data-id');
+      $.get('producto/' + data.id +'/edit', function (data) {
+         /*  $('#editProducto-modal').modal('show'); */
+          $('#UpdateProducto #id').val(data.id);
+          $('#UpdateProducto #nombre').val(data.nombre);
+          $('#UpdateProducto #descripcion').val(data.descripcion);
+          $('#UpdateProducto #valor').val(data.valor);
+          $('#UpdateProducto #cantidad').val(data.cantidad);
+          $('#UpdateProducto #color').val(data.color);
+          $('#UpdateProducto #categoria').val(data.categoria);
+      })      
+  });
+      $("#UpdateProducto").validate({
+      rules: {
+        id: "required",
+        nombre: "required",
+        descripcion: "required",
+        color: "required",
+        valor: "required",
+        categoria: "required"
+      },
+      messages: {
+      },
+      submitHandler: function(form) {
+        var form_action = $("#UpdateProducto").attr("action");
+        $.ajax({
+        data: $('#UpdateProducto').serialize(),
+        url: form_action,
+        type: "POST",
+        dataType: 'json',
+        success: function (data) {
+        var producto = '<td>' + data.id + '</td>';
+        producto += '<td>' + data.nombre + '</td>';
+        producto += '<td>' + data.descripcion + '</td>';
+        producto += '<td>' + data.categoria + '</td>';
+        producto += '<td>' + data.color + '</td>';
+        producto += '<td>' + data.cantidad + '</td>';
+        producto += '<td>' + valor + '</td>';
+        producto += '<td><a data-id="' + data.id + '" class="btn btn-primary btnEdit">Edit</a>&nbsp;&nbsp;<a data-id="' + data.id + '" class="btn btn-danger btnDelete">Delete</a></td>';
+        },
+        error: function (data) {
+        }
+        });
+      }
+      });
+
+
+});
+  
+</script>
 @stop

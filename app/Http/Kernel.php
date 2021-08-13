@@ -53,8 +53,26 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+
+        //Bloque de middleware para usuarios USER
         'auth' => \App\Http\Middleware\Authenticate::class,
-        'auth.admin' => \App\Http\Middleware\AdminAuth::class,
+        'home.admin' => \App\Http\Middleware\AdminAuth::class,
+        'facturas.admin' => \App\Http\Middleware\AdminAuth::class,
+        'clientes.admin' => \App\Http\Middleware\AdminAuth::class,
+        'usuarios.admin' => \App\Http\Middleware\AdminAuth::class,
+        'costos.admin' => \App\Http\Middleware\AdminAuth::class,
+        'clientes.admin' => \App\Http\Middleware\AdminAuth::class,
+        'productos.admin' => \App\Http\Middleware\AdminAuth::class,
+         // FIn del Bloque.
+
+
+
+         
+        //Bloque de middleware para usuario no logeados
+        'user.home' => \App\Http\Middleware\UserAuth::class,
+        'user.tienda' => \App\Http\Middleware\UserAuth::class,
+
+
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,

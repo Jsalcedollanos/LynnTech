@@ -11,6 +11,12 @@ class CostoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function __construct()
+    {
+        $this->middleware('costos.admin');
+    }
     public function index()
     {
         //

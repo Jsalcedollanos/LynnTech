@@ -31,6 +31,17 @@ class CarritoController extends Controller
         return view('carrito')->withTittle('Carrito de Compra Lynda Polo')->with(['productosCarrito'=> $poductosCarrito]);
     }
 
+    public function add(Request $request){
+        Carrito::add(array(
+            'codigo' => $request -> codigo,
+            'imagen' => $request -> imagen,
+            'nombre' => $request -> nombre,
+            'valor' => $request -> valor,
+            
+
+        ));
+    }
+
 
     /**
      * Show the form for creating a new resource.

@@ -224,6 +224,14 @@ img {
   float: left;
   width: 100%;
 }
+#aa-header .aa-header-oferta {
+  background-color: #F6D7E1;
+  font-size: 10pt;
+  display: flex;
+  justify-content: center;
+  font-family: 'Merienda', cursive;
+}
+
 #aa-header .aa-header-top {
   border-bottom: 1px solid #E8E8E8;
   display: inline;
@@ -648,7 +656,7 @@ img {
 }
 #menu .menu-area .navbar-default .navbar-nav li a {
   color: #795C64;
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px 15px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -911,7 +919,7 @@ img {
   display: inline;
   float: left;
   width: 100%;
-  height: 400px;
+  height: 500px;
   overflow: hidden;
 }
 #aa-promo .aa-promo-area .aa-promo-left .aa-prom-content {
@@ -928,7 +936,7 @@ img {
   display: inline;
   float: left;
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 #aa-promo .aa-promo-area .aa-promo-right .aa-single-promo-right {
   width: 50%;
@@ -1449,13 +1457,18 @@ img {
   margin-bottom: 0;
 }
 
+#aa-support .aa-support-area .aa-support-single img {
+  width: 180px;
+  height: 180px;
+}
+
 /*==================
  TESTIMONIAL SECTION
 ====================*/
 
 #aa-testimonial {
   background-attachment: fixed;
-  background-image: url("../img/testimonial-bg-1.jpg");
+  background-image: url("../img/biografia-img.png");
   background-repeat: no-repeat;
   background-size: cover;
   display: inline;
@@ -3558,6 +3571,7 @@ img {
   .slick-prev {
     left: 91%;
   }
+
 
   #quick-view-modal .modal-dialog {
     margin: 10% auto;

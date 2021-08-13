@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -95,27 +97,53 @@
                 <!-- / currency -->
                 <!-- start cellphone -->
                 <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span>00-62-658-658</p>
+                  <p><span class="fa fa-phone"></span>+57 3003746338</p>
                 </div>
                 <!-- / cellphone -->
               </div>
-              <!-- / header top left -->
-             <div class="aa-header-top-right">
+             
+
+                   <!-- / header con validacion de session + funciones addicionales -->
+          @if (auth()->check()) 
+              @if(Auth::user()->role =="user")
+              <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                   @if(Auth::user()->name != "" )
-                  <li><a>{{Auth::user()->name}} estos son nuestros productos.</a></li>
-                     @endif                  
+               
+                  <li><a>{{Auth::user()->name}}, pide lo que deseas, si no lo tenemos. te lo diseñamos!!</a></li>            
                   <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
                   <li class="hidden-xs"><a href="{{ route('carrito.index') }}">Mi Carrito</a></li>
                   <li><a href="" data-toggle="modal" data-target="#sesion-modal">Salir</a></li>
-               </ul>
+                </ul>
+              </div>
+              @endif
+              @if(Auth::user()->role =="admin")
+              <div class="aa-header-top-right">
+                <ul class="aa-head-top-nav-right">
+                  <li><a>{{Auth::user()->name}}, pide lo que deseas, si no lo tenemos. te lo diseñamos!!</a></li>
+                  <li class="hidden-xs"><a href="{{route('admin.index')}}">Administrar mi Pagina</a></li>            
+                  <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
+                  <li class="hidden-xs"><a href="{{ route('carrito.index') }}">Mi Carrito</a></li>
+                  <li><a href="" data-toggle="modal" data-target="#sesion-modal">Salir</a></li>
+                </ul>
+              </div>
+              @endif 
+              @else
+            <div class="aa-header-top-right">
+                <ul class="aa-head-top-nav-right">
+                  <li><a href="{{ route('register') }}">Aun no te has registrado? Que esperas!</a></li>
+                <li><a href="{{ route('register') }}">Registrarme</a></li>
+                  <li><a href="{{ route('login') }}">Login</a></li>
+                  <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
+                  <li class="hidden-xs"><a href="{{ route('login') }}">Mi Carrito</a></li>
+                </ul>
               </div>
             </div>
+          @endif
           </div>
         </div>
       </div>
     </div>
-    <!-- / header top  -->
+    <!-- / header final de este bloque  -->
 
     <!-- start header bottom  -->
     <div class="aa-header-bottom">
@@ -125,20 +153,14 @@
             <div class="aa-header-bottom-area">
               <!-- logo  -->
               <div class="aa-logo">
-                <!-- Text based logo -->
-                <a href="index.html">
-                  <span class="fa fa-shopping-cart"></span>
-                  <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
-                </a>
-                <!-- img based logo -->
-                <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
+                <a href="/home"><img src="img/logolynda.png" class="logo" alt="logo img"></a>
               </div>
               <!-- / logo  -->
                <!-- cart box -->
               <div class="aa-cartbox">
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">Carrito de Compra</span>
+                  <span class="aa-cart-title"> <a href=""></a> Carrito de Compra</span>
                   <span class="aa-cart-notify">2</span>
                 </a>
                 <div class="aa-cartbox-summary">
@@ -206,8 +228,27 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="/home">Inicio</a></li>
-    
-              
+              <li><a href="{{ route('tienda.index')}}">Todo los productos</a></li>
+              <li><a>Vestidos <span class="caret"></span></a>
+                <ul class="dropdown-menu">                
+                  <li><a href="{{ route('tienda.index')}}?busqueda=Vestidos de lujo">Vestido de lujo</a></li>
+                  <li><a href="{{ route('tienda.index')}}?busqueda=Vestido Sencillo">Vestido Sencillo</a></li>
+                  </li>
+                </ul>
+              </li>
+              <li><a>Batolas <span class="caret"></span></a>
+              <ul class="dropdown-menu">                
+                  <li><a href="{{ route('tienda.index')}}?busqueda=Batola lisa">Batola lisa</a></li>
+                  <li><a href="{{ route('tienda.index')}}?busqueda=Batola Campana">Batola Campana</a></li>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="{{ route('tienda.index')}}?busqueda=Conjunto">Conjuntos</a></li>
+              <li><a href="{{ route('tienda.index')}}?busqueda=Mi muñeca y Yo">Mi muñeca y Yo</a></li>
+              <li><a href="{{ route('tienda.index')}}?busqueda=Tutu">Tutus</a></li>
+              <li><a href="{{ route('tienda.index')}}?busqueda=Accesorios">Accesorios</a></li>
+              <li><a href="{{ route('tienda.index')}}?busqueda=Lenceria Infantil">Lenceria Infantil</a></li>
+              <li><a href="{{ route('tienda.index')}}?busqueda=Calzado">Calzado</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -263,9 +304,9 @@
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
                 <!-- start single product item -->
-                @foreach ($productos as $producto)
-                @if ($producto->categoria='busqueda')
-                
+                  @foreach ($productos as $producto)
+                  @if ($producto->categoria='busqueda')
+
                 <li>
                   <figure>
                     <a class="aa-product-img" href="#"><img src="{{asset($producto->imagen)}}" alt="{{$producto->nombre}}"></a>
@@ -290,11 +331,9 @@
             
                 @endforeach
             </ul>
-
-
+            @csrf
             @foreach ($productos as $producto)
-              <!-- quick view modal --> 
-   
+                 <!-- quick view modal -->
               <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">                      
@@ -347,7 +386,7 @@
                                 </select>
                               </form>
                               <p class="aa-prod-category">
-                                Categoria: <a href="#">{{($producto->categoria)}}</a>
+                                Categoria: <a href="#">{{$producto->categoria}}</a>
                               </p>
                             </div>
                             <div class="aa-prod-view-bottom">
@@ -361,7 +400,6 @@
                   </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
               </div> <!-- / quick view modal -->
-
             @endforeach
 
             </div>
@@ -525,11 +563,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="aa-subscribe-area">
-            <h3>Subscribe our newsletter </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, velit!</p>
+            <h3>Subscribete Ya! </h3>
+            <p>Permitenos mandarte todas las novedades y mucho mas!</p>
             <form action="" class="aa-subscribe-form">
-              <input type="email" name="" id="" placeholder="Enter your Email">
-              <input type="submit" value="Subscribe">
+              <input type="email" name="" id="" placeholder="Ingresa tu Correo">
+              <input type="submit" value="Subscribete">
             </form>
           </div>
         </div>
@@ -655,8 +693,7 @@
     </div><!-- /.modal-dialog -->
   </div> 
 
-    
-
+  
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -678,6 +715,24 @@
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
   
+  
+  <script>
+        $(document).ready(function(){
+        $.ajax({
+          url: '/producto/all',
+          method: 'POST',
+          data: { 
+            id:1,
+            _token = $('input[name="_token"]').val()
+          }
+        }).done(function(res){
+            var arreglo = JSON.parse(res);
+            console.log(arreglo);
+            for(var x=0;x<arreglo.lenght;x++){
+              
+            }
+    }); 
+  </script>
 
   </body>
 </html>

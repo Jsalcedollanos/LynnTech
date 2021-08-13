@@ -7,15 +7,13 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     
-
+    public function __construct(){
+        $this->middleware('home.admin');
+    }
     public function index(){
 
-        return view('admin.index');
-        if (auth()->check()) {
-            if (auth()->user()->name != '') {
-                return view('home.index2');;
-            }
-        }
+       return view('admin.index');
+        
 
     }
 

@@ -12,6 +12,11 @@ class FacturaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+        $this ->middleware('facturas.admin');
+    }
+
     public function index(Request $request)
     {
 
@@ -38,6 +43,9 @@ class FacturaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+   
+
     public function store(Request $request)
     {
         $facturas = new Factura();

@@ -12,6 +12,22 @@ class TiendaproductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this -> middleware('user.tienda');
+    }
+
+    public function all(Request $request)
+    {
+        /* $productos = \BD::table('productos')
+        ->select('productos.*')
+        ->orderBy('id','DESC')
+        ->get();
+        return response(json_encode($productos),200)->header('Content-type','text/plain'); */
+
+    }
+
     public function index(Request $request)
     {
         

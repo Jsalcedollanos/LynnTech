@@ -267,7 +267,7 @@ return [
                 ],    
                 [
                     'text' => 'Todo los productos',
-                    'url'  => '/tienda',
+                    'url'  => 'tienda',
                 ], 
                 
             ],
@@ -343,7 +343,7 @@ return [
                 ],    
                 [
                     'text' => 'Ver Productos',
-                    'url'  => 'productos',
+                    'url'  => 'producto/index',
                 ], 
                 
             ],

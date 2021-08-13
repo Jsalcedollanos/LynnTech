@@ -11,6 +11,12 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+public function __construct(){
+    $this->middleware('clientes.admin');
+}
+
+
     public function index(Request $request)
     {
         $cedula = $request->get('busqueda');

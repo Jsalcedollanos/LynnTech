@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use Response;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -12,17 +14,27 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-       /*  $productos = Producto::all();
-        return view('producto.index')->with('productos', $productos);  */
 
-        $nombre = $request->get('busqueda');
-        $productos = Producto::where('nombre','like',"%$nombre%")->paginate(5);
-        return view('producto.index',compact('productos'));
-
+    public function __construct(){
+        $this->middleware('productos.admin');
     }
 
+    public function index(Request $request)
+    {
+
+        $producto = Producto::select('id','codigo','nombre','descripcion','categoria','color','cantidad','valor','imagen')->get();
+        return datatables()->of($producto)
+        
+        ->toJson();
+        
+        
+    }
+
+    
+    public function mostrar()
+    {
+      return view('producto.index');
+    }
     
 
     /**
@@ -32,7 +44,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return view('producto.create');
+     
     }
 
     /**
@@ -44,19 +56,31 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
 
-        $productos = new Producto();
-        $productos->codigo = $request->get('codigo');
+
+        $producto = new Producto();
+
+        $producto->codigo = $request->post('codigo');
+        $producto->nombre = $request->post('nombre');
+        $producto->cantidad = $request->post('cantidad');
+        $producto->valor = $request->post('valor');
+        $producto->categoria = $request->post('categoria');
+        $producto->color = $request ->post('color');
+        $producto->descripcion = $request->post('descripcion');
+
+        /* Guardar Imagen Normal */
         $request->validate([
             'imagen' => 'required|image|max:2048'
         ]);
         if ($request->hasfile('imagen')) {
-            $file = $request->file('imagen');
-            $destinationPath = 'img/featureds/';
-            $filename = time(). '-' . $file->getClientOriginalName();
-            $uplaadSuccess = $request->file('imagen')->move($destinationPath, $filename);
-            $productos -> imagen = $destinationPath . $filename;
-        }
+        $file = $request->file('imagen');
+        $destinationPath = 'img/featureds/';
+        $filename = time(). '-' . $file->getClientOriginalName();
+        $uplaadSuccess = $request->file('imagen')->move($destinationPath, $filename);
+        $producto -> imagen = $destinationPath . $filename;
+    }
+        /* Fin Imagen Normal */
 
+        /* Guardar Imagen Grande */
         $request->validate([
             'imagenGrande' => 'required|image|max:2048'
         ]);
@@ -65,21 +89,18 @@ class ProductoController extends Controller
             $destinationPath = 'img/featureds/';
             $filename = time(). '-' . $file->getClientOriginalName();
             $uplaadSuccess = $request->file('imagenGrande')->move($destinationPath, $filename);
-            $productos -> imagenGrande = $destinationPath . $filename;
+            $producto -> imagenGrande = $destinationPath . $filename;
         }
+        /* Fin Imagen Grande */
 
 
-        $productos->nombre = $request->get('nombre');
-        $productos->cantidad = $request->get('cantidad');
-        $productos->valor = $request->get('valor');
-        $productos->categoria = $request->get('categoria');
-        $productos->color = $request ->get('color');
-        $productos->descripcion = $request->get('descripcion');
-        $productos->save();
-        return redirect('/admin');
-       
-        
-    }
+        /* Guardar Datos de metodo POST retornando un archivo json */
+        $producto->save();
+        return Response::json($producto);
+        redirect('producto/index');
+        /* Fin */
+    }  
+
 
     /**
      * Display the specified resource.
@@ -100,8 +121,10 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        $producto = Producto::find($id);
-        return view('producto.edit')->with('producto',$producto);
+
+        $where = array('id' => $id);
+        $producto  = Producto::where($where)->first();
+        return Response::json($producto);
     }
 
     /**
@@ -114,34 +137,27 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $producto = Producto::find($id);
-        $request->validate([
-            'imagen' => 'required|image|max:2048'
-        ]);
-        if ($request->hasfile('imagen')) {
-            $file = $request->file('imagen');
-            $destinationPath = 'img/featureds/';
-            $filename = time(). '-' . $file->getClientOriginalName();
-            $uplaadSuccess = $request->file('imagen')->move($destinationPath, $filename);
-            $productos -> imagen = $destinationPath . $filename;
-        }
-
-        $request->validate([
-            'imagenGrande' => 'required|image|max:2048'
-        ]);
-        if ($request->hasfile('imagenGrande')) {
-            $file = $request->file('imagenGrande');
-            $destinationPath = 'img/featureds/';
-            $filename = time(). '-' . $file->getClientOriginalName();
-            $uplaadSuccess = $request->file('imagenGrande')->move($destinationPath, $filename);
-            $productos -> imagen = $destinationPath . $filename;
-        }
-
-        $producto->titulo = $request->get('titulo');
-        $producto->cantidad = $request->get('cantidad');
-        $producto->valor = $request->get('valor');
-        $producto->descripcion = $request->get('descripcion');
+        $producto ->fill($request->all());
+        
         $producto->save();
-        return redirect('/productos');    
+        return response()->json([
+            "mensaje" => "listo"
+        ]);
+        
+
+
+        /* $producto->codigo = $request->post('codigo');
+        $producto->nombre = $request->post('nombre');
+        $producto->cantidad = $request->post('cantidad');
+        $producto->valor = $request->post('valor');
+        $producto->categoria = $request->post('categoria');
+        $producto->color = $request ->post('color');
+        $producto->descripcion = $request->post('descripcion'); */
+
+       
+
+
+        /* Guardar Datos de metodo POST retornando un archivo json */
     }
 
     /**
@@ -152,8 +168,13 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        $producto = Producto::find($id);
-        $producto->delete();
-        return redirect('/productos');
+        /* $producto = Producto::where('id',$id)->delete();
+        return Response::json($producto); */
+
+        Producto::find($id)->delete($id);
+  
+        return response()->json([
+        'success' => 'Record deleted successfully!'
+        ]);   
     }
 }
