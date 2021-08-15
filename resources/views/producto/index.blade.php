@@ -3,8 +3,11 @@
 @section('title', 'Productos | Lynda Polo')
 
 @section('content_header')
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+      <!-- CSS PERSONALIZADO PARA ADMIN -->
+      <link rel="stylesheet" href="/css/style-admin.css">
+      <!-- FIN -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
       <link rel="stylesheet" href="/plugins/toastr/toastr.min.css">
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <h1>Productos LyndaPolo.co</h1>
@@ -12,13 +15,28 @@
 
 
 @section('content')
+
+<!-- Boton para guardar productos -->
+<div class="card-body">
+  <svg type="button" data-toggle="modal" data-target="#addModal" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+  </svg>
+  <br>
+  <label for="" class="text-content">Agregar Producto</label>
+</div>
+
+<!-- Fin de guardar productos -->
+
 <!-- Incluir Modal para Eliminar Producto -->
 @include('producto.modalEliminar')
 <!-- Fin de Modal eliminar Producto -->
-<div class="card-body">
-<button class="btn btn-success me-md-2" type="button" data-toggle="modal" data-target="#addModal">Agregar Producto</button>
-<button class="btn btn-success me-md-2" type="button" id="actualizar" name="actualizar">Recargar Pagina</button>
-</div>
+
+<!-- Incluir Modal para agregar Productos -->
+@include('producto.modalAddProducto')
+<!-- Fin de Modal agregar Producto -->
+
+
+
 
 <!-- Tabla de productos -->
 <table class="table table-bordered" id="productos">
@@ -38,13 +56,12 @@
     </tr>
   </thead>
 </table>
+
 <!-- Fin de tabla de productos -->
 
 
 
-<!-- Incluir Modal para agregar Productos -->
-@include('producto.modalAddProducto')
-<!-- Fin de Modal agregar Producto -->
+
 
 <!-- Incluir Modal para editar Producto -->
 @include('producto.modalEditarProducto')
@@ -55,7 +72,7 @@
 @stop
 
 @section('css')
-    <script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
+<script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
 @stop
 
 @section('js')
@@ -120,6 +137,8 @@ $(document).ready( function () {
             
             ]
     });
+
+    
 /* Fin de peticion AJAX listar productos en tabla */
 
 /* Peticion AJAX Eliminar registro */
@@ -155,9 +174,6 @@ $(document).ready( function () {
       var colorP = $('#editColor').val();
       var valorP = $('#editValor').val();
       var cantidadP = $('#editCantidad').val();
-      /* var imagenP = $('#editImagen').val();
-      var imagenGrandeP = $('#editImagenGrande').val(); */
-      /* var _token2 = $('#input[name=_token]').val(); */
     $.ajax({ 
         url : "update/"+idP,
         type : 'PUT',
@@ -172,7 +188,7 @@ $(document).ready( function () {
           descripcion:descripcionP,
           color:colorP,
           valor:valorP,          
-          cantidad:cantidadP,           
+          cantidad:cantidadP,          
          },
          success:function(data){
                 setTimeout(function(){
@@ -182,7 +198,7 @@ $(document).ready( function () {
                 }, 200);
           }
       })
-   }); 
+   });  
 });
 </script>
 
@@ -214,11 +230,40 @@ $(document).ready( function () {
 <!-- Fin de editar Modal -->
 
 
-<!-- Actualizar -->
 <script>
-
+        //Add the Student  
+       
+       $('#guardar').submit(function(e){
+          e.preventDefault();    
+          $.ajax({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+          $('#addProducto').serialize(),
+          url: '{{route("producto.create")}}',
+          type: "post",
+          dataType: 'json',
+          data: {
+            data:codigo,
+            data:nombre,
+            data:descripcion,
+            data:valor,
+            data:cantidad,
+            data:color,
+            data:categoria,
+            data:imagen,
+            data:imagenGrande,
+          },
+          success:function(data){
+                setTimeout(function(){
+                  console.log('aquii');
+                  $('#addModal').modal('hide');
+                  toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
+                  table.ajax.reload();
+                }, 200);
+          }
+        })
+    });
 </script>
-
-
 
 @stop

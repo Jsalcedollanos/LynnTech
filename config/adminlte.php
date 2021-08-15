@@ -336,17 +336,8 @@ return [
             
             'text'    => 'Productos',
             'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Agregar',
-                    'url'  => 'productos/create',
-                ],    
-                [
-                    'text' => 'Ver Productos',
-                    'url'  => 'producto/index',
-                ], 
-                
-            ],
+            'url'  => 'producto/index',
+            
         ],
 
         [

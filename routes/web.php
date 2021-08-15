@@ -44,6 +44,7 @@ Route::resource('facturas','App\Http\Controllers\FacturaController');
 Route::resource('productos','App\Http\Controllers\ProductoController');
 Route::resource('tienda','App\Http\Controllers\TiendaproductoController');
 Route::resource('add','App\Http\Controllers\TiendaproductoController');
+Route::resource('productos','App\Http\Controllers\ProductoController');
 Route::resource('costos','App\Http\Controllers\CostoController');
 Route::resource('clientes','App\Http\Controllers\ClienteController');
 Route::resource('registro','App\Http\Controllers\RegistroController');
@@ -52,7 +53,8 @@ Route::resource('carrito','App\Http\Controllers\CarritoController');
 Route::resource('home','App\Http\Controllers\UserController');
 Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
 
-Route::post('producto',[ProductoController::class,'store'])
+
+Route::post('producto/index',[ProductoController::class,'store'])
 ->name('producto.create');
 
 Route::get('producto/edit/{id}',[ProductoController::class,'edit'])

@@ -9,8 +9,8 @@
 
   <title>Editar Producto</title>
 </head>
-<body>
 
+<body>
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -19,8 +19,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-
       <form id="editProducto" name="editProducto" enctype="multipart/form-data">
           @csrf
           
@@ -81,24 +79,12 @@
                 <label for="">Descripcion</label>
                 <textarea required id="editDescripcion" name="editDescripcion" class="form-control form-control-lg" type="text" value=""  placeholder="" tabindex="5" ></textarea>
                 <br>
-                
-                <!-- <label for="">Imagen Pequeña</label>
-                <div class="input-group mb-3">
-                <input type="file" name="editImagen" id="editImagen" accept="image/*" tabindex="6">
-                </div>
-                <span>Foto de perfil del producto en lo cart.</span> 
-                <p>                  
-                  Advertencia: Recuerda que las imagenes solo deben ser de dos tipos de 
-                  formatos (PNG) y (JPG).
-                  La medida estandar de la imagen es de 250px X 300px para una buena visualizacion.
-                </p> -->
-
-               
+             
           </div>
 
                 <div class="card-footer">
-                  <button  type="submit" class="btn btn-primary" tabindex="5">Actualizar</button>
-                  <a href="/producto/index" class="btn btn-secondary" tabindex="6">Cancelar</a>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button  type="submit" class="btn btn-primary" tabindex="5">Actualizar</button>   
                 </div>
 
               </form>

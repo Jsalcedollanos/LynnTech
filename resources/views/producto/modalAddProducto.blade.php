@@ -25,7 +25,7 @@
                   $desordenada = str_shuffle($caracteres);
                   $CH = substr($desordenada, 1, 4);
               ?>
-        <form enctype="multipart/form-data" form id="addProducto" name="addProducto" action="{{route('producto.create')}}" method="POST">
+        <form enctype="multipart/form-data" form id="addProducto" name="addProducto"  method="POST">
         @csrf
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Codigo:</label>
@@ -126,52 +126,12 @@
 
 <!-- PETICION AJAX -->
 
-<script>
-  $(document).ready(function () {
-        //Add the Student  
-        $("#addProducto").validate({
-        rules: {
-        id: "required",
-        nombre: "required",
-        descripcion: "required",
-        color: "required",
-        valor: "required",
-        categoria: "required",
-        imagen:"required",
-        imagenGrande:"required"
-        },
-        messages: {
-          
-        },
-        submitHandler: function(form) {
-          var form_action = $("#addProducto").attr("action");
-          $.ajax({
-            "_token": $("meta[name='csrf-token']").attr("content")
-          data: $('#addProducto').serialize(),
-          url: form_action,
-          type: "POST",
-          dataType: 'json',
-          success: function (data) {
-          var product = '<tr id="'+data.id+'">';
-          product += '<td>' + data.codigo + '</td>';
-          product += '<td>' + data.nombre + '</td>';
-          product += '<td>' + data.descripcion + '</td>';
-          product += '<td>' + data.valor + '</td>';
-          product += '<td>' + data.cantidad + '</td>';
-          product += '<td>' + data.color + '</td>';
-          product += '<td>' + data.categoria + '</td>';
-          product += '<td>' + data.imagen + '</td>';
-          product += '<td>' + data.imagenGrande + '</td>';
-          product += '</tr>';            
-          $('#productTable tbody').prepend(product);
 
-          },
-          error: function (data) {
-          }
-          });
-        }
-      });
-});
-</script>
+
+<!-- Integracion de JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!-- Fin de Integracion -->
 
 </html>
