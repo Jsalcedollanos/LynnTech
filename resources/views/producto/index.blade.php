@@ -259,7 +259,7 @@ $(document).ready( function () {
                   console.log('aquii');
                   $('#addModal').modal('hide');
                   toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
-                  table.ajax.reload();
+                  /* table.ajax.reload(); */
                 }, 200);
           }
         })
