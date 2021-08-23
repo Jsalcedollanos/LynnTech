@@ -49,6 +49,9 @@
 
   </head>
   <body> 
+
+ 
+
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">          
       <div class="wpf-loader-two-inner">
@@ -109,6 +112,7 @@
                 </div>
                 <!-- / cellphone -->
               </div>
+
               <!-- / header con validacion de session + funciones addicionales -->
           @if (auth()->check()) 
               @if(Auth::user()->role =="user")
@@ -138,7 +142,8 @@
                 <ul class="aa-head-top-nav-right">
                   <li><a href="{{ route('register') }}">Aun no te has registrado? Que esperas!</a></li>
                 <li><a href="{{ route('register') }}">Registrarme</a></li>
-                  <li><a href="{{ route('login') }}">Login</a></li>
+                  <!-- <li><a class="hidden-xs"><a href="{{ route('login') }}">Login</a></li> -->
+                  <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
                   <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
                   <li class="hidden-xs"><a href="{{ route('login') }}">Mi Carrito</a></li>
                 </ul>
@@ -1335,6 +1340,11 @@
   </footer>
   <!-- / footer -->
 
+     <!-- Modal de login -->
+  <!-- Login Modal -->  
+      @include('login.index')
+  <!-- Fin de Modal de login -->
+
   <!-- Login Modal -->  
   <div class="modal fade" id="sesion-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -1360,7 +1370,6 @@
   </div>    
 
 
-                         
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -1382,5 +1391,9 @@
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
   <script src="js/validarVacios.js"></script>
+
+
+
+  
   </body>
 </html>
