@@ -21,7 +21,7 @@ class FacturaController extends Controller
     public function index(Request $request)
     {
 
-        $facturas = Factura::select('id','nfactura','nombre','apellido','telefono','direccion','valor','create_at')->get();
+        $facturas = Factura::select('id','nfactura','cedula','nombres','apellidos','telefono','direccion','valor','created_at')->get();
         return datatables()->of($facturas)
         
         ->toJson();
@@ -51,13 +51,13 @@ class FacturaController extends Controller
     public function store(Request $request)
     {
         $factura = new Factura();
-        $factura->nfactura = $request->get('nfactura');
-        $factura->nombre = $request->get('nombre');
-        $factura->apellido = $request->get('apellido');
-        $factura->cedula = $request->get('cedula');
-        $factura->telefono = $request->get('telefono');
-        $factura->direccion = $request->get('direccion');
-        $factura->valor = $request->get('valor');
+        $factura->nfactura = $request->post('nfactura');
+        $factura->nombre = $request->post('nombres');
+        $factura->apellido = $request->post('apellidos');
+        $factura->cedula = $request->post('cedula');
+        $factura->telefono = $request->post('telefono');
+        $factura->direccion = $request->post('direccion');
+        $factura->valor = $request->post('valor');
         $factura->save();
         return Response::json($factura);
     }

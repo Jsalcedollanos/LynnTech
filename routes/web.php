@@ -58,7 +58,7 @@ Route::resource('home','App\Http\Controllers\UserController');
 Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
 
 
-Route::post('facturas',[ProductoController::class,'store'])
+Route::post('facturas',[ProductoController::class,'index'])
 ->name('factura.index');
 
 

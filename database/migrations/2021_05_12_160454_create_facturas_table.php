@@ -17,8 +17,8 @@ class CreateFacturasTable extends Migration
             $table->id();
             $table->unsignedinteger('nfactura');
             $table->integer('cedula');
-            $table->string('nombre',40);
-            $table->string('apellido',40);
+            $table->string('nombres',40);
+            $table->string('apellidos',40);
             $table->string('telefono');
             $table->string('direccion');
             $table->integer('valor');
