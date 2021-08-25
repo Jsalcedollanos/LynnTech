@@ -33,7 +33,7 @@ class ProductoController extends Controller
     
     public function mostrar()
     {
-      return view('producto.create');
+      
     }
     
 
@@ -96,7 +96,7 @@ class ProductoController extends Controller
 
         /* Guardar Datos de metodo POST retornando un archivo json */
         $producto->save();
-        return redirect("producto/index");
+        return Response::json($producto);
         /* Fin */
     }  
 

@@ -33,6 +33,10 @@ Route::get('/producto/20/edit', function () {
     return view('producto.edit');
 });
 
+Route::get('/facturas/index', function () {
+    return view('factura.index');
+});
+
 
 
 
@@ -52,6 +56,10 @@ Route::resource('admin','App\Http\Controllers\AdminController');
 Route::resource('carrito','App\Http\Controllers\CarritoController');
 Route::resource('home','App\Http\Controllers\UserController');
 Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
+
+
+Route::post('facturas',[ProductoController::class,'store'])
+->name('factura.index');
 
 
 Route::post('producto/index',[ProductoController::class,'store'])

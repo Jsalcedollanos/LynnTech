@@ -197,7 +197,7 @@
               <!-- search box -->
               <div class="aa-search-box">
                 <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                  <input type="text" name="" id="" placeholder="Buscar ejemplo 'Vestidos' ">
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -227,7 +227,7 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="/home">Inicio</a></li>
+              <li><a href="{{ route('home.index') }}">Inicio</a></li>
               <li><a href="{{ route('tienda.index')}}">Todo los productos</a></li>
               <li><a>Vestidos <span class="caret"></span></a>
                 <ul class="dropdown-menu">                

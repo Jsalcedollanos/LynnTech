@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Factura;
-
+use Response;
+use Illuminate\Support\Facades\Storage;
 class FacturaController extends Controller
 {
     /**
@@ -20,9 +21,10 @@ class FacturaController extends Controller
     public function index(Request $request)
     {
 
-        $cedula = $request->get('busqueda');
-        $facturas = Factura::where('cedula','like',"%$cedula%")->paginate(5);
-        return view('factura.index',compact('facturas'));
+        $facturas = Factura::select('id','nfactura','nombre','apellido','telefono','direccion','valor','create_at')->get();
+        return datatables()->of($facturas)
+        
+        ->toJson();
 
      
     }
@@ -48,16 +50,16 @@ class FacturaController extends Controller
 
     public function store(Request $request)
     {
-        $facturas = new Factura();
-        $facturas->nfactura = $request->get('nfactura');
-        $facturas->nombre = $request->get('nombre');
-        $facturas->apellido = $request->get('apellido');
-        $facturas->cedula = $request->get('cedula');
-        $facturas->telefono = $request->get('telefono');
-        $facturas->direccion = $request->get('direccion');
-        $facturas->valor = $request->get('valor');
-        $facturas->save();
-        return redirect('/admin');
+        $factura = new Factura();
+        $factura->nfactura = $request->get('nfactura');
+        $factura->nombre = $request->get('nombre');
+        $factura->apellido = $request->get('apellido');
+        $factura->cedula = $request->get('cedula');
+        $factura->telefono = $request->get('telefono');
+        $factura->direccion = $request->get('direccion');
+        $factura->valor = $request->get('valor');
+        $factura->save();
+        return Response::json($factura);
     }
 
     /**

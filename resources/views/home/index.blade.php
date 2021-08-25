@@ -242,6 +242,7 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
+              <li><a href="{{ route('home.index') }}">Inicio</a></li>
               <li><a href="{{ route('tienda.index') }}">Todo los productos</a></li>
               <li><a>Vestidos <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
@@ -1345,7 +1346,7 @@
       @include('login.index')
   <!-- Fin de Modal de login -->
 
-  <!-- Login Modal -->  
+  <!-- Cerrar Sesion Modal -->  
   <div class="modal fade" id="sesion-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">                      
@@ -1390,7 +1391,7 @@
   <script type="text/javascript" src="js/nouislider.js"></script>
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
-  <script src="js/validarVacios.js"></script>
+ <!--  <script src="js/validarVacios.js"></script> -->
 
 
 

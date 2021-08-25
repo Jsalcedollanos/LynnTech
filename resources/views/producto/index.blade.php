@@ -229,20 +229,21 @@ $(document).ready( function () {
 </script>
 <!-- Fin de editar Modal -->
 
-
+<!-- GUARDAR PRODUCTO -->
 <script>
-        //Add the Student  
        
-       $('#guardar').submit(function(e){
-          e.preventDefault();    
+       
+       $('#addProducto').submit(function(e){
+          e.preventDefault(); 
           $.ajax({
+            
+            url: '{{route("producto.create")}}',
+            type: "POST",
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-          $('#addProducto').serialize(),
-          url: '{{route("producto.create")}}',
-          type: "post",
-          dataType: 'json',
+            dataType: 'json',
+            $('#addProducto').serialize(),
           data: {
             data:codigo,
             data:nombre,
@@ -256,7 +257,6 @@ $(document).ready( function () {
           },
           success:function(data){
                 setTimeout(function(){
-                  console.log('aquii');
                   $('#addModal').modal('hide');
                   toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
                   /* table.ajax.reload(); */
@@ -265,5 +265,5 @@ $(document).ready( function () {
         })
     });
 </script>
-
+<!-- FIN DE GUARDAR -->
 @stop

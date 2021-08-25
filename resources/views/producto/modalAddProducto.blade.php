@@ -25,7 +25,7 @@
                   $desordenada = str_shuffle($caracteres);
                   $CH = substr($desordenada, 1, 4);
               ?>
-        <form enctype="multipart/form-data" form id="addProducto" name="addProducto"  method="POST">
+        <form enctype="multipart/form-data" id="addProducto" name="addProducto" method="post">
         @csrf
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Codigo:</label>
@@ -107,7 +107,7 @@
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="11">Cerrar</button>
-                  <button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
+                  <button type="submit" id="guardar" class="btn btn-primary" tabindex="10">Guardar</button>
                 </div>
         </form>
       </div>

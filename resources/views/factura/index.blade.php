@@ -14,18 +14,10 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Bloque de codigo de Buscar -->
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input name="busqueda" required maxlength="11" onkeypress='return validaNumericos(event)' class="form-control me-2" type="search" placeholder="ID Factura" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
-      <a href="/admin" class="btn btn-secondary" >Retroceder</a>
-    </form>
-  </div>
-</nav>
-<table class="table table-dark table-striped ">
+
+<table class="table table-bordered" id="facturas">
     <thead>
-        <tr>
+        <tr class="table-danger">
             <th scope="col">ID</th>
             <th scope="col">Numero Factura</th>
             <th scope="col">Cedula</th>
@@ -38,48 +30,23 @@
             <th scope="col">Accion</th>
         </tr>
     </thead>
-        <tbody>
-            @foreach ($facturas as $factura)
-                <tr>
-                    <td>{{$factura->id}}</td>
-                    <td>{{$factura->nfactura}}</td>
-                    <td>{{$factura->cedula}}</td>
-                    <td>{{$factura->nombre}}</td>
-                    <td>{{$factura->apellido}}</td>
-                    <td>{{$factura->telefono}}</td>
-                    <td>{{$factura->direccion}}</td>
-                    <td>{{$factura->valor}}</td>
-                    <td>{{$factura->created_at}}</td>
-                    <td>   
-                        <form action="{{ route ('facturas.destroy',$factura->id) }}" method="POST">
-
-                            <a class="btn btn-info" href="/facturas/{{ $factura->id}}/edit">Editar</a>
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger">Borrar</button>
-
-
-                        </form>
-                        
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-</table>
+       </table>
           
 @stop
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
-    <script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!-- Fin Boostrap 5 -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> 
 <!-- Validacion solo numero -->
 <script>
         function validaNumericos(event)
@@ -92,6 +59,56 @@
         }
     </script>
 <!-- Fin Validacion solo numero -->
+
+
+<script> 
+/* Pedicion AJAX para mostrar productos en datable */
+$(document).ready( function () { 
+    
+   var table = $('#facturas').DataTable({ 
+
+        "processing": true, 
+
+        "serverSide": true, 
+
+        "ajax": "{{route('factura.index')}}", 
+
+        "columns": [ 
+  
+            {data:'id'},
+
+            {data:'nfactura'},
+
+            {data:'cedula'},
+
+            {data:'nombre'}, 
+
+            {data:'apellido'},            
+
+            {data:'telefono'},
+
+            {data:'direccion'},
+
+            {data:'valor'},
+
+            {data:'create_at'},
+            
+            {data:'id', "render": function (data) {
+            return "<button id=\"" + data + "\" type=\"button\" name=\"btnEditar\" class=\"btnEditar btn btn-warning botonEditar\"><span class=\"material-icons\">edit</span></button>";
+            }},
+
+            {data:'id', "render": function (data) {
+                var ide = data;
+            return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
+            }},
+            
+            ]
+    });
+
+});
+</script>
+
+<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
 @stop
 
 

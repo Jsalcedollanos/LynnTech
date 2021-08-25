@@ -289,18 +289,18 @@
                 <h4>Login</h4>
 
 				<!-- FORMULARIO DE LOGIN -->
-                 <form action="" class="aa-login-form" method="POST" action="{{ route('login')}}">
-					@csrf
-				<!-- 	<x-jet-validation-errors class="mb-4" /> -->
-					
-					<label for="">Correo<span>*</span></label>
-					<input type="email" class="form-control" name="email" placeholder="Ingrese su correo">
-					<label for="">Contraseña<span>*</span></label>
-					<input type="password" name="password"  class="form-control" placeholder="Contraseña">
-					<button type="submit" class="aa-browse-btn">Login</button>
-					<label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Recuerdame <span>!</span> </label>
-					<p class="aa-lost-password"><a href="#">He olvidado mi contraseña?</a></p>
-                  </form>
+          <form class="aa-login-form" method="POST" action="{{ route('login')}}">
+          @csrf
+               <!--  <x-jet-validation-errors class="mb-4" /> -->
+                
+                <label for="">Correo<span>*</span></label>
+                <input type="email" class="form-control" name="email" placeholder="Ingrese su correo">
+                <label for="">Contraseña<span>*</span></label>
+                <input type="password" name="password"  class="form-control" placeholder="Contraseña">
+                <button type="submit" class="aa-browse-btn">Login</button>
+                <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Recuerdame <span>!</span> </label>
+                <p class="aa-lost-password"><a href="#">He olvidado mi contraseña?</a></p>
+          </form>
                 </div>
               </div>
 				<!-- FIN DE FORMULARIO DE LOGIN -->
@@ -309,15 +309,18 @@
               <div class="col-md-6">
                 <div class="aa-myaccount-register">                 
                  <h4>Registrate</h4>
-                 <form action="{{route('register')}}" method="POST" class="aa-login-form">
-					@csrf
+                 <form action="{{ route('register') }}" method="POST" class="aa-login-form">
+				        	@csrf
+                    <label for="">Usuario<span>*</span></label>
+                    <input type="text" class="form-control" name="name" placeholder="Ejemplo 'Juan'" required>
                     <label for="">Correo<span>*</span></label>
-                    <input type="email" id="email" class="form-control" name="email" placeholder="Ingresa tu correo">
+                    <input type="email"  class="form-control" name="email" placeholder="Ingresa tu correo" required>
                     <label for="">Contraseña<span>*</span></label>
-                    <input type="password" id="pass1" name="password" class="form-control" placeholder="Ingresa contraseña">
-                    <input type="password" id="pass2"  class="form-control" placeholder="Repite contraseña">
-                    <button type="submit" id="btn-registrar" onClick="errorR()" class="aa-browse-btn">Registrate</button>    
-					
+                    <input type="password" id="pass1" name="password" class="form-control" placeholder="Ingresa contraseña" required>
+                    <input type="password" id="pass2" name ="password_confirmation" class="form-control" placeholder="Repite contraseña" required>
+                    <button type="submit" onClick="errorR()" id="btn-registrar"  class="aa-browse-btn">Registrate</button>  
+                     
+                    
 					<!-- Validacion  -->
 			@if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
@@ -464,28 +467,8 @@
   @include('error.modalErrorRegistro')
 
   <!-- Login Modal -->  
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">                      
-        <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4>Login or Register</h4>
-          <form class="aa-login-form" action="">
-            <label for="">Username or Email address<span>*</span></label>
-            <input type="text" placeholder="Username or email">
-            <label for="">Password<span>*</span></label>
-            <input type="password" placeholder="Password">
-            <button class="aa-browse-btn" type="submit">Login</button>
-            <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Remember me </label>
-            <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
-            <div class="aa-register-now">
-              Don't have an account?<a href="account.html">Register now!</a>
-            </div>
-          </form>
-        </div>                        
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div>
+  @include('login.index')
+  <!-- Fin de Modal de login -->
   
 
 
