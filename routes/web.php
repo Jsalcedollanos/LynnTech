@@ -57,11 +57,16 @@ Route::resource('carrito','App\Http\Controllers\CarritoController');
 Route::resource('home','App\Http\Controllers\UserController');
 Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
 
-
+/* RUTAS DE FACTURAS */
 Route::post('facturas',[ProductoController::class,'index'])
 ->name('factura.index');
 
+Route::post('facturas/index',[FacturaController::class,'store'])
+->name('factura.create');
 
+/* FIN DE RUTAS DE FACTURAS */
+
+/* RUTAS DE PRODUCTOS */
 Route::post('producto/index',[ProductoController::class,'store'])
 ->name('producto.create');
 
@@ -77,8 +82,7 @@ Route::get('/productos',[ProductoController::class, 'index'])
 Route::get('producto/eliminar/{id}',[ProductoController::class,'destroy'])
 ->name('producto.modalEliminar');
 
-
-
+/* FIN DE RUTAS DE PRODUCTOS */
 
 
 

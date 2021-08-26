@@ -343,17 +343,18 @@ return [
         [
             'text'    => 'Facturas',
             'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
+            'url'     => 'facturas/index'
+            /* 'submenu' => [
                 [
                     'text' => 'Agregar',
                     'url'  => 'facturas/create',
                 ],    
                 [
                     'text' => 'Ver Facturas',
-                    'url'  => 'facturas',
+                    'url'  => 'facturas/index',
                 ], 
                 
-            ],
+            ], */
         ],
 
        

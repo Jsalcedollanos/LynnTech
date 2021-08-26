@@ -3,12 +3,14 @@
 @section('title', 'LynnTech')
 
 @section('content_header')
-     <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-      <link rel="stylesheet" href="/plugins/toastr/toastr.min.css">
-      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<!-- CSS DE ADMIEN -->
+<link rel="stylesheet" href="/css/style-admin.css">
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/plugins/toastr/toastr.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <h1>LynnTech - Factura</h1>
 @stop
 
@@ -17,6 +19,21 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Bloque de codigo de Buscar -->
+
+<!-- Boton para guardar Facturas -->
+<div class="card-body">
+  <svg type="button"  class="btnGuardar" id="btnGuardar" name="btnGuardar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
+  </svg>
+  <br>
+  <label for="" class="text-content">Agregar Factura</label>
+</div>
+
+<!-- Fin de guardar Facturas -->
+
+<!-- MODAL DE AGREGAR FACTURA -->
+@include('factura.modalAddFactura')
+<!-- FIN DE MODAL -->
 
 <table class="table table-bordered" id="facturas">
     <thead>
@@ -114,11 +131,49 @@ $(document).ready( function () {
             
             ]
     });
-
 });
 </script>
 
 <!-- /* Fin de peticion AJAX listar productos en tabla */ -->
+
+<script>
+/* Agregar factura via AJAX */
+$(document).on('click','.btnGuardar',function(){
+    
+    $('#form-factura').submit(function(e){
+        e.preventDefault();    
+        $.ajax({
+         /*    
+            url: '{{route("factura.create")}}',
+            type: "POST",
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            $('#form-factura').serialize(),
+            data: {
+            data:nfactura,
+            data:cedula,
+            data:nombres,
+            data:apellidos,
+            data:telefono,
+            data:direccion,
+            data:valor,
+          }, */
+            success:function(){
+                $('#facturaModal').modal('show');
+               /*  setTimeout(function(){
+                  $('#facturaModal').modal('hide');
+                  toastr.success('La factura se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
+                }, 200); */
+            } 
+        });   
+    });
+});
+/* FIN de intruccion AJAX */
+
+</script>
+
 @stop
 
 
