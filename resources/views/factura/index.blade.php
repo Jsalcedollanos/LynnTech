@@ -6,6 +6,7 @@
 <!-- CSS DE ADMIEN -->
 <link rel="stylesheet" href="/css/style-admin.css">
 <!-- Google Font: Source Sans Pro -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -22,7 +23,7 @@
 
 <!-- Boton para guardar Facturas -->
 <div class="card-body">
-  <svg type="button"  class="btnGuardar" id="btnGuardar" name="btnGuardar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+  <svg type="button"  id="btnGuardar"  xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
   </svg>
   <br>
@@ -34,6 +35,12 @@
 <!-- MODAL DE AGREGAR FACTURA -->
 @include('factura.modalAddFactura')
 <!-- FIN DE MODAL -->
+
+<!-- MODAL DE ELIMINAR FACTURA-->
+@include('factura.modalEliminarFactura')
+<!-- FIN DE MODAL -->
+
+
 
 <table class="table table-bordered" id="facturas">
     <thead>
@@ -126,53 +133,69 @@ $(document).ready( function () {
 
             {data:'id', "render": function (data) {
                 var ide = data;
-            return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
+            /* return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>"; */
+            return "<button  id=\"eliminar\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
             }},
             
             ]
     });
-});
-</script>
 
-<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
+/* INSTRUCCION AJAX PARA GUARDAR FACTURAS */
+$('#btnGuardar').on('click',function(){
+    $('#facturaModal').modal('show');
 
-<script>
-/* Agregar factura via AJAX */
-$(document).on('click','.btnGuardar',function(){
-    
     $('#form-factura').submit(function(e){
         e.preventDefault();    
+    
+        let nfactura = $('#nfactura').val();
+        let cedula = $('#cedula').val();
+        let nombres = $('#nombres').val();
+        let apellidos = $('#apellidos').val();
+        let telefono = $('#telefono').val();
+        let direccion = $('#direccion').val();
+        let valor = $('#valor').val();
         $.ajax({
-         /*    
+            
             url: '{{route("factura.create")}}',
             type: "POST",
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             dataType: 'json',
-            $('#form-factura').serialize(),
+        
             data: {
-            data:nfactura,
-            data:cedula,
-            data:nombres,
-            data:apellidos,
-            data:telefono,
-            data:direccion,
-            data:valor,
-          }, */
-            success:function(){
-                $('#facturaModal').modal('show');
-               /*  setTimeout(function(){
+            nfactura:nfactura,
+            cedula:cedula,
+            nombres:nombres,
+            apellidos:apellidos,
+            telefono:telefono,
+            direccion:direccion,
+            valor:valor,
+          },
+            success:function(data){
+                setTimeout(function(){
                   $('#facturaModal').modal('hide');
                   toastr.success('La factura se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
-                }, 200); */
+                  table.ajax.reload();
+                }, 200);
             } 
         });   
     });
 });
-/* FIN de intruccion AJAX */
+/* FIN de intruccion AJAX de guardar*/
 
+/* INSTRUCCION AJAX PARA ELIMINAR REGISTRO */
+$('#eliminar').on('click',function(){
+    $('#eliminarModal').modal('show');
+
+});
+/* FIN DE INSTRUCCION AJAX PARA ELIMINAR REGISTRO */
+
+});
 </script>
+
+<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
+
 
 @stop
 

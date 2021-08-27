@@ -52,8 +52,8 @@ class FacturaController extends Controller
     {
         $factura = new Factura();
         $factura->nfactura = $request->post('nfactura');
-        $factura->nombre = $request->post('nombres');
-        $factura->apellido = $request->post('apellidos');
+        $factura->nombres = $request->post('nombres');
+        $factura->apellidos = $request->post('apellidos');
         $factura->cedula = $request->post('cedula');
         $factura->telefono = $request->post('telefono');
         $factura->direccion = $request->post('direccion');
