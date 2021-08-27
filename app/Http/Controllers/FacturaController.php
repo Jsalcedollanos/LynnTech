@@ -79,10 +79,11 @@ class FacturaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($nfactura)
+    public function edit($id)
     {
-        $factura = Factura::find($nfactura);
-        return view('factura.edit')->with('factura',$factura);
+        $idFactura = array('id' => $id);
+        $factura  = Factura::where($idFactura)->first();
+        return Response::json($factura);
     }
 
     /**
@@ -92,18 +93,15 @@ class FacturaController extends Controller
      * @param  int  $nfactura
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $nfactura)
+    public function update(Request $request, $id)
     {
-        $factura = Factura::find($nfactura);
-        $factura->cedula = $request->get('cedula');
-        $factura->nombre = $request->get('nombre');
-        $factura->apellido = $request->get('apellido');
-        $factura->telefono = $request->get('telefono');
-        $factura->direccion = $request->get('direccion');
-        $factura->valor = $request->get('valor');
-
+        $factura = Factura::find($id);
+        $factura ->fill($request->all());
+        
         $factura->save();
-        return redirect('/facturas');    
+        return response()->json([
+            "mensaje" => "listo"
+        ]);  
     }
 
     /**
@@ -114,8 +112,9 @@ class FacturaController extends Controller
      */
     public function destroy($id)
     {
-        $factura = Factura::find($id);
-        $factura->delete();
-        return redirect('/facturas');
+        Factura::find($id)->delete($id);
+        return response()->json([
+        'success' => 'Record deleted successfully!'
+        ]);  
     }
 }

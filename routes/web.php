@@ -62,8 +62,17 @@ Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
 Route::post('facturas',[ProductoController::class,'index'])
 ->name('factura.index');
 
+Route::get('facturas/eliminar/{id}',[FacturaController::class,'destroy'])
+->name('factura.modalEliminarFactura');
+
 Route::post('facturas/index',[FacturaController::class,'store'])
 ->name('factura.create');
+
+Route::put('facturas/update/{id}',[FacturaController::class,'update'])
+->name('factura.update');
+
+Route::get('facturas/editar/{id}',[FacturaController::class,'edit'])
+->name('producto.modalEditarFactura');
 
 /* FIN DE RUTAS DE FACTURAS */
 

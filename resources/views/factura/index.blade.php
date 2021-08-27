@@ -32,12 +32,17 @@
 
 <!-- Fin de guardar Facturas -->
 
+
 <!-- MODAL DE AGREGAR FACTURA -->
 @include('factura.modalAddFactura')
 <!-- FIN DE MODAL -->
 
 <!-- MODAL DE ELIMINAR FACTURA-->
 @include('factura.modalEliminarFactura')
+<!-- FIN DE MODAL -->
+
+<!-- MODAL DE ELIMINAR FACTURA-->
+@include('factura.modalEditarFactura')
 <!-- FIN DE MODAL -->
 
 
@@ -133,10 +138,8 @@ $(document).ready( function () {
 
             {data:'id', "render": function (data) {
                 var ide = data;
-            /* return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>"; */
-            return "<button  id=\"eliminar\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
+            return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
             }},
-            
             ]
     });
 
@@ -185,11 +188,58 @@ $('#btnGuardar').on('click',function(){
 /* FIN de intruccion AJAX de guardar*/
 
 /* INSTRUCCION AJAX PARA ELIMINAR REGISTRO */
-$('#eliminar').on('click',function(){
+var id_factura;
+$(document).on('click','.eliminar',function(){
+    var id_factura = $(this).attr('id');
+    console.log(id_factura);
     $('#eliminarModal').modal('show');
-
+    $('#btnEliminar').on('click',function(){
+       $.ajax({
+        url:"eliminar/"+id_factura,
+        success:function(data){
+                setTimeout(function(){
+                  toastr.success('El producto se ha eliminado satifactoriamente', 'Atencion!', {timeOut: 5000});
+                    $('#eliminarModal').modal('hide');
+                    table.ajax.reload();
+                }, 100);
+            }
+       }); 
+    });
 });
 /* FIN DE INSTRUCCION AJAX PARA ELIMINAR REGISTRO */
+
+/* $('#btnEditar').on('click',function(){
+let nfactura = $('#editarFactura');
+let cedula = $('#editarCedula');
+let nombres = $('#editarNombres');
+let apellidos = $('#editarApellidos');
+let telefono = $('#editarTelefono');
+let direccion = $('#editardireccion');
+let valor = $('#editarValor');
+$('#editarModal').modal('show');
+
+}); */
+
+/* BLOQUE DE LISTAR FACTURA VIA AJAX */
+let id_fac;
+$(document).on('click','.btnEditar',function(){
+id_fac = $(this).attr('id');
+$.ajax({
+url:"editar/"+id_fac,
+type:'get',
+            success:function(data){
+                $('#editarFactura').val(data.nfactura),
+                $('#editarCedula').val(data.cedula),
+                $('#editarNombres').val(data.nombres),
+                $('#editarApellidos').val(data.apellidos),
+                $('#editarTelefono').val(data.telefono),
+                $('#editarDireccion').val(data.direccion),
+                $('#editarValor').val(data.valor),
+                $('#editarModal').modal('show');
+			    }
+});
+});
+/* FIN DEL BLOQUE AJAX */
 
 });
 </script>
