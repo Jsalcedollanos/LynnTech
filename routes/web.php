@@ -74,6 +74,7 @@ Route::put('facturas/update/{id}',[FacturaController::class,'update'])
 Route::get('facturas/editar/{id}',[FacturaController::class,'edit'])
 ->name('producto.modalEditarFactura');
 
+
 /* FIN DE RUTAS DE FACTURAS */
 
 /* RUTAS DE PRODUCTOS */

@@ -68,7 +68,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+  
     <script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
 @stop
 
@@ -78,6 +78,7 @@
 
 @section('js')
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 <!-- Boostrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -186,6 +187,9 @@ $('#btnGuardar').on('click',function(){
             } 
         });   
     });
+
+
+    
 });
 /* FIN de intruccion AJAX de guardar*/
 
@@ -205,69 +209,98 @@ $(document).on('click','.eliminar',function(){
                     $(this).removeData('modal');
                     table.ajax.reload();
                 }, 100);
+            },
+            error:function(data){
+                setTimeout(function(){
+                    $('#editarModal').modal('hide');
+                    toastr.success('La factura no se pudo eliminar', 'Atencion!', {timeOut: 5000});
+                    table.ajax.reload();
+                    }, 200);
             }
        }); 
     });
 });
-/* FIN DE INSTRUCCION AJAX PARA ELIMINAR REGISTRO */
+/* BLOQUE DE ACTUALIZAR FACTURA VIA AJAX */
+    $('#editFactura').submit(function(e){
+    e.preventDefault();
+    var idf = $('#id').val();
+    var nfacturaf = $('#editarFactura').val();
+    var cedulaf = $('#editarCedula').val();
+    var nombresf = $('#editarNombres').val();
+    var apellidosf = $('#editarApellidos').val();
+    var telefonof = $('#editarTelefono').val();
+    var direccionf = $('#editarDireccion').val();
+    var valorf = $('#editValor').val();
+        $.ajax({
+            url:"update/"+idf,
+            type: 'PUT',
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            typedata: 'json',
+            data:{
+           
+                nfactura:nfacturaf,
+                cedula:cedulaf,
+                nombres:nombresf,
+                apellidos:apellidosf,
+                telefono:telefonof,
+                direccion:direccionf,
+                valor:valorf,
+            },
+           
+            success:function(data){
+                    setTimeout(function(){
+                    $('#editarModal').modal('hide');
+                    toastr.success('La factura se ha actualizado satifactoriamente', 'Atencion!', {timeOut: 5000});
+                    table.ajax.reload();
+                    }, 200);
+            },
+            error:function(data){
+                setTimeout(function(){
+                    $('#editarModal').modal('hide');
+                    toastr.success('La factura no se actualizo correctamente', 'Atencion!', {timeOut: 5000});
+                    table.ajax.reload();
+                    }, 200);
+            }
+            
+        })
 
-/* $('#btnEditar').on('click',function(){
-let nfactura = $('#editarFactura');
-let cedula = $('#editarCedula');
-let nombres = $('#editarNombres');
-let apellidos = $('#editarApellidos');
-let telefono = $('#editarTelefono');
-let direccion = $('#editardireccion');
-let valor = $('#editarValor');
-$('#editarModal').modal('show');
-
-}); */
-
-/* BLOQUE DE LISTAR FACTURA VIA AJAX */
-
+    });
 });
+/* FIN DEL BLOQUE DE ACTUALIZAR  */
 </script>
 
-<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
 
+<!-- LISTAR FACTURA VIA AJAX -->
 <script>
     let id_fac;
 $(document).ready(function(){
-
-
-$(document).on('click','.btnEditar',function(){
-id_fac = $(this).attr('id');
-$.ajax({
-url:"editar/"+id_fac,
-type:'get',
+    $(document).on('click','.btnEditar',function(){
+        id_fac = $(this).attr('id');
+            $.ajax({
+                url:"editar/"+id_fac,
+                type:'get',
             success:function(data){
+                $('#id').val(data.id),
                 $('#editarFactura').val(data.nfactura),
                 $('#editarCedula').val(data.cedula),
                 $('#editarNombres').val(data.nombres),
                 $('#editarApellidos').val(data.apellidos),
                 $('#editarTelefono').val(data.telefono),
                 $('#editarDireccion').val(data.direccion),
-                $('#editarValor').val(data.valor),
+                $('#editValor').val(data.valor),
                 $('#editarModal').modal('show');
 			    }
+            });
+    });
+    /* FIN DE LISTAR PRODUCTO VIA AJAX */
 });
-});
-});
-/* FIN DEL BLOQUE AJAX */
+<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
 
+   
 </script>
 
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
 <script>
     jQuery(document).ready(function(){
  

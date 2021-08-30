@@ -2,6 +2,7 @@ var separador = document.getElementById('valor');
 var separador2 = document.getElementById('editValor');
 
 
+
 separador.addEventListener('keyup', (e) => {
     var entrada = e.target.value.split('.').join('');
     entrada = entrada.split('').reverse();

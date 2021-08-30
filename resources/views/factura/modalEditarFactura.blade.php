@@ -16,16 +16,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="form-factura" name="form-factura">
+        <form id="editFactura" name="editFactura">
         @csrf
-    <!--     <?php
-                  $caracteres = "1234567890";
-                  $desordenada = str_shuffle($caracteres);
-                  $CH = substr($desordenada, 1, 4);
-              ?> -->
               
+              <input type="hidden" readonly value="" id="id" name="id"  class="form-control form-control-lg">
+              <br>
+
                 <label for="">N°Factura</label>
-                <input value="<?php echo $CH ?>" readonly id="editarFactura" name="editarFactura" class="form-control form-control-lg" type="number" min="0" placeholder="" tabindex="1">
+                <input  readonly id="editarFactura" name="editarFactura" class="form-control form-control-lg" type="number" min="0" placeholder="" tabindex="1">
                 <br>
                 
                 <label for="">Cedula</label>
@@ -50,7 +48,7 @@
                 <br>
 
                 <label for="">valor</label>
-                <input required maxlength="7" onkeypress="return valideKey(event);" id="editarValor" name="editarValor" class="form-control form-control-lg" type="text" placeholder="" tabindex="7">
+                <input required maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" class="form-control form-control-lg" type="text" placeholder="" tabindex="7">
                 <br>
 
                   </div>
@@ -66,7 +64,7 @@
 </div>
 </body>
 
-
+<script src="/js/validacionNumero.js"></script>
 <script src="/js/validacionNumero.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
