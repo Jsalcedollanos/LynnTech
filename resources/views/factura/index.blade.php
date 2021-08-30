@@ -146,8 +146,14 @@ $(document).ready( function () {
 
 /* INSTRUCCION AJAX PARA GUARDAR FACTURAS */
 $('#btnGuardar').on('click',function(){
-    $('#facturaModal').modal('show');
+    $('#cedula').val("");
+    $('#nombres').val("");
+    $('#apellidos').val("");
+    $('#telefono').val("");
+    $('#direccion').val("");
+    $('#valor').val("");
 
+    $('#facturaModal').modal('show');
     $('#form-factura').submit(function(e){
         e.preventDefault();    
     
@@ -167,7 +173,7 @@ $('#btnGuardar').on('click',function(){
             },
             dataType: 'json',
         
-            data: {
+        data: {
             nfactura:nfactura,
             cedula:cedula,
             nombres:nombres,
@@ -175,12 +181,11 @@ $('#btnGuardar').on('click',function(){
             telefono:telefono,
             direccion:direccion,
             valor:valor,
-          },
+        },
             success:function(data){
                 setTimeout(function(){
+                  $("#facturaModal").find("input,textarea,select").val("");
                   $('#facturaModal').modal('hide');
-                  jQuery(this).removeData('bs.modal');
-	            jQuery(this).find('.modal-content').empty();
                   toastr.success('La factura se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
                   table.ajax.reload();
                 }, 20);
@@ -197,7 +202,6 @@ $('#btnGuardar').on('click',function(){
 var id_factura;
 $(document).on('click','.eliminar',function(){
     var id_factura = $(this).attr('id');
-    console.log(id_factura);
     $('#eliminarModal').modal('show');
     $('#btnEliminar').on('click',function(){
        $.ajax({

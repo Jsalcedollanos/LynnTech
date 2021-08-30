@@ -68,7 +68,7 @@ class ProductoController extends Controller
         $producto->descripcion = $request->post('descripcion');
 
         /* Guardar Imagen Normal */
-      /*   $request->validate([
+        $request->validate([
             'imagen' => 'required|image|max:2048'
         ]);
         if ($request->hasfile('imagen')) {
@@ -77,11 +77,11 @@ class ProductoController extends Controller
         $filename = time(). '-' . $file->getClientOriginalName();
         $uplaadSuccess = $request->file('imagen')->move($destinationPath, $filename);
         $producto -> imagen = $destinationPath . $filename;
-    } */
+    }
         /* Fin Imagen Normal */
 
         /* Guardar Imagen Grande */
-        /* $request->validate([
+        $request->validate([
             'imagenGrande' => 'required|image|max:2048'
         ]);
         if ($request->hasfile('imagenGrande')) {
@@ -90,7 +90,7 @@ class ProductoController extends Controller
             $filename = time(). '-' . $file->getClientOriginalName();
             $uplaadSuccess = $request->file('imagenGrande')->move($destinationPath, $filename);
             $producto -> imagenGrande = $destinationPath . $filename;
-        } */
+        }
         /* Fin Imagen Grande */
 
 

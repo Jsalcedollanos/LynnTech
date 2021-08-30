@@ -87,7 +87,7 @@ Route::get('producto/edit/{id}',[ProductoController::class,'edit'])
 Route::put('producto/update/{id}',[ProductoController::class,'update'])
 ->name('producto.update');
 
-Route::get('/productos',[ProductoController::class, 'index'])
+Route::post('/productos',[ProductoController::class, 'index'])
 ->name('producto.index');
 
 Route::get('producto/eliminar/{id}',[ProductoController::class,'destroy'])
