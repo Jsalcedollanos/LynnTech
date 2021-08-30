@@ -178,9 +178,11 @@ $('#btnGuardar').on('click',function(){
             success:function(data){
                 setTimeout(function(){
                   $('#facturaModal').modal('hide');
+                  jQuery(this).removeData('bs.modal');
+	            jQuery(this).find('.modal-content').empty();
                   toastr.success('La factura se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
                   table.ajax.reload();
-                }, 200);
+                }, 20);
             } 
         });   
     });
@@ -200,6 +202,7 @@ $(document).on('click','.eliminar',function(){
                 setTimeout(function(){
                   toastr.success('El producto se ha eliminado satifactoriamente', 'Atencion!', {timeOut: 5000});
                     $('#eliminarModal').modal('hide');
+                    $(this).removeData('modal');
                     table.ajax.reload();
                 }, 100);
             }
@@ -221,7 +224,17 @@ $('#editarModal').modal('show');
 }); */
 
 /* BLOQUE DE LISTAR FACTURA VIA AJAX */
-let id_fac;
+
+});
+</script>
+
+<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
+
+<script>
+    let id_fac;
+$(document).ready(function(){
+
+
 $(document).on('click','.btnEditar',function(){
 id_fac = $(this).attr('id');
 $.ajax({
@@ -239,14 +252,32 @@ type:'get',
 			    }
 });
 });
+});
 /* FIN DEL BLOQUE AJAX */
 
-});
 </script>
 
-<!-- /* Fin de peticion AJAX listar productos en tabla */ -->
 
-
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+<script>
+    jQuery(document).ready(function(){
+ 
+	jQuery('#facturaModal').on('hidden', function (e) {
+	    jQuery(this).removeData('bs.modal');
+	    jQuery(this).find('.modal-content').empty();
+	})
+ 
+    })
+</script>
 @stop
 
 

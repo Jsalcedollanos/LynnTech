@@ -18,7 +18,7 @@
 
 <!-- Boton para guardar productos -->
 <div class="card-body">
-  <svg type="button" data-bs-toggle="modal" data-bs-target="#addModal" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
+  <svg type="button" id="btnGuardar" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
   </svg>
   <br>
@@ -138,7 +138,55 @@ $(document).ready( function () {
             ]
     });
 
-    
+/* BLOQUE AJAX PARA INSERTAR PRODUCTOS */
+  $('#btnGuardar').on('click',function(){
+    $('#addModal').modal('show');
+  
+    $('#addProducto').submit(function(e){
+      
+          e.preventDefault();
+          
+          let codigo = $('#codigo').val(); 
+          let nombre = $('#nombre').val(); 
+          let descripcion= $('#descripcion').val(); 
+          let categoria = $('#categoria').val(); 
+          let color = $('#color').val(); 
+          let cantidad = $('#cantidad').val(); 
+          let valor = $('#valor').val(); 
+          let imagen = $('#imagen').val(); 
+          let imagenGrande = $('#imagenGrande').val(); 
+          $.ajax({
+            
+            url: '{{route("producto.create")}}',
+            type: "POST",
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            dataType: 'json',
+            
+          data: {
+            data:codigo,
+            data:nombre,
+            data:descripcion,
+            data:valor,
+            data:cantidad,
+            data:color,
+            data:categoria,
+            data:imagen,
+            data:imagenGrande,
+            
+          },
+          success:function(data){
+                setTimeout(function(){
+                  $('#addModal').modal('hide');
+                  toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
+                  table.ajax.reload(); 
+                }, 20);
+          }
+        });
+      });
+    });
+
 /* Fin de peticion AJAX listar productos en tabla */
 
 /* Peticion AJAX Eliminar registro */
@@ -235,37 +283,7 @@ $(document).ready( function () {
 <script>
        
        
-       $('#addProducto').submit(function(e){
-          e.preventDefault(); 
-          $.ajax({
-            
-            url: '{{route("producto.create")}}',
-            type: "POST",
-            headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            dataType: 'json',
-            $('#addProducto').serialize(),
-          data: {
-            data:codigo,
-            data:nombre,
-            data:descripcion,
-            data:valor,
-            data:cantidad,
-            data:color,
-            data:categoria,
-            data:imagen,
-            data:imagenGrande,
-          },
-          success:function(data){
-                setTimeout(function(){
-                  $('#addModal').modal('hide');
-                  toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
-                  /* table.ajax.reload(); */
-                }, 200);
-          }
-        })
-    });
+       
 </script>
 <!-- FIN DE GUARDAR -->
 @stop

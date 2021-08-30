@@ -21,7 +21,7 @@ class CreateFacturasTable extends Migration
             $table->string('apellidos',40);
             $table->string('telefono');
             $table->string('direccion');
-            $table->integer('valor');
+            $table->decimal('valor',8,3);
             $table->timestamps();
         });
     }
