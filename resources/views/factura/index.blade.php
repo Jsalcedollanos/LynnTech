@@ -47,9 +47,9 @@
 
 
 
-<table class="table table-bordered" id="facturas">
+<table class="table table-dark table-striped table-bordered" id="facturas">
     <thead>
-        <tr class="table-danger">
+        <tr>
             <th scope="col">ID</th>
             <th scope="col">Numero Factura</th>
             <th scope="col">Cedula</th>

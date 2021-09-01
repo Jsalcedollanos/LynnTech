@@ -39,9 +39,9 @@
 
 
 <!-- Tabla de productos -->
-<table class="table" id="productos">
+<table class="table table-dark table-striped table-bordered" id="productos">
   <thead>
-    <tr class="table-danger">
+    <tr>
       <th scope="col" >ID</th>
       <th scope="col">Codigo</th>
       <th scope="col">Producto</th>
