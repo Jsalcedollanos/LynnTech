@@ -39,7 +39,7 @@
 
 
 <!-- Tabla de productos -->
-<table class="table table-bordered" id="productos">
+<table class="table" id="productos">
   <thead>
     <tr class="table-danger">
       <th scope="col" >ID</th>
@@ -138,41 +138,32 @@ $(document).ready( function () {
             ]
             
   });
-  /* Bloque de Guardar producto */
-  $('#add').on('click',function(){
+ 
+/* Fin de peticion AJAX listar productos en tabla */
+
+   /* Bloque de Guardar producto */
+   $('#add').on('click',function(){
+     /* resetear campos al abrir modal nuevamente */
+      $('#nombre').val("");
+      $('#cantidad').val("");
+      $('#valor').val("");
+      $('#descripcion').val("");
+     /* fin de este bloque */
     $('#addModal').modal('show');
       $('#addProducto').submit(function(e){
-        /* $('#addProducto').serialize(); */
           e.preventDefault(); 
-          let codigoP = $('#codigo').val();
-          let nombreP = $('#nombre').val();
-          let descripcionP = $('#descripcion').val();
-          let valorP = $('#valor').val();
-          let cantidadP = $('#cantidad').val();
-          let colorP = $('#color').val();
-          let categoriaP = $('#categoria').val();
-          let imagenP = $('#imagen').val();
-          let imagenGrandeP = $('#imagenGrande').val();
-          $.ajax({                        
+          $.ajax({               
             url: '{{route("producto.create")}}',
             type: "POST",
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
+            },   
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
             dataType: 'json',
-            
-          data: {
-            
-            codigo:codigoP,
-            nombre:nombreP,
-            cantidad:cantidadP,
-            valor:valorP,  
-            categoria:categoriaP,  
-            color:colorP,        
-            descripcion:descripcionP,          
-            imagen:imagenP,
-            imagenGrande:imagenGrandeP,
-          },
+         
             success:function(data){
                 setTimeout(function(){
                   $('#addModal').modal('hide');
@@ -183,9 +174,6 @@ $(document).ready( function () {
         })
     });
 });    
-/* Fin de peticion AJAX listar productos en tabla */
-
-  
     
 
 /* Peticion AJAX Eliminar registro */
@@ -196,12 +184,10 @@ $(document).ready( function () {
     });
     $('#btnEliminar').click(function(){
         $.ajax({
-            url:"eliminar/"+id_producto,
-            beforeSend:function(){
-                $('#btnEliminar').text('Eliminando...');
-            },            
+            url:"eliminar/"+id_producto,          
             success:function(data){
                 setTimeout(function(){
+
                   toastr.success('El producto se ha eliminado satifactoriamente', 'Atencion!', {timeOut: 5000});
                     $('#eliminarModal').modal('hide');
                     table.ajax.reload();
@@ -251,6 +237,10 @@ $(document).ready( function () {
   
 });
 
+</script>
+
+<script>
+  
 </script>
 
 <!-- Editar, Listar Producto en modal -->
