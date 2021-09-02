@@ -47,7 +47,7 @@
 
 
 
-<table class="table table-dark table-striped table-bordered" id="facturas">
+<table class="table table-dark table-striped" id="facturas">
     <thead>
         <tr>
             <th scope="col">ID</th>

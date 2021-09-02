@@ -1204,7 +1204,7 @@
   <!-- / Latest Blog -->
 
   <!-- Client Brand -->
-  <!-- <section id="aa-client-brand">
+  <section id="aa-client-brand">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -1226,7 +1226,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
   <!-- / Client Brand -->
 
   <!-- Subscribe section -->
