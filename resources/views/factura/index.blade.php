@@ -146,17 +146,17 @@ $(document).ready( function () {
 
 /* INSTRUCCION AJAX PARA GUARDAR FACTURAS */
 $('#btnGuardar').on('click',function(){
+    /* Restablecer modal al cargar */
     $('#cedula').val("");
     $('#nombres').val("");
     $('#apellidos').val("");
     $('#telefono').val("");
     $('#direccion').val("");
     $('#valor').val("");
-
+    /* fin de este bloque */
     $('#facturaModal').modal('show');
     $('#form-factura').submit(function(e){
         e.preventDefault();    
-    
         let nfactura = $('#nfactura').val();
         let cedula = $('#cedula').val();
         let nombres = $('#nombres').val();
@@ -165,14 +165,12 @@ $('#btnGuardar').on('click',function(){
         let direccion = $('#direccion').val();
         let valor = $('#valor').val();
         $.ajax({
-            
             url: '{{route("factura.create")}}',
             type: "POST",
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             dataType: 'json',
-        
         data: {
             nfactura:nfactura,
             cedula:cedula,

@@ -143,12 +143,12 @@ $(document).ready( function () {
 
    /* Bloque de Guardar producto */
    $('#add').on('click',function(){
-     /* resetear campos al abrir modal nuevamente */
+    /* resetear campos al abrir modal nuevamente */
       $('#nombre').val("");
       $('#cantidad').val("");
       $('#valor').val("");
       $('#descripcion').val("");
-     /* fin de este bloque */
+    /* fin de este bloque */
     $('#addModal').modal('show');
       $('#addProducto').submit(function(e){
           e.preventDefault(); 
@@ -165,11 +165,22 @@ $(document).ready( function () {
             dataType: 'json',
          
             success:function(data){
+              
                 setTimeout(function(){
                   $('#addModal').modal('hide');
                   toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
                   table.ajax.reload(); 
-                }, 20);
+                }, 20);  
+            },
+            error:function(response){
+              toastr.error('Asegurese de haber ingresado toda la informacion requerida!', 'Atencion', {timeOut: 10000});
+              $('#nombreError').text(response.responseJSON.errors.nombre);
+              $('#cantidadError').text(response.responseJSON.errors.cantidad);
+              $('#valorError').text(response.responseJSON.errors.valor);
+              $('#descripcionError').text(response.responseJSON.errors.descripcion);
+              $('#imagenError').text(response.responseJSON.errors.imagen);
+              $('#imagenGrandeError').text(response.responseJSON.errors.imagenGrande);
+                
             }
         })
     });
@@ -229,6 +240,9 @@ $(document).ready( function () {
                   toastr.success('El producto se ha actualizado satifactoriamente', 'Atencion!', {timeOut: 5000});
                   table.ajax.reload();
                 }, 200);
+          },
+          error:function(data){
+            
           }
       })
   });

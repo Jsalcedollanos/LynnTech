@@ -55,22 +55,43 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+    /* $validator = Validator::make($request->all(),[
+        'codigo' => 'required|codigo|unique:producto',
+        'nombre' => 'required',
+        'cantidad' => 'required',
+        'valor' => 'required',
+        'categoria' => 'required',
+        'color' => 'required',
+        'descripcion' => 'required',
+        'imagen' => 'required|image|max:2048',
+        'imagenGrande' => 'required|image|max:2048'
+    ]); */
+    /* if (!$validator->passes()) {
+        return response()->json(['status'=>0, 'error'=>$validator->errors()->toArray()]);
+    }; */
 
 
-        $producto = new Producto();
+    $producto = new Producto();
 
-        $producto->codigo = $request->post('codigo');
-        $producto->nombre = $request->post('nombre');
-        $producto->cantidad = $request->post('cantidad');
-        $producto->valor = $request->post('valor');
-        $producto->categoria = $request->post('categoria');
-        $producto->color = $request ->post('color');
-        $producto->descripcion = $request->post('descripcion');
+    $request -> validate([
+        
+        'nombre' => 'required',
+        'cantidad' => 'required',
+        'valor' => 'required',
+        'categoria' => 'required',
+        'color' => 'required',
+        'descripcion' => 'required',
+        'imagen' => 'required|image|max:2048',
+        'imagenGrande' => 'required|image|max:2048'
+    ]);
+            $producto->codigo = $request->post('codigo');
+            $producto->nombre = $request->post('nombre');
+            $producto->cantidad = $request->post('cantidad');
+            $producto->valor = $request->post('valor');
+            $producto->categoria = $request->post('categoria');
+            $producto->color = $request ->post('color');
+            $producto->descripcion = $request->post('descripcion');
 
-        /* Guardar Imagen Normal */
-        $request->validate([
-            'imagen' => 'required|image|max:2048'
-        ]);
         if ($request->hasfile('imagen')) {
         $file = $request->file('imagen');
         $destinationPath = 'img/featureds/';
@@ -80,10 +101,6 @@ class ProductoController extends Controller
     }
         /* Fin Imagen Normal */
 
-        /* Guardar Imagen Grande */
-        $request->validate([
-            'imagenGrande' => 'required|image|max:2048'
-        ]);
         if ($request->hasfile('imagenGrande')) {
             $file = $request->file('imagenGrande');
             $destinationPath = 'img/featureds/';

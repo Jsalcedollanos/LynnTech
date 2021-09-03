@@ -25,6 +25,7 @@
                   $desordenada = str_shuffle($caracteres);
                   $CH = substr($desordenada, 1, 4);
               ?>
+        
         <form enctype="multipart/form-data" id="addProducto" name="addProducto" method="post">
         @csrf
           <div class="mb-3">
@@ -34,9 +35,10 @@
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Nombre:</label>
             <input type="text" class="form-control" id="nombre" name="nombre" tabindex="2">
+            <span class="text-danger" id="nombreError"></span><br>
           </div>
           <div class="mb-3">
-          <label for="">Categoria</label>
+          <label for="">Categoria:</label>
                   <select name="categoria" id="categoria" class="form-control form-control-lg" tabindex="3">
                   <option value="Vestido de lujo" >Vestido de lujo</option>
                   <option value="Vestido tematico" >Vestido tematico</option>
@@ -52,8 +54,10 @@
                   <option value="Calzado" >Calzado</option>
                   <option value="Accesorios" >Accesorios</option>
                   </select>
+                  <span class="text-danger" id="categoriaError"></span><br>
           </div>
           <div class="mb-3">
+            <label for="">Color:</label>
           <select name="color" id="color" class="form-control form-control-lg" tabindex="4">
                   <option value="Rojo" >Rojo</option>
                   <option value="Azul" >Azul</option>
@@ -70,18 +74,22 @@
                   <option value="Azul Pastel" >Azul Pastel</option>
                   <option value="Amarillo" >Amarillo</option>
                   </select>
+                  <span class="text-danger" id="colorError"></span><br>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Cantidad:</label>
-            <input required maxlength="3" onkeypress="return valideKey(event);" id="cantidad" name="cantidad" class="form-control form-control-lg" type="text" placeholder="" tabindex="5">
+            <input  maxlength="3" onkeypress="return valideKey(event);" id="cantidad" name="cantidad" class="form-control form-control-lg" type="text" placeholder="" tabindex="5">
+            <span class="text-danger" id="cantidadError"></span><br>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Valor:</label>
-            <input required maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+            <input  maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+            <span class="text-danger" id="valorError"></span><br>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Descripcion:</label>
-            <textarea required id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="255"></textarea>
+            <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="255"></textarea>
+            <span class="text-danger" id="descripcionError"></span><br>
           </div>
           <label for="mb-3">Imagen Pequeña</label>
                 <div class="input-group mb-3">
@@ -93,7 +101,7 @@
                   formatos (PNG) y (JPG).
                   La medida estandar de la imagen es de 250px X 300px para una buena visualizacion.
                 </p>
-
+                <span class="text-danger" id="imagenError"></span><br>
                 <label for="mb-3">Imagen Grande</label>
                 <div class="input-group mb-3">
                 <input type="file" name="imagenGrande" id="imagenGrande" accept="image/*" tabindex="9">
@@ -104,6 +112,13 @@
                   formatos (PNG) y (JPG).
                   La medida estandar de la imagen es de 900px X 1024px para una buena visualizacion.
                 </p>
+                <span class="text-danger" id="imagenGrandeError"></span><br>
+                <!-- BLOQUE PARA MOSTRAR ERRORES -->
+                
+              
+                    <span class="text-danger" id="nombreError"></span><br>
+                    <span class="text-danger" id="cantidadError"></span><br>
+                 
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="11">Cerrar</button>
