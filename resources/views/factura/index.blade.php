@@ -187,7 +187,17 @@ $('#btnGuardar').on('click',function(){
                   toastr.success('La factura se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
                   table.ajax.reload();
                 }, 20);
-            } 
+            },
+            error:function(response){
+                toastr.error('Asegurece de llenar los campos requeridos!','Atencion!',{timeOut:5000});
+                $('#cedulaError').text(response.responseJSON.errors.cedula);
+                $('#nombresError').text(response.responseJSON.errors.nombres);
+                $('#apellidosError').text(response.responseJSON.errors.apellidos);
+                $('#direccionError').text(response.responseJSON.errors.direccion);
+                $('#telefonoError').text(response.responseJSON.errors.telefono);
+                $('#valorError').text(response.responseJSON.errors.valor);
+              
+            }
         });   
     });
 
@@ -258,12 +268,14 @@ $(document).on('click','.eliminar',function(){
                     table.ajax.reload();
                     }, 200);
             },
-            error:function(data){
-                setTimeout(function(){
-                    $('#editarModal').modal('hide');
-                    toastr.success('La factura no se actualizo correctamente', 'Atencion!', {timeOut: 5000});
-                    table.ajax.reload();
-                    }, 200);
+            error:function(response){
+                toastr.error('Asegurece de llenar los campos requeridos!','Atencion!',{timeOut:5000});
+                $('#editarCedulaError').text(response.responseJSON.errors.cedula);
+                $('#editarNombresError').text(response.responseJSON.errors.nombres);
+                $('#editarApellidosError').text(response.responseJSON.errors.apellidos);
+                $('#editarDireccionError').text(response.responseJSON.errors.direccion);
+                $('#editarTelefonoError').text(response.responseJSON.errors.telefono);
+                $('#editarValorError').text(response.responseJSON.errors.valor);
             }
             
         })

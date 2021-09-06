@@ -25,33 +25,42 @@
                   $CH = substr($desordenada, 1, 4);
               ?>
               
-                <label for="">Factura</label>
+                <label for="">Factura:</label>
                 <input value="<?php echo $CH ?>" readonly id="nfactura" name="nfactura" class="form-control form-control-lg" type="number" min="0" placeholder="" tabindex="1">
                 <br>
                 
-                <label for="">Cedula</label>
+                <label for="">Cedula:</label>
                     
-                <input required maxlength="11" onkeypress='return validaNumericos(event)' id="cedula" name="cedula" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="2">
+                <input  maxlength="11" onkeypress='return validaNumericos(event)' id="cedula" name="cedula" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="2">
+                <span class="text-danger" id="cedulaError"></span><br>
                 <br>
 
-                <label for="">Nombres</label>
-                <input required maxlength="20" id="nombres" name="nombres" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <label for="">Nombres:</label>
+                <input  maxlength="20" id="nombres" name="nombres" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <span class="text-danger" id="nombresError"></span><br>
                 <br>
 
-                <label for="">apellidos</label>
-                <input required maxlength="25" id="apellidos" name="apellidos" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
+                <label for="">Apellidos:</label>
+                <input  maxlength="25" id="apellidos" name="apellidos" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
+                <span class="text-danger" id="apellidosError"></span><br>
                 <br>
 
-                <label for="">telefono</label>
-                <input required maxlength="10" onkeypress='return validaNumericos(event)' required id="telefono" name="telefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
+                <label for="">Telefono:</label>
+                <input  maxlength="10" onkeypress='return validaNumericos(event)'  id="telefono" name="telefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
+                <span class="text-danger" id="telefonoError"></span><br>
                 <br>
 
-                <label for="">direccion</label>
-                <input required maxlength="40" id="direccion" name="direccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+                <label for="">Direccion:</label>
+                <input  maxlength="40" id="direccion" name="direccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+                <span class="text-danger" id="direccionError"></span><br>
                 <br>
 
-                <label for="">valor</label>
-                <input required maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="7">
+                <label for="">Valor:</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">$</span>
+                    <input  maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control" type="text" placeholder="" tabindex="7">
+                </div>
+                <span class="text-danger" id="valorError"></span><br>
                 <br>
 
                   </div>

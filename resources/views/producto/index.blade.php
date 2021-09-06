@@ -179,8 +179,7 @@ $(document).ready( function () {
               $('#valorError').text(response.responseJSON.errors.valor);
               $('#descripcionError').text(response.responseJSON.errors.descripcion);
               $('#imagenError').text(response.responseJSON.errors.imagen);
-              $('#imagenGrandeError').text(response.responseJSON.errors.imagenGrande);
-                
+              $('#imagenGrandeError').text(response.responseJSON.errors.imagenGrande);   
             }
         })
     });
@@ -241,8 +240,12 @@ $(document).ready( function () {
                   table.ajax.reload();
                 }, 200);
           },
-          error:function(data){
-            
+          error:function(response){
+            toastr.error('Asegurate que los campos no esten vacios','Atencion!', {timeOut: 5000});
+            $('#editNombreError').text(response.responseJSON.errors.nombre); 
+            $('#editCantidadError').text(response.responseJSON.errors.cantidad); 
+            $('#editValorError').text(response.responseJSON.errors.valor); 
+            $('#editDescripcionError').text(response.responseJSON.errors.descripcion); 
           }
       })
   });

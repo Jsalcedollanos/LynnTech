@@ -25,11 +25,11 @@
               <label for="">ID Producto:</label>
               <input type="text" readonly value="" id="id" name="id"  class="form-control form-control-lg">
               <br>
-                <label for="">Nombre</label>
-                <input required id="editNombre" name="editNombre"  class="form-control form-control-lg" type="text" placeholder="" tabindex="2">
-                <br>
 
-                  
+                <label for="">Nombre</label>
+                <input  id="editNombre" name="editNombre"  class="form-control form-control-lg" type="text" placeholder="" tabindex="2">
+                <span class="text-danger" id="editNombreError"></span><br>
+                <br>
                   <label for="">Categoria</label>
                   <select name="editCategoria" id="editCategoria" class="form-control form-control-lg" tabindex="3">
                   <option value="Vestido de lujo" >Vestido de lujo</option>
@@ -69,16 +69,19 @@
 
 
                 <label for="">Cantidad</label>
-                <input required maxlength="3" onkeypress="return valideKey(event);" id="editCantidad" name="editCantidad" value="" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <input  maxlength="3" onkeypress="return valideKey(event);" id="editCantidad" name="editCantidad" value="" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <span class="text-danger" id="editCantidadError"></span><br>
                 <br>
                 
                 <label for="">Valor</label>
-                <input required maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" value="" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
-                <br> 
+                <input  maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" value="" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
+                <span class="text-danger" id="editValorError"></span><br>
+                <br>
 
                 <label for="">Descripcion</label>
-                <textarea required id="editDescripcion" name="editDescripcion" class="form-control form-control-lg" type="text" value=""  placeholder="" tabindex="5" ></textarea>
-                <br>
+                <textarea  id="editDescripcion" name="editDescripcion" class="form-control form-control-lg" type="text" value=""  placeholder="" tabindex="5" ></textarea>
+                <span class="text-danger" id="editDescripcionError"></span><br>
+                
              
           </div>
 

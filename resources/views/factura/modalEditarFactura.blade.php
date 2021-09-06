@@ -28,27 +28,33 @@
                 
                 <label for="">Cedula</label>
                     
-                <input required maxlength="11" onkeypress='return validaNumericos(event)' id="editarCedula" name="editarCedula" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="2">
+                <input  maxlength="11" onkeypress='return validaNumericos(event)' id="editarCedula" name="editarCedula" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="2">
+                <span class="text-danger" id="editarCedulaError"></span><br>
                 <br>
 
                 <label for="">Nombres</label>
-                <input required maxlength="20" id="editarNombres" name="editarNombres" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <input  maxlength="20" id="editarNombres" name="editarNombres" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
+                <span class="text-danger" id="editarNombresError"></span><br>
                 <br>
 
                 <label for="">apellidos</label>
-                <input required maxlength="25" id="editarApellidos" name="editarApellidos" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
+                <input  maxlength="25" id="editarApellidos" name="editarApellidos" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
+                <span class="text-danger" id="editarApellidosError"></span><br>
                 <br>
 
                 <label for="">telefono</label>
-                <input required maxlength="10" onkeypress='return validaNumericos(event)' required id="editarTelefono" name="editarTelefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
+                <input  maxlength="10" onkeypress='return validaNumericos(event)'  id="editarTelefono" name="editarTelefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
+                <span class="text-danger" id="editarTelefonoError"></span><br>
                 <br>
 
                 <label for="">direccion</label>
-                <input required maxlength="40" id="editarDireccion" name="editarDireccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+                <input  maxlength="40" id="editarDireccion" name="editarDireccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
+                <span class="text-danger" id="editarDireccionError"></span><br>
                 <br>
 
                 <label for="">valor</label>
-                <input required maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" class="form-control form-control-lg" type="text" placeholder="" tabindex="7">
+                <input  maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" class="form-control form-control-lg" type="text" placeholder="" tabindex="7">
+                <span class="text-danger" id="editarValorError"></span><br>
                 <br>
 
                   </div>

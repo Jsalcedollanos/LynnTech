@@ -152,6 +152,15 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request -> validate([
+        
+            'nombre' => 'required',
+            'cantidad' => 'required',
+            'valor' => 'required',
+            'categoria' => 'required',
+            'color' => 'required',
+            'descripcion' => 'required',
+        ]);
         $producto = Producto::find($id);
         $producto ->fill($request->all());
         

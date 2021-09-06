@@ -50,6 +50,14 @@ class FacturaController extends Controller
 
     public function store(Request $request)
     {
+        $request -> validate([
+            'nombres' => 'required|min:3|max:25',
+            'apellidos' => 'required|min:3|max:30',
+            'cedula' => 'required|min:8|max:10',
+            'telefono' => 'required|min:7|max:11',
+            'direccion' => 'required|max:25',
+            'valor' => 'required|min:1'
+        ]);
         $factura = new Factura();
         $factura->nfactura = $request->post('nfactura');
         $factura->nombres = $request->post('nombres');
@@ -95,6 +103,14 @@ class FacturaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request -> validate([
+            'nombres' => 'required|min:3|max:25',
+            'apellidos' => 'required|min:3|max:30',
+            'cedula' => 'required|min:8|max:10',
+            'telefono' => 'required|min:7|max:11',
+            'direccion' => 'required|max:25',
+            'valor' => 'required|min:1'
+        ]);
         $factura = Factura::find($id);
         $factura ->fill($request->all());
         
