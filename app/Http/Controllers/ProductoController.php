@@ -81,8 +81,8 @@ class ProductoController extends Controller
         'categoria' => 'required',
         'color' => 'required',
         'descripcion' => 'required',
-        'imagen' => 'required|image|max:2048',
-        'imagenGrande' => 'required|image|max:2048'
+        'imagen' => 'required|mimes:jpeg, png',
+        'imagenGrande' => 'required|mimes:jpeg, png'
     ]);
             $producto->codigo = $request->post('codigo');
             $producto->nombre = $request->post('nombre');

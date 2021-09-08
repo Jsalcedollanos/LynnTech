@@ -173,7 +173,7 @@ $(document).ready( function () {
                 }, 20);  
             },
             error:function(response){
-              toastr.error('Asegurese de haber ingresado toda la informacion requerida!', 'Atencion', {timeOut: 10000});
+              toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!', 'Atencion', {timeOut: 10000});
               $('#nombreError').text(response.responseJSON.errors.nombre);
               $('#cantidadError').text(response.responseJSON.errors.cantidad);
               $('#valorError').text(response.responseJSON.errors.valor);
@@ -241,7 +241,7 @@ $(document).ready( function () {
                 }, 200);
           },
           error:function(response){
-            toastr.error('Asegurate que los campos no esten vacios','Atencion!', {timeOut: 5000});
+            toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!', {timeOut: 5000});
             $('#editNombreError').text(response.responseJSON.errors.nombre); 
             $('#editCantidadError').text(response.responseJSON.errors.cantidad); 
             $('#editValorError').text(response.responseJSON.errors.valor); 
