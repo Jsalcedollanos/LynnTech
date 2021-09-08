@@ -189,7 +189,7 @@ $('#btnGuardar').on('click',function(){
                 }, 20);
             },
             error:function(response){
-                toastr.error('Asegurece de llenar los campos requeridos!','Atencion!',{timeOut:5000});
+                toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!',{timeOut:5000});
                 $('#cedulaError').text(response.responseJSON.errors.cedula);
                 $('#nombresError').text(response.responseJSON.errors.nombres);
                 $('#apellidosError').text(response.responseJSON.errors.apellidos);
@@ -269,7 +269,7 @@ $(document).on('click','.eliminar',function(){
                     }, 200);
             },
             error:function(response){
-                toastr.error('Asegurece de llenar los campos requeridos!','Atencion!',{timeOut:5000});
+                toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!',{timeOut:5000});
                 $('#editarCedulaError').text(response.responseJSON.errors.cedula);
                 $('#editarNombresError').text(response.responseJSON.errors.nombres);
                 $('#editarApellidosError').text(response.responseJSON.errors.apellidos);
