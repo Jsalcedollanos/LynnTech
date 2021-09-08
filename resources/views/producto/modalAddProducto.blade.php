@@ -81,8 +81,9 @@
             <input  maxlength="3" onkeypress="return valideKey(event);" id="cantidad" name="cantidad" class="form-control form-control-lg" type="text" placeholder="" tabindex="5">
             <span class="text-danger" id="cantidadError"></span><br>
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Valor:</label>
+          <label for="message-text" class="col-form-label">Valor:</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">$</span>
             <input  maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
             <span class="text-danger" id="valorError"></span><br>
           </div>
