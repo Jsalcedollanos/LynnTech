@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\FacturaController;
+use App\Http\Controllers\RolesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +18,16 @@ use App\Http\Controllers\FacturaController;
 |
 */
 
-/* Route::get('/', function () {
-    return view('home.index');
-}); */
-
-
 Route::get('/', function () {
     return view('home.index');
 });
 
 Route::get('/producto/index', function () {
     return view('producto.index');
+});
+
+Route::get('/roles/index', function (){
+    return view('roles.index');
 });
 
 Route::get('/producto/20/edit', function () {
@@ -37,13 +37,6 @@ Route::get('/producto/20/edit', function () {
 Route::get('/facturas/index', function () {
     return view('factura.index');
 });
-
-
-
-
-
-
-
 
 Route::resource('facturas','App\Http\Controllers\FacturaController');
 Route::resource('productos','App\Http\Controllers\ProductoController');
@@ -59,7 +52,7 @@ Route::resource('home','App\Http\Controllers\UserController');
 Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
 
 /* RUTAS DE FACTURAS */
-Route::post('facturas',[ProductoController::class,'index'])
+Route::post('facturas',[FactutaController::class,'index'])
 ->name('factura.index');
 
 Route::get('facturas/eliminar/{id}',[FacturaController::class,'destroy'])
@@ -73,7 +66,6 @@ Route::put('facturas/update/{id}',[FacturaController::class,'update'])
 
 Route::get('facturas/editar/{id}',[FacturaController::class,'edit'])
 ->name('producto.modalEditarFactura');
-
 
 /* FIN DE RUTAS DE FACTURAS */
 
@@ -95,25 +87,35 @@ Route::get('producto/eliminar/{id}',[ProductoController::class,'destroy'])
 
 /* FIN DE RUTAS DE PRODUCTOS */
 
+/* RUTAS DE ROLES */
+Route::get('roles/index',[RolesController::class,'index'])
+->name('roles.index');
+/* FIN DE RUTAS */
 
 
+/* Middleware para bloqueo a user no autorizados */
 
-/* Route::get('/productos',[DatatableController::class, 'index'])
-->name('prueba.index'); */
-
-
-
-/* Route::middleware(['auth:sanctum', 'verified'])->get('/admin', function () {
-    return view('admin.index');
-})->name('admin'); */
-
-    Route::get('/admin', [AdminController::class,'index'])
+    /* Route::get('/admin', [AdminController::class,'index'])
         -> middleware('home.admin')
-        -> name('admin.index');
-/* 
-    Route::get('/index2', [TiendaproductoController::class,'index'])
-    -> middleware('user.tienda')
-    -> name('producto.productos'); */
+        -> name('admin.index'); */
+
+
+    Route::get('/roles/index', [RolesController::class,'mostrar']) 
+        -> middleware('auth.role')     
+        -> name('roles.index');
+
+    Route::get('/producto/index',[ProductoController::class,'mostrar'])
+        -> middleware('productos.admin')
+        -> name('producto.index');
+
+    Route::get('/facturas/index',[FacturaController::class,'mostrar'])
+        -> middleware('facturas.admin')
+        -> name('factura.index');
+
+    
+    
+
+/* Fin */
 
 
 

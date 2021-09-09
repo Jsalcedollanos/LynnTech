@@ -23,12 +23,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+    use HasFactory;
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
+        'created_at',
     ];
-
+    
+    
     /**
      * The attributes that should be hidden for arrays.
      *

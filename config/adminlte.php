@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => 'LynnTech',
+    'logo' => 'Lyndapolo.co',
     'logo_img' => 'img/logolynda.png',
     'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
@@ -259,14 +259,16 @@ return [
 
         [
             'text'    => 'Pagina Web',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'far fa-file-word',
             'submenu' => [
                 [
                     'text' => 'Home',
+                    'icon'    => 'fas fa-home',
                     'url'  => '/home',
                 ],    
                 [
                     'text' => 'Todo los productos',
+                    'icon'    => 'fab fa-product-hunt',
                     'url'  => 'tienda',
                 ], 
                 
@@ -278,83 +280,28 @@ return [
 
 
         [
-            'text'    => 'Usuarios',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Roles',
-                    'url'  => '#',
-                ],    
-                [
-                    'text' => 'Ver Usuarios',
-                    'url'  => '#',
-                ], 
-                
-            ],
+            'text'    => 'Roles',
+            'icon'    => 'fas fa-user-tag',
+            'url'     => 'roles/index'
         ],
 
 
-        ['header' => 'Funcionalidades'],
-
-
-        [
-            'text'    => 'Clientes',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Agregar',
-                    'url'  => 'clientes/create',
-                ],    
-                [
-                    'text' => 'Ver Clientes',
-                    'url'  => 'clientes',
-                ], 
-                
-            ],
-        ],
-
-
-        [
-            'text'    => 'Costos',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Agregar',
-                    'url'  => 'costos/create',
-                ],    
-                [
-                    'text' => 'Ver Costos',
-                    'url'  => '#',
-                ], 
-                
-            ],
-        ],
-
+        ['header' => 'Administrar mi pagina'],
 
 
         [
             
             'text'    => 'Productos',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-store',
             'url'  => 'producto/index',
             
         ],
 
         [
             'text'    => 'Facturas',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-file-invoice-dollar',
             'url'     => 'facturas/index'
-            /* 'submenu' => [
-                [
-                    'text' => 'Agregar',
-                    'url'  => 'facturas/create',
-                ],    
-                [
-                    'text' => 'Ver Facturas',
-                    'url'  => 'facturas/index',
-                ], 
-                
-            ], */
+            
         ],
 
        

@@ -20,14 +20,17 @@ class FacturaController extends Controller
 
     public function index(Request $request)
     {
-
         $facturas = Factura::select('id','nfactura','cedula','nombres','apellidos','telefono','direccion','valor','created_at')->get();
         return datatables()->of($facturas)
         
         ->toJson();
-
-     
     }
+
+    public function mostrar()
+    {
+        return view('factura.index');
+    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +39,7 @@ class FacturaController extends Controller
      */
     public function create()
     {
-        return view('factura.create');
+       
     }
 
     /**

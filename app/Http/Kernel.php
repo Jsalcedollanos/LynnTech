@@ -55,15 +55,14 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
 
         //Bloque de middleware para usuarios USER
+        'auth.role' => \App\Http\Middleware\AdminAuth::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'home.admin' => \App\Http\Middleware\AdminAuth::class,
         'facturas.admin' => \App\Http\Middleware\AdminAuth::class,
         'clientes.admin' => \App\Http\Middleware\AdminAuth::class,
         'usuarios.admin' => \App\Http\Middleware\AdminAuth::class,
-        'costos.admin' => \App\Http\Middleware\AdminAuth::class,
-        'clientes.admin' => \App\Http\Middleware\AdminAuth::class,
         'productos.admin' => \App\Http\Middleware\AdminAuth::class,
-         // FIn del Bloque.
+         // FIn del Bloque. 
 
 
 

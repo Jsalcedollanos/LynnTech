@@ -72,10 +72,6 @@
     <script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
 @stop
 
-@section('css')
-<script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
-@stop
-
 @section('js')
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
