@@ -39,6 +39,7 @@ Route::get('/facturas/index', function () {
 });
 
 Route::resource('facturas','App\Http\Controllers\FacturaController');
+Route::resource('roles','App\Http\Controllers\RolesController');
 Route::resource('productos','App\Http\Controllers\ProductoController');
 Route::resource('tienda','App\Http\Controllers\TiendaproductoController');
 Route::resource('add','App\Http\Controllers\TiendaproductoController');
@@ -88,7 +89,7 @@ Route::get('producto/eliminar/{id}',[ProductoController::class,'destroy'])
 /* FIN DE RUTAS DE PRODUCTOS */
 
 /* RUTAS DE ROLES */
-Route::get('roles/index',[RolesController::class,'index'])
+Route::post('roles/index',[RolesController::class,'index'])
 ->name('roles.index');
 /* FIN DE RUTAS */
 

@@ -27,14 +27,16 @@
 <!-- Fin de guardar productos -->
 
 <!-- Tabla de productos -->
-<table class="table table-dark table-striped" id="usuarios">
+<table class="table table-dark table-striped" id="users">
   <thead>
     <tr>
+      <th scope="col" >ID</th>
       <th scope="col" >Nombre</th>
       <th scope="col">Email</th>
       <th scope="col">Roll</th>
       <th scope="col">Fecha de creacion</th>
       <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
 </table>
@@ -65,7 +67,7 @@
 /* Pedicion AJAX para mostrar productos en datable */
 $(document).ready( function () { 
     
-   var table = $('#usuarios').DataTable({ 
+   var table = $('#users').DataTable({ 
 
         "processing": true, 
 
@@ -95,4 +97,6 @@ $(document).ready( function () {
             }},
             ]
     });
+  });
+</script>
 @stop

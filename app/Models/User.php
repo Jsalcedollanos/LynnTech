@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -23,12 +25,13 @@ class User extends Authenticatable
      *
      * @var array
      */
-    use HasFactory;
+    
     protected $fillable = [
         'id',
         'name',
         'email',
         'password',
+        'role',
         'created_at',
     ];
     

@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
+use App\Models\Role;
 use Response;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class RolesController extends Controller
 {
     /**
@@ -19,7 +19,7 @@ class RolesController extends Controller
     
     public function index(Request $request)
     {
-        $users = User::select('id','name','email','role','created_at')->get();
+        $users = Role::select('id','name','email','role','created_at')->get();
         return datatables()->of($users)  
         ->toJson();
     }

@@ -287,11 +287,5 @@ $(document).ready( function () {
 </script>
 <!-- Fin de editar Modal -->
 
-<!-- GUARDAR PRODUCTO -->
-<script>     
-  /* BLOQUE DE GUARDAR VIA AJAX */
- 
-/* FIN DE BLOQUE GUARDAR PRODUCTO */     
-</script>
 <!-- FIN DE GUARDAR -->
 @stop
