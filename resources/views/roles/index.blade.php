@@ -40,10 +40,14 @@
     </tr>
   </thead>
 </table>
-
+  
 <!-- Fin de tabla de productos -->
 
 @include('roles.modalEditarUsuario')
+
+@include('roles.modalEliminarUsuario')
+
+@include('roles.modalAddUsuario')
 
 @stop
 
@@ -82,21 +86,138 @@ $(document).ready( function () {
 
             {data:'email'},
 
-            {data:'role'},    
+            {data:'role'},   
 
             {data:'created_at'},             
         
             {data:'id', "render": function (data) {
             return "<button id=\"" + data + "\" type=\"button\" name=\"btnEditar\" class=\"btnEditar btn btn-warning botonEditar\"><span class=\"material-icons\">edit</span></button>";
             }},
-
-            {data:'id', "render": function (data) {
-                
-            return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
+            
+            {data:'id',data:'role', "render": function (data) { 
+              /* Validacion de usuario admin para no se eliminado por error */
+              if (data == 'admin') {
+                return "<button  id=\"" + data + "\" \ disabled\ type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
+              }else
+              {
+                return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
+              }              
+              /* Fin de validacion */
             }},
             ]
+            
+            
     });
+  
+ /* Bloque de Guardar usuario */
+ $('#add').on('click',function(){
+   
+    /* resetear campos al abrir modal nuevamente */
+      $('#name').val("");
+      $('#email').val("");
+      $('#role').val("");
+      $('#password').val("");
+    /* fin de este bloque */
+    $('#addModal').modal('show');
+      $('#addUsuario').submit(function(e){
+          e.preventDefault(); 
+          $.ajax({               
+            url: '{{route("roles.create")}}',
+            type: "POST",
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },   
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            dataType: 'json',
+         
+            success:function(data){
+              
+                setTimeout(function(){
+                  $('#addModal').modal('hide');
+                  toastr.success('El usuario se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
+                  table.ajax.reload(); 
+                }, 20);  
+            },
+            error:function(response){
+              toastr.error('Opps Algunos errores no permiten guardar el usuario, Corrigelos!', 'Atencion', {timeOut: 10000});
+              $('#nameError').text(response.responseJSON.errors.name);
+              $('#emailError').text(response.responseJSON.errors.email);
+              $('#roleError').text(response.responseJSON.errors.role); 
+              $('#contraselaError').text(response.responseJSON.errors.password); 
+            }
+        })
+    });
+});    
+
+/* Peticion AJAX Eliminar usuario */
+var id_usuario;
+    $(document).on('click','.eliminar', function(){
+         id_usuario = $(this).attr('id');
+         $('#eliminarModal').modal('show');
+    });
+    $('#btnEliminar').click(function(){
+        $.ajax({
+            url:"eliminar/"+id_usuario,          
+            success:function(data){
+                setTimeout(function(){
+                  toastr.success('El usuario se ha eliminado satifactoriamente', 'Atencion!', {timeOut: 5000});
+                    $('#eliminarModal').modal('hide');
+                    table.ajax.reload();
+                }, 500);
+            },
+            error:function(response){
+              toastr.error('No se pudo eliminar el usuario!','Atencion',{timeOut:5000});
+            }
+        });
+    }); 
+/* Fin de peticion AJAX eliminar usuario */
+
+
+/* Peticion AJAX Editar Usuario */
+/* $('#eliminar').on('click', function(){
+  var roll = $('#editarRole').val();
+if (roll == 'admin') {
+ console.log('es admin'); 
+} */
+$('#editarUsuario').submit(function(e){    
+      e.preventDefault();
+      var idU = $('#id').val();
+      var nombreU = $('#editarNombre').val();
+      var emailU = $('#editarEmail').val();
+      var roleU = $('#editarRole').val();
+    $.ajax({ 
+        url : "update/"+idU,
+        type : 'PUT',
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        typedata: 'json',
+        data: {
+          id:idU,
+          name:nombreU,
+          email:emailU,
+          role:roleU,        
+         },
+         success:function(data){
+                setTimeout(function(){
+                  $('#editarModal').modal('hide');
+                  toastr.success('El usuario se ha actualizado satifactoriamente', 'Atencion!', {timeOut: 5000});
+                  table.ajax.reload();
+                }, 200);
+          },
+          error:function(response){
+            toastr.error('Opps Algunos errores no permiten actualizar el usuario, Corrigelos!', {timeOut: 5000});
+            $('#editarNombreError').text(response.responseJSON.errors.name); 
+            $('#editarEmailError').text(response.responseJSON.errors.email); 
+            $('#editarRoleError').text(response.responseJSON.errors.role); 
+          }
+      })
   });
+});
+/* }); */
 </script>
 
 <script>
@@ -117,10 +238,9 @@ $(document).ready(function(){
             });
     });
     /* FIN DE LISTAR PRODUCTO VIA AJAX */
-});
-<!-- /* Fin de peticion AJAX listar usuarios en tabla */ -->
-
-   
+});   
 </script>
+
+
 
 @stop

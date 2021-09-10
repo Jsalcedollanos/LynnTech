@@ -16,27 +16,34 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="editarUsuario" name="editarUsuario"> 
+        <form id="editarUsuario" name="editarUsuario">
+        @csrf
+
+        <input type="hidden" name="" id="id">
+
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Nombre:</label>
             <input type="text" class="form-control" id="editarNombre" tabindex="1">
+            <span class="text-danger" id="editarNombreError"></span>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Email:</label>
             <input type="email" class="form-control" id="editarEmail" tabindex="2">
+            <span class="text-danger" id="editarEmailError"></span>
           </div>
     
                 <label for="">Roll</label>
                     
                     <select id="editarRole" name="editarRole" class="form-control form-control-lg" tabindex="3">
-                        <option value="User" >User</option>
-                        <option value="Admin" >Admin</option>
+                        <option value="user" >User</option>
+                        <option value="admin" >Admin</option>
                     </select>
+            <span class="text-danger" id="editarRoleError"></span>
                   <br>
             </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="5">Cerrar</button>
-            <button type="button" class="btn btn-primary" tabindex="4">Actualizar</button>
+            <button type="submit" class="btn btn-primary" tabindex="4">Actualizar</button>
           </div>
         </form>
       </div>

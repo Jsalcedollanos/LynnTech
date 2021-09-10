@@ -92,8 +92,17 @@ Route::get('producto/eliminar/{id}',[ProductoController::class,'destroy'])
 Route::post('roles',[RolesController::class,'index'])
 ->name('roles.index');
 
+Route::post('roles/index',[RolesController::class,'store'])
+->name('roles.create');
+
 Route::get('roles/editar/{id}',[RolesController::class,'edit'])
 ->name('roles.modalEditarUsuario');
+
+Route::put('roles/update/{id}',[RolesController::class,'update'])
+->name('roles.update');
+
+Route::get('roles/eliminar/{id}',[RolesController::class,'destroy'])
+->name('roles.modalEliminarUsuario');
 /* FIN DE RUTAS */
 
 

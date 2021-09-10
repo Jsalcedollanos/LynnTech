@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Response;
+use Illuminate\Support\Facades\Crypt; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -48,7 +49,20 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'name' => 'required|min:3|max:20',
+            'email' => 'required|min:3|max:40',
+            'role' => 'required',
+            'password' => 'required'
+        ]);
+        $user = new User();
+        $user -> name = $request -> post('name');
+        $user -> email = $request -> post('email');
+        $user -> role = $request -> post('role');
+        $user -> password = Crypt::encrypt($request -> post('password'));
+        $user -> save();
+        return Response::json($user);
+
     }
 
     /**
@@ -84,7 +98,16 @@ class RolesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    
+    $request -> validate([
+        'name' => 'required|min:3|max:20',
+        'email' => 'required|min:3|max:40',
+        'role' => 'required'
+    ]);
+        $user = User::find($id);
+        $user ->fill($request->all());  
+        $user->save();
+        return response()->json();
     }
 
     /**
@@ -95,6 +118,10 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete($id);
+  
+        return response()->json([
+        'success' => 'Record deleted successfully!'
+        ]);
     }
 }
