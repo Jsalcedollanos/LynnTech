@@ -43,12 +43,11 @@
 
 <!-- Fin de tabla de productos -->
 
-
+@include('roles.modalEditarUsuario')
 
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
     <script src="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"></script>
 @stop
 
@@ -83,20 +82,45 @@ $(document).ready( function () {
 
             {data:'email'},
 
-            {data:'role'}, 
+            {data:'role'},    
 
-            {data:'created_at'},            
+            {data:'created_at'},             
         
             {data:'id', "render": function (data) {
             return "<button id=\"" + data + "\" type=\"button\" name=\"btnEditar\" class=\"btnEditar btn btn-warning botonEditar\"><span class=\"material-icons\">edit</span></button>";
             }},
 
             {data:'id', "render": function (data) {
-                var ide = data;
+                
             return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
             }},
             ]
     });
   });
 </script>
+
+<script>
+    let id_usu;
+$(document).ready(function(){
+    $(document).on('click','.btnEditar',function(){
+        id_usu = $(this).attr('id');
+            $.ajax({
+                url:"editar/"+id_usu,
+                type:'get',
+            success:function(data){
+                $('#id').val(data.id),
+                $('#editarNombre').val(data.name),
+                $('#editarEmail').val(data.email),
+                $('#editarRole').val(data.role),
+                $('#editarModal').modal('show');
+			    }
+            });
+    });
+    /* FIN DE LISTAR PRODUCTO VIA AJAX */
+});
+<!-- /* Fin de peticion AJAX listar usuarios en tabla */ -->
+
+   
+</script>
+
 @stop

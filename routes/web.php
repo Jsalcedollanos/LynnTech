@@ -89,8 +89,11 @@ Route::get('producto/eliminar/{id}',[ProductoController::class,'destroy'])
 /* FIN DE RUTAS DE PRODUCTOS */
 
 /* RUTAS DE ROLES */
-Route::post('roles/index',[RolesController::class,'index'])
+Route::post('roles',[RolesController::class,'index'])
 ->name('roles.index');
+
+Route::get('roles/editar/{id}',[RolesController::class,'edit'])
+->name('roles.modalEditarUsuario');
 /* FIN DE RUTAS */
 
 
