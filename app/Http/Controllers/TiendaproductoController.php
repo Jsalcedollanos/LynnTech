@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Response;
+use Illuminate\Support\Facades\Storage;
 
 class TiendaproductoController extends Controller
 {
@@ -34,6 +36,9 @@ class TiendaproductoController extends Controller
         $categoria = $request->get('busqueda');
         $productos = Producto::where('categoria','like',"%$categoria%")->paginate(5);
         return view('producto.productos',compact('productos'));
+
+       /*  $producto = Producto::select('id','codigo','nombre','descripcion','categoria','color','cantidad','valor','imagen')->get();
+        return Response::json($producto); */
     }
 
     /**
@@ -44,6 +49,12 @@ class TiendaproductoController extends Controller
     public function create()
     {
         //
+    }
+
+    public function mostrar()
+    {
+         $producto = Producto::select('id','codigo','nombre','descripcion','categoria','color','cantidad','valor','imagen')->get();
+        return Response::json($producto);
     }
 
     /**

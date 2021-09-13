@@ -17,13 +17,13 @@
     <p>Cuentas de usuarios.</p>
 
     <!-- Boton para guardar productos -->
-<div class="card-body">
+<!-- <div class="card-body">
   <svg type="button" id="add" xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-bag-plus-fill" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"/>
   </svg>
   <br>
   <label for="" class="text-content">Agregar Usuario</label>
-</div>
+</div> -->
 <!-- Fin de guardar productos -->
 
 <!-- Tabla de productos -->
@@ -69,9 +69,7 @@
 <script> 
 /* Pedicion AJAX para mostrar productos en datable */
 $(document).ready( function () { 
-    
    var table = $('#users').DataTable({ 
-
         "processing": true, 
 
         "serverSide": true, 
@@ -93,31 +91,26 @@ $(document).ready( function () {
             {data:'id', "render": function (data) {
             return "<button id=\"" + data + "\" type=\"button\" name=\"btnEditar\" class=\"btnEditar btn btn-warning botonEditar\"><span class=\"material-icons\">edit</span></button>";
             }},
-            
-            {data:'id',data:'role', "render": function (data) { 
-              /* Validacion de usuario admin para no se eliminado por error */
-              if (data == 'admin') {
-                return "<button  id=\"" + data + "\" \ disabled\ type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
-              }else
-              {
-                return "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>";
-              }              
-              /* Fin de validacion */
+
+            {data:'id',  "render": function (data) {  
+              /* aun no terminada! */
+              if (table.rows()=="admin") {
+                return  "<button disabled id=\"" + data + "\" type=\"button\" name=\"eliminar\" class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>" ;                   
+              }else{
+                return  "<button  id=\"" + data + "\" type=\"button\" name=\"eliminar\"  class=\"eliminar btn btn-warning\"> <span class=\"material-icons\">delete</span></button>" ;                   
+              }       
+                
             }},
             ]
-            
-            
-    });
+});
   
  /* Bloque de Guardar usuario */
- $('#add').on('click',function(){
-   
-    /* resetear campos al abrir modal nuevamente */
+ /* $('#add').on('click',function(){
       $('#name').val("");
       $('#email').val("");
       $('#role').val("");
       $('#password').val("");
-    /* fin de este bloque */
+
     $('#addModal').modal('show');
       $('#addUsuario').submit(function(e){
           e.preventDefault(); 
@@ -146,22 +139,24 @@ $(document).ready( function () {
               $('#nameError').text(response.responseJSON.errors.name);
               $('#emailError').text(response.responseJSON.errors.email);
               $('#roleError').text(response.responseJSON.errors.role); 
-              $('#contraselaError').text(response.responseJSON.errors.password); 
+              $('#contraseñaError').text(response.responseJSON.errors.password); 
             }
         })
     });
-});    
+});     */
 
 /* Peticion AJAX Eliminar usuario */
+var roll;
 var id_usuario;
+
     $(document).on('click','.eliminar', function(){
-         id_usuario = $(this).attr('id');
-         $('#eliminarModal').modal('show');
+        id_usuario = $(this).attr('id');
+         $('#eliminarModal').modal('show');          
     });
     $('#btnEliminar').click(function(){
         $.ajax({
-            url:"eliminar/"+id_usuario,          
-            success:function(data){
+            url:"eliminar/"+id_usuario,      
+            success:function(){
                 setTimeout(function(){
                   toastr.success('El usuario se ha eliminado satifactoriamente', 'Atencion!', {timeOut: 5000});
                     $('#eliminarModal').modal('hide');
@@ -177,11 +172,7 @@ var id_usuario;
 
 
 /* Peticion AJAX Editar Usuario */
-/* $('#eliminar').on('click', function(){
-  var roll = $('#editarRole').val();
-if (roll == 'admin') {
- console.log('es admin'); 
-} */
+
 $('#editarUsuario').submit(function(e){    
       e.preventDefault();
       var idU = $('#id').val();

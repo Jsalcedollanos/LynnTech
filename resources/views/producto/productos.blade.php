@@ -321,7 +321,7 @@
                   <div class="aa-product-hvr-content">
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Agregar a lista de deseo"><span class="fa fa-heart-o"></span></a>
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Comparar"><span class="fa fa-exchange"></span></a>
-                    <a href="#" data-toggle2="tooltip" data-placement="top" title="Vista Rapida" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
+                    <a data-toggle2="tooltip" data-placement="top" title="Vista Rapida" id="vista"><span class="fa fa-search"></span></a>
 
                   </div>
                   <!-- product badge -->
@@ -719,19 +719,20 @@
   <script>
         $(document).ready(function(){
         $.ajax({
-          url: '/producto/all',
-          method: 'POST',
-          data: { 
-            id:1,
-            _token = $('input[name="_token"]').val()
-          }
-        }).done(function(res){
-            var arreglo = JSON.parse(res);
-            console.log(arreglo);
+          url: '/tienda/all',
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+          method: 'GET',
+          dataType
+        }).done(function(response){
+            var arreglo = JSON.parse(response);
+            console.log('aqui entre');
             for(var x=0;x<arreglo.lenght;x++){
-              
+              console.log(arreglo);
             }
     }); 
+    });
   </script>
 
   </body>

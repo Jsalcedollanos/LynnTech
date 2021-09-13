@@ -33,7 +33,7 @@ class ProductoController extends Controller
     
     public function mostrar()
     {
-      return view('producto.index');
+      return view('producto.tienda');
     }
     
 

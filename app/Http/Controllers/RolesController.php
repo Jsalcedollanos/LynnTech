@@ -53,7 +53,7 @@ class RolesController extends Controller
             'name' => 'required|min:3|max:20',
             'email' => 'required|min:3|max:40',
             'role' => 'required',
-            'password' => 'required'
+            'password' => 'required|min:8'
         ]);
         $user = new User();
         $user -> name = $request -> post('name');
@@ -122,6 +122,6 @@ class RolesController extends Controller
   
         return response()->json([
         'success' => 'Record deleted successfully!'
-        ]);
+        ]);   
     }
 }

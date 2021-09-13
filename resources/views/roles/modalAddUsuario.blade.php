@@ -15,7 +15,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="addUsuario" name="addUsuario" method="post" enctype="multipart/form-data">
+        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <input type="hidden" name="" id="id">

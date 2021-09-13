@@ -298,7 +298,7 @@
                 <label for="">Contraseña<span>*</span></label>
                 <input type="password" name="password"  class="form-control" placeholder="Contraseña">
                 <button type="submit" class="aa-browse-btn">Login</button>
-                <label class="rememberme" for="rememberme"><input type="checkbox" id="rememberme"> Recuerdame <span>!</span> </label>
+                <label class="rememberme" for="remembersme"><input type="checkbox" id="rememberme"> Recuerdame <span>!</span> </label>
                 <p class="aa-lost-password"><a href="#">He olvidado mi contraseña?</a></p>
           </form>
                 </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\TiendaProductoController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\RolesController;
 
@@ -30,6 +31,10 @@ Route::get('/roles/index', function (){
     return view('roles.index');
 });
 
+Route::get('/tienda/all', function (){
+    return view('producto.productos');
+});
+
 Route::get('/producto/20/edit', function () {
     return view('producto.edit');
 });
@@ -43,7 +48,6 @@ Route::resource('roles','App\Http\Controllers\RolesController');
 Route::resource('productos','App\Http\Controllers\ProductoController');
 Route::resource('tienda','App\Http\Controllers\TiendaproductoController');
 Route::resource('add','App\Http\Controllers\TiendaproductoController');
-Route::resource('productos','App\Http\Controllers\ProductoController');
 Route::resource('costos','App\Http\Controllers\CostoController');
 Route::resource('clientes','App\Http\Controllers\ClienteController');
 Route::resource('registro','App\Http\Controllers\RegistroController');
@@ -51,6 +55,11 @@ Route::resource('admin','App\Http\Controllers\AdminController');
 Route::resource('carrito','App\Http\Controllers\CarritoController');
 Route::resource('home','App\Http\Controllers\UserController');
 Route::resource('pruebaproductos','App\Http\Controllers\DatatableController');
+
+/* RUTA DE PRODUCTOS DE LA PAGINA */
+Route::post('tienda/all',[TiendaproductoController::class,'mostrar'])
+->name('producto.mostrar');
+/* FIN */
 
 /* RUTAS DE FACTURAS */
 Route::post('facturas',[FactutaController::class,'index'])
