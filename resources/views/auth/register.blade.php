@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>Registrate | Lynda Polo</title>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font awesome -->
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
@@ -37,7 +37,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+      @livewireStyles
   </head>
   <body>
   
@@ -154,10 +154,10 @@
               <!-- logo  -->
               <div class="aa-logo">
                 <!-- Text based logo -->
-                <a href="index.html">
+                <a href="{{ route('home.index') }}">
                   
             <!--img based logo -->
-               <a href="index.html"><img class="logo" src="img/logolynda.png" alt="logo img"></a> 
+               <a href="{{ route('home.index') }}"><img class="logo" src="img/logolynda.png" alt="logo img"></a> 
               </div>
               <!-- / logo  -->
                <!-- cart box -->
@@ -276,80 +276,12 @@
    </div>
   </section>
   <!-- / catg header banner section -->
-
- <!-- Cart view section -->
- <section id="aa-myaccount">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-12">
-        <div class="aa-myaccount-area">         
-            <div class="row">
-              <div class="col-md-6">
-                <div class="aa-myaccount-login">
-                <h4>Login</h4>
-
-				<!-- FORMULARIO DE LOGIN -->
-          <form class="aa-login-form" method="POST" action="{{ route('login')}}">
-          @csrf
-               <!--  <x-jet-validation-errors class="mb-4" /> -->
-                
-                <label for="">Correo<span>*</span></label>
-                <input type="email" class="form-control" name="email" placeholder="Ingrese su correo">
-                <label for="">Contraseña<span>*</span></label>
-                <input type="password" name="password"  class="form-control" placeholder="Contraseña">
-                <button type="submit" class="aa-browse-btn">Login</button>
-                <label class="rememberme" for="remembersme"><input type="checkbox" id="rememberme"> Recuerdame <span>!</span> </label>
-                <p class="aa-lost-password"><a href="#">He olvidado mi contraseña?</a></p>
-          </form>
-                </div>
-              </div>
-				<!-- FIN DE FORMULARIO DE LOGIN -->
-
-			  <!-- FORMULARIO DE REGISTRO -->
-              <div class="col-md-6">
-                <div class="aa-myaccount-register">                 
-                 <h4>Registrate</h4>
-                 <form action="{{ route('register') }}" method="POST" class="aa-login-form">
-				        	@csrf
-                    <label for="">Usuario<span>*</span></label>
-                    <input type="text" class="form-control" name="name" placeholder="Ejemplo 'Juan'" required>
-                    <label for="">Correo<span>*</span></label>
-                    <input type="email"  class="form-control" name="email" placeholder="Ingresa tu correo" required>
-                    <label for="">Contraseña<span>*</span></label>
-                    <input type="password" id="pass1" name="password" class="form-control" placeholder="Ingresa contraseña" required>
-                    <input type="password" id="pass2" name ="password_confirmation" class="form-control" placeholder="Repite contraseña" required>
-                    <button type="submit" onClick="errorR()" id="btn-registrar"  class="aa-browse-btn">Registrate</button>  
-                     
-                    
-					<!-- Validacion  -->
-			@if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
-                </div>
-            @endif
-			<!-- Fin de la validacion -->
-                  </form>
-				  <!-- FIN DE FORMULARIO DE REGISTRO -->
-                </div>
-              </div>
-            </div>          
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
- <!-- / Cart view section -->
+ 
+ <!-- Bloque de implementacion de livewire para validacion en tiempo real, se encuentra en ruta;
+      VIEW>>LIVEWIRE>>FORM-REGISTER.BLADE.PHP donde se encuentra la plantilla....
+      su controlador donde se establecen las rutas lo encontramos en: APP>>HTTP>>LIVEWIRE>>FORMREGISTER-->
+      @livewire('form-register')  <!-- IMPLEMENTACION LIVEWIRE -->
+  <!-- fin de este bloque -->
 
 
   <!-- Subscribe section -->
@@ -495,7 +427,8 @@
   <script type="text/javascript" src="js/nouislider.js"></script>
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
+  @livewireScripts      
   
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
