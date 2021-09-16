@@ -6,14 +6,22 @@ use Livewire\Component;
 
 class FormRegister extends Component
 {
-    public $name;
-    public $password;
-    public $email;
+    public $nombre;
+    public $contraseña;
+    public $contraseña_;
+    public $confirmar_contraseña;
+    public $correo_;
+
+    public $correo;
+
 
     protected $rules = [
-        'name' => 'required|min:3',
-        'email' => 'required|email|min:3|max:35',
-        'password' => 'required|min:8|max:35',
+        'nombre' => 'required|min:3',
+        'correo' => 'required|email|min:3|max:35',
+        'correo_' => 'required|email|min:3|max:35',
+        'contraseña' => 'required|min:8|max:35',
+        'contraseña_' => 'required|min:8|max:35',
+        'confirmar_contraseña' => 'required|min:8|max:35',
     ];
 
     public function updated($propertyName)

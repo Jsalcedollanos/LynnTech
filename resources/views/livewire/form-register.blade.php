@@ -21,13 +21,12 @@
           @csrf
               
                 <label for="">Correo<span>*</span></label> <br>     
-                
-                <input wire:model="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Ingrese su correo">
-                @error('email') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
+                <input wire:model="correo" type="email" class="form-control @error('correo') is-invalid @enderror" name="email" placeholder="Ingrese su correo">
+                @error('correo') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
             
                 <label for="">Contraseña<span>*</span></label> <br> 
-                <input wire:model="password" type="password" name="password"  class="form-control @error('password') is-invalid @enderror" placeholder="Contraseña">
-                @error('password') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
+                <input wire:model="contraseña_" type="password" name="password"  class="form-control @error('contraseña_') is-invalid @enderror" placeholder="Contraseña">
+                @error('contraseña_') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>                
                 
                 <button type="submit" class="aa-browse-btn">Login</button>
                 <label class="rememberme" for="remembersme"><input type="checkbox" id="rememberme"> Recuerdame <span>!</span> </label>
@@ -44,14 +43,17 @@
                  <form action="{{ route('register') }}" method="POST" class="aa-login-form">
 				        	@csrf
                     <label for="">Usuario<span>*</span></label>
-                    <input type="text" class="form-control" name="name" placeholder="Ejemplo 'Juan'" required>
-                    <label for="">Correo<span>*</span></label>
-                    
-                    <input type="email"  class="form-control" name="email" placeholder="Ingresa tu correo" required>
+                    <input wire:model="nombre" type="text" class="form-control @error('nombre') is-invalid @enderror" name="name" placeholder="Ejemplo 'Juan'" required>
+                    @error('nombre') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
+                    <label for="">Correo<span>*</span></label>            
+                    <input wire:model="correo_" type="email"  class="form-control @error('correo_') is-invalid @enderror" name="email" placeholder="Ingresa tu correo" required>
+                    @error('correo_') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
                     <label for="">Contraseña<span>*</span></label>
-                    
-                    <input type="password" id="pass1" name="password" class="form-control" placeholder="Ingresa contraseña" required>
-                    <input type="password" id="pass2" name ="password_confirmation" class="form-control" placeholder="Repite contraseña" required>
+                    <input wire:model="contraseña" type="password" id="contraseña" name="password" class="form-control @error('contraseña') is-invalid @enderror" placeholder="Ingresa contraseña" required>
+                    @error('contraseña') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
+                    <label for="">Confirmar Contraseña<span>*</span></label>
+                    <input wire:model="confirmar_contraseña" type="password" id="password2" name ="password2" class="form-control @error('confirmar_contraseña') is-invalid @enderror" placeholder="Repite contraseña" required>
+                    @error('confirmar_contraseña') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
                     <button type="submit"  id="btn-registrar"  class="aa-browse-btn">Registrate</button>  
                      
                     

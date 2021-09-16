@@ -6,7 +6,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4>Login o Registrarme</h4>
           
-          <x-jet-validation-errors class="mb-4" />
+          
           <form class="aa-login-form" method="POST" action="{{ route('login')}}">
           @csrf
             <label for="">Correo<span>*</span></label>
