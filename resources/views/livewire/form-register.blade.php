@@ -13,9 +13,11 @@
                 <div class="aa-myaccount-login">
                   
                 <h4>Login</h4>    
-      <!-- <div class="alert alert-danger" role="alert" id="alerta">
-        <x-jet-validation-errors class="mb-4" />
-      </div> -->
+               
+        <!-- Validacion de jetstream -->
+        <x-jet-validation-errors class=""  />
+        <!-- Fin de validacion -->
+
 				<!-- FORMULARIO DE LOGIN -->
           <form class="aa-login-form" method="POST" action="{{ route('login')}}">
           @csrf
@@ -34,9 +36,7 @@
           </form>
                 </div>
               </div>
-				<!-- FIN DE FORMULARIO DE LOGIN -->
-
-			  <!-- FORMULARIO DE REGISTRO -->
+		
               <div class="col-md-6">
                 <div class="aa-myaccount-register">                 
                  <h4>Registrate</h4>
@@ -52,10 +52,10 @@
                     <input wire:model="contraseña" type="password" id="contraseña" name="password" class="form-control @error('contraseña') is-invalid @enderror" placeholder="Ingresa contraseña" required>
                     @error('contraseña') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
                     <label for="">Confirmar Contraseña<span>*</span></label>
-                    <input wire:model="confirmar_contraseña" type="password" id="password2" name ="password2" class="form-control @error('confirmar_contraseña') is-invalid @enderror" placeholder="Repite contraseña" required>
+                    <input wire:model="confirmar_contraseña" type="password" id="password_confirmation" name ="password_confirmation" class="form-control @error('confirmar_contraseña') is-invalid @enderror" placeholder="Repite contraseña" required>
                     @error('confirmar_contraseña') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
                     <button type="submit"  id="btn-registrar"  class="aa-browse-btn">Registrate</button>  
-                     
+
                     
 					<!-- Validacion  -->
 			@if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

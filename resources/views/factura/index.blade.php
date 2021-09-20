@@ -51,7 +51,8 @@
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Numero Factura</th>
+            <th scope="col">N°Factura</th>
+            <th scope="col">N°Producto</th>
             <th scope="col">Cedula</th>
             <th scope="col">Nombres</th>
             <th scope="col">Apellidos</th>
@@ -115,6 +116,8 @@ $(document).ready( function () {
 
             {data:'nfactura'},
 
+            {data:'codigo'},
+
             {data:'cedula'},
 
             {data:'nombres'}, 
@@ -144,6 +147,7 @@ $(document).ready( function () {
 $('#btnGuardar').on('click',function(){
     /* Restablecer modal al cargar */
     $('#cedula').val("");
+    $('#codigo').val("");
     $('#nombres').val("");
     $('#apellidos').val("");
     $('#telefono').val("");
@@ -154,6 +158,7 @@ $('#btnGuardar').on('click',function(){
     $('#form-factura').submit(function(e){
         e.preventDefault();    
         let nfactura = $('#nfactura').val();
+        let codigo = $('#codigo').val();
         let cedula = $('#cedula').val();
         let nombres = $('#nombres').val();
         let apellidos = $('#apellidos').val();
@@ -169,6 +174,7 @@ $('#btnGuardar').on('click',function(){
             dataType: 'json',
         data: {
             nfactura:nfactura,
+            codigo:codigo,
             cedula:cedula,
             nombres:nombres,
             apellidos:apellidos,
@@ -187,6 +193,7 @@ $('#btnGuardar').on('click',function(){
             error:function(response){
                 toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!',{timeOut:5000});
                 $('#cedulaError').text(response.responseJSON.errors.cedula);
+                $('#codigoError').text(response.responseJSON.errors.codigo);
                 $('#nombresError').text(response.responseJSON.errors.nombres);
                 $('#apellidosError').text(response.responseJSON.errors.apellidos);
                 $('#direccionError').text(response.responseJSON.errors.direccion);

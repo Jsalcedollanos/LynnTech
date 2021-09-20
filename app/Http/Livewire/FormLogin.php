@@ -6,12 +6,12 @@ use Livewire\Component;
 
 class FormLogin extends Component
 {
-    public $password;
-    public $email;
+    public $contraseña;
+    public $correo;
+    
     protected $rules = [
-        'email' => 'required|email|min:3|max:35',
-        'password' => 'required|min:8',
-        
+        'correo' => 'required|email|min:3',
+        'contraseña' => 'required|min:8',
     ];
     public function updated($propertyName)
     {

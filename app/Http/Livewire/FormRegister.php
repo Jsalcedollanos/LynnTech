@@ -17,11 +17,11 @@ class FormRegister extends Component
 
     protected $rules = [
         'nombre' => 'required|min:3',
-        'correo' => 'required|email|min:3|max:35',
-        'correo_' => 'required|email|min:3|max:35',
-        'contraseña' => 'required|min:8|max:35',
-        'contraseña_' => 'required|min:8|max:35',
-        'confirmar_contraseña' => 'required|min:8|max:35',
+        'correo' => 'required|email|min:3',
+        'correo_' => 'required|email|min:3|unique:App\Models\User,email',
+        'contraseña' => 'required|min:8',
+        'contraseña_' => 'required|min:8',
+        'confirmar_contraseña' => 'required|min:8',
     ];
 
     public function updated($propertyName)

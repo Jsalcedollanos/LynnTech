@@ -10,12 +10,12 @@
           <form class="aa-login-form" method="POST" action="{{ route('login')}}">
           @csrf
             <label for="">Correo<span>*</span></label>
-            <input wire:model="email" class="@error('email') @enderror" type="text" name="email" placeholder="Correo">
-            @error('email') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
+            <input wire:model="correo" class="form-control @error('correo') is-invalid @enderror" type="text" name="email" placeholder="Correo">
+            @error('correo') <span class="error">{{ $message }}</span> @enderror
 
             <label for="">Contraseña<span>*</span></label>
-            <input wire:model="password" class="@error('password') @enderror" type="password" name="password" placeholder="Contraseña" >
-            @error('password') <span class="invalid-feedback">{{ $message }}</span> @enderror <br>
+            <input   type="password" name="password" placeholder="Contraseña" >
+            
             
             <button class="aa-browse-btn" type="submit">Login</button>
             <label for="rememberme" class="rememberme"><input type="checkbox" id="rememberme"> Recuerdame </label>

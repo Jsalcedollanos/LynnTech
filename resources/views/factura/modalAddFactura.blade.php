@@ -24,43 +24,47 @@
                   $desordenada = str_shuffle($caracteres);
                   $CH = substr($desordenada, 1, 4);
               ?>
-              
-                <label for="">Factura:</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">N°Factura</span>
                 <input value="<?php echo $CH ?>" readonly id="nfactura" name="nfactura" class="form-control form-control-lg" type="number" min="0" placeholder="" tabindex="1">
                 <br>
-                
-                <label for="">Cedula:</label>
-                    
+              </div> 
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Codigo de producto</span>
+                <input type="number" name="codigo" id="codigo" class="form-control form-control-lg" placeholder="">
+                <span class="text-danger" id="codigoError"></span>
+              </div>
+              
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Cedula</span>    
                 <input  maxlength="11" onkeypress='return validaNumericos(event)' id="cedula" name="cedula" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="2">
                 <span class="text-danger" id="cedulaError"></span><br>
-                <br>
+              </div>
 
-                <label for="">Nombres:</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Nombres</span>   
                 <input  maxlength="20" id="nombres" name="nombres" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
-                <span class="text-danger" id="nombresError"></span><br>
-                <br>
-
-                <label for="">Apellidos:</label>
+                <span class="text-danger" id="nombresError"></span>
+                <span class="input-group-text" id="basic-addon2">Apellidos</span>           
                 <input  maxlength="25" id="apellidos" name="apellidos" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
-                <span class="text-danger" id="apellidosError"></span><br>
-                <br>
+                <span class="text-danger" id="apellidosError"></span>
+              </div>
 
-                <label for="">Telefono:</label>
-                <input  maxlength="10" onkeypress='return validaNumericos(event)'  id="telefono" name="telefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
+              <div class="input-group mb-3">     
+                <span class="input-group-text" id="basic-addon2">Telefono</span> 
+                <input  maxlength="10" onkeypress='return validaNumericos(event)' id="telefono" name="telefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
                 <span class="text-danger" id="telefonoError"></span><br>
-                <br>
-
-                <label for="">Direccion:</label>
+                <span class="input-group-text" id="basic-addon2">Direccion</span>
                 <input  maxlength="40" id="direccion" name="direccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
                 <span class="text-danger" id="direccionError"></span><br>
-                <br>
+              </div>
 
-                <label for="">Valor:</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">$</span>
-                    <input  maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control" type="text" placeholder="" tabindex="7">
-                </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$COP</span>
+                <input  maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control" type="text" placeholder="" tabindex="7">
                 <span class="text-danger" id="valorError"></span><br>
+              </div>
+                
                 <br>
 
                   </div>

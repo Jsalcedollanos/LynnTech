@@ -15,7 +15,8 @@ class CreateFacturasTable extends Migration
     {
         Schema::create('facturas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedinteger('nfactura');
+            $table->integer('nfactura');
+            $table->integer('codigo');
             $table->integer('cedula');
             $table->string('nombres',40);
             $table->string('apellidos',40);
@@ -23,6 +24,7 @@ class CreateFacturasTable extends Migration
             $table->string('direccion');
             $table->decimal('valor',8,3);
             $table->timestamps();
+            $table->foreign('codigo')->references('codigo')->on('productos');
         });
     }
 

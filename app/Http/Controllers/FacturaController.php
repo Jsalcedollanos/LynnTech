@@ -20,7 +20,7 @@ class FacturaController extends Controller
 
     public function index(Request $request)
     {
-        $facturas = Factura::select('id','nfactura','cedula','nombres','apellidos','telefono','direccion','valor','created_at')->get();
+        $facturas = Factura::select('id','codigo','nfactura','cedula','nombres','apellidos','telefono','direccion','valor','created_at')->get();
         return datatables()->of($facturas)
         
         ->toJson();
@@ -56,6 +56,7 @@ class FacturaController extends Controller
         $request -> validate([
             'nombres' => 'required|min:3|max:25',
             'apellidos' => 'required|min:3|max:30',
+            'codigo' => 'required|confirmed',
             'cedula' => 'required|min:8|max:10',
             'telefono' => 'required|min:7|max:11',
             'direccion' => 'required|max:25',
@@ -63,6 +64,7 @@ class FacturaController extends Controller
         ]);
         $factura = new Factura();
         $factura->nfactura = $request->post('nfactura');
+        $factura->codigo = $request->post('codigo');
         $factura->nombres = $request->post('nombres');
         $factura->apellidos = $request->post('apellidos');
         $factura->cedula = $request->post('cedula');
@@ -109,6 +111,7 @@ class FacturaController extends Controller
         $request -> validate([
             'nombres' => 'required|min:3|max:25',
             'apellidos' => 'required|min:3|max:30',
+            'codigo' => 'required',
             'cedula' => 'required|min:8|max:10',
             'telefono' => 'required|min:7|max:11',
             'direccion' => 'required|max:25',

@@ -144,6 +144,7 @@ $(document).ready( function () {
    /* Bloque de Guardar producto */
    $('#add').on('click',function(){
     /* resetear campos al abrir modal nuevamente */
+      /* $('#codigo').val(""); */
       $('#nombre').val("");
       $('#cantidad').val("");
       $('#valor').val("");
@@ -168,8 +169,9 @@ $(document).ready( function () {
               
                 setTimeout(function(){
                   $('#addModal').modal('hide');
+                  
                   toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
-                  table.ajax.reload(); 
+                  table.ajax.reload();                 
                 }, 20);  
             },
             error:function(response){
