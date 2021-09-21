@@ -39,7 +39,7 @@
 
 
 <!-- Tabla de productos -->
-<table class="table table-dark table-striped" id="productos">
+<table class="table table-dark" id="productos">
   <thead>
     <tr>
       <th scope="col" >ID</th>

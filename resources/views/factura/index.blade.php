@@ -240,6 +240,7 @@ $(document).on('click','.eliminar',function(){
     e.preventDefault();
     var idf = $('#id').val();
     var nfacturaf = $('#editarFactura').val();
+    var codigof = $('#editarCodigo').val();
     var cedulaf = $('#editarCedula').val();
     var nombresf = $('#editarNombres').val();
     var apellidosf = $('#editarApellidos').val();
@@ -256,6 +257,7 @@ $(document).on('click','.eliminar',function(){
             data:{
            
                 nfactura:nfacturaf,
+                codigo:codigof,
                 cedula:cedulaf,
                 nombres:nombresf,
                 apellidos:apellidosf,
@@ -274,6 +276,7 @@ $(document).on('click','.eliminar',function(){
             error:function(response){
                 toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!',{timeOut:5000});
                 $('#editarCedulaError').text(response.responseJSON.errors.cedula);
+                $('#editarCodigoError').text(response.responseJSON.errors.codigo);
                 $('#editarNombresError').text(response.responseJSON.errors.nombres);
                 $('#editarApellidosError').text(response.responseJSON.errors.apellidos);
                 $('#editarDireccionError').text(response.responseJSON.errors.direccion);
@@ -301,6 +304,7 @@ $(document).ready(function(){
             success:function(data){
                 $('#id').val(data.id),
                 $('#editarFactura').val(data.nfactura),
+                $('#editarCodigo').val(data.codigo),
                 $('#editarCedula').val(data.cedula),
                 $('#editarNombres').val(data.nombres),
                 $('#editarApellidos').val(data.apellidos),

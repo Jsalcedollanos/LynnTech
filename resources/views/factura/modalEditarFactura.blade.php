@@ -22,43 +22,48 @@
               <input type="hidden" readonly value="" id="id" name="id"  class="form-control form-control-lg">
               <br>
 
-                <label for="">N°Factura</label>
-                <input  readonly id="editarFactura" name="editarFactura" class="form-control form-control-lg" type="number" min="0" placeholder="" tabindex="1">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">N°Factura</span>
+                <input value="" readonly id="editarFactura" name="editarFactura" class="form-control form-control-lg" type="number" min="0" placeholder="" tabindex="1">
                 <br>
-                
-                <label for="">Cedula</label>
-                    
+              </div> 
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Codigo de producto</span>
+                <input type="number" name="editarCodigo" id="editarCodigo" class="form-control form-control-lg" placeholder="">
+              </div>
+              <span class="text-danger" id="editarCodigoError"></span>
+
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Cedula</span>    
                 <input  maxlength="11" onkeypress='return validaNumericos(event)' id="editarCedula" name="editarCedula" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="2">
-                <span class="text-danger" id="editarCedulaError"></span><br>
-                <br>
+              </div>
+              <span class="text-danger" id="editarCedulaError"></span>
 
-                <label for="">Nombres</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Nombres</span>   
                 <input  maxlength="20" id="editarNombres" name="editarNombres" class="form-control form-control-lg" type="text" placeholder="" tabindex="3">
-                <span class="text-danger" id="editarNombresError"></span><br>
-                <br>
-
-                <label for="">apellidos</label>
+                <span class="text-danger" id="editarNombresError"></span>
+                <span class="input-group-text" id="basic-addon2">Apellidos</span>           
                 <input  maxlength="25" id="editarApellidos" name="editarApellidos" class="form-control form-control-lg" type="text" placeholder="" tabindex="4">
-                <span class="text-danger" id="editarApellidosError"></span><br>
-                <br>
-
-                <label for="">telefono</label>
-                <input  maxlength="10" onkeypress='return validaNumericos(event)'  id="editarTelefono" name="editarTelefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
-                <span class="text-danger" id="editarTelefonoError"></span><br>
-                <br>
-
-                <label for="">direccion</label>
+              </div>
+              <span class="text-danger" id="editarApellidosError"></span>
+              
+              <div class="input-group mb-3">     
+                <span class="input-group-text" id="basic-addon2">Telefono</span> 
+                <input  maxlength="10" onkeypress='return validaNumericos(event)' id="editarTelefono" name="editarTelefono" class="form-control form-control-lg" type="text" min="0" placeholder="" tabindex="5">
+                <span class="input-group-text" id="basic-addon2">Direccion</span>
                 <input  maxlength="40" id="editarDireccion" name="editarDireccion" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
-                <span class="text-danger" id="editarDireccionError"></span><br>
-                <br>
+              </div>
+              <span class="text-danger" id="editarDireccionError"></span><br>
+              <span class="text-danger" id="editarTelefonoError"></span>
+              
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">$COP</span>
+                <input  maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" class="form-control" type="text" placeholder="" tabindex="7">
+              </div>
+              <span class="text-danger" id="editarValorError"></span>
 
-                <label for="">valor</label>
-                <input  maxlength="7" onkeypress="return valideKey(event);" id="editValor" name="editValor" class="form-control form-control-lg" type="text" placeholder="" tabindex="7">
-                <span class="text-danger" id="editarValorError"></span><br>
-                <br>
-
-                  </div>
-                  <div class="modal-footer">
+      <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="submit" class="btn btn-primary">Actualizar</button>
       </div>

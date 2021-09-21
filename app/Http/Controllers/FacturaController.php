@@ -56,9 +56,9 @@ class FacturaController extends Controller
         $request -> validate([
             'nombres' => 'required|min:3|max:25',
             'apellidos' => 'required|min:3|max:30',
-            'codigo' => 'required|confirmed',
-            'cedula' => 'required|min:8|max:10',
-            'telefono' => 'required|min:7|max:11',
+            'codigo' => 'required',
+            'cedula' => 'required|min:8|max:11',
+            'telefono' => 'required|min:7|max:12',
             'direccion' => 'required|max:25',
             'valor' => 'required|min:1'
         ]);
@@ -112,10 +112,10 @@ class FacturaController extends Controller
             'nombres' => 'required|min:3|max:25',
             'apellidos' => 'required|min:3|max:30',
             'codigo' => 'required',
-            'cedula' => 'required|min:8|max:10',
-            'telefono' => 'required|min:7|max:11',
+            'cedula' => 'required|min:8|max:12',
+            'telefono' => 'required|min:7|max:13',
             'direccion' => 'required|max:25',
-            'valor' => 'required|min:1'
+            'valor' => 'required|min:3'
         ]);
         $factura = Factura::find($id);
         $factura ->fill($request->all());
