@@ -13,7 +13,9 @@
     <!-- Font awesome -->
     <link href="css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">   
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Estilos de card de anuncios -->   
+    <link href="css/card.style.css" rel="stylesheet">   
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
     <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
     <!-- Product view slider -->
@@ -39,6 +41,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+
+    <!-- visual descargado por web -->
+  
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -412,20 +417,53 @@
   </section>
    
   <!-- SECCION DE PUBLICIDAD -->
-  <div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
+      <div id="card1" class="card mb-3" style="max-width: 2024px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/img/anuncios/vestido-princesa-disney.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">Diseños exclusivos LyndaPolo.co</h5>
+            <p class="card-text">Nuestros productos son 100% propios, diseñados con tela de excelente calidad. diseño de artes textiles a su gusto. <br><br>
+              - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
+              - Los vestidos y demas prendas de vestir son planchados a vapor, para poder llegar a una textura fina libre de contaminacion.
+            </p>
+            <img id="logolynda" src="/img/anuncios/logolynda.png" class="img-fluid rounded-start" alt="Lyndapolo.co">
+            <img id="logolynn" src="/img/anuncios/logolynn.png" class="img-fluid rounded-start" alt="LynnDoll">
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
+    <div id="card2" class="card mb-3" style="max-width: 2024px;">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">Como tomar medidas </h3>
+            <p class="card-text"> <h4>Busto:</h4>Gira alrededor con la cinta metrica a la altura del pecho sin apretar.
+                                  <h4>Cintura:</h4>Gira alrededor con la cinta metrica en el abdomen por la altura del ombligo sin apretar. <br>
+                                  <h4>Altura de talle:</h4>Verticalmente desde el hombro hasta arriba del ombligo
+                                  <h4>Largo de vestido:</h4>Verticalmente desde el hombro hasta el largo deseado.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img src="/img/anuncios/tallas.png" class="img-fluid rounded-start" alt="...">
+        </div>
+      </div>
+    </div>
+
   <!-- FIN DE SECCION DE PUBLICIDAD -->
 
   <!-- banner section -->
@@ -1286,6 +1324,37 @@
  <!--  <script src="js/validarVacios.js"></script> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+<!-- EFECTO VISUAL -->
+
+<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+		<script src="js/hover.js"></script>
+		<script>
+			imagesLoaded( document.querySelectorAll('img'), () => {
+				document.body.classList.remove('loading');
+			});
+
+			Array.from(document.querySelectorAll('.grid__item-img')).forEach((el) => {
+				const imgs = Array.from(el.querySelectorAll('img'));
+				new hoverEffect({
+					parent: el,
+					intensity: el.dataset.intensity || undefined,
+					speedIn: el.dataset.speedin || undefined,
+					speedOut: el.dataset.speedout || undefined,
+					easing: el.dataset.easing || undefined,
+					hover: el.dataset.hover || undefined,
+					image1: imgs[0].getAttribute('src'),
+					image2: imgs[1].getAttribute('src'),
+					displacementImage: el.dataset.displacement
+				});
+			});
+		</script>
+    <!-- FIN DEL EFECTO VISUAL -->
+
   @livewireScripts
   </body>
 </html>
