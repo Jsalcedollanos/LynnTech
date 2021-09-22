@@ -417,35 +417,52 @@
   </section>
    
   <!-- SECCION DE PUBLICIDAD -->
-      <div id="card1" class="card mb-3" style="max-width: 2024px;">
+  <div id="card1" class="card mb-3" style="max-width: 2024px;">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">Linea de lujo LyndaPolo.co</h5>
+            <p class="card-text">
+              Cuando requieras algo de buena calidad, no piences en el precio, piensa en su calidad y lo diferente
+              que va ser tu producto, en LyndaPolo.co nos encargamos de llevar tu prenda a otro nivel, garantizandote calidad, durabilidad
+              y lo mas importante el producto es 100% echo por nuestro propio taller de confeccion. <br><br>
+              - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
+              - Nuestra linea de lujo es exclusiva. Detallada y sobre todo sus accesorios son acorde a los lujos que lleva el vestido.
+            </p>
+          </div>
+          <button>Cotiza tu vestido YA!</button>
+        </div>
+        <div class="col-md-4">
+              <img src="/img/anuncios/vestido-flores.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
+            </div>
+      </div>
+    </div>
+  </div>
+</div>    
+
+
+
+  <div id="card1" class="card mb-3" style="max-width: 2024px;">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="/img/anuncios/vestido-princesa-disney.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h3 class="card-title">Diseños exclusivos LyndaPolo.co</h5>
+            <h3 class="card-title">Vestidos tematicos exclusivos LyndaPolo.co</h5>
             <p class="card-text">Nuestros productos son 100% propios, diseñados con tela de excelente calidad. diseño de artes textiles a su gusto. <br><br>
               - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
               - Los vestidos y demas prendas de vestir son planchados a vapor, para poder llegar a una textura fina libre de contaminacion.
             </p>
-            <img id="logolynda" src="/img/anuncios/logolynda.png" class="img-fluid rounded-start" alt="Lyndapolo.co">
-            <img id="logolynn" src="/img/anuncios/logolynn.png" class="img-fluid rounded-start" alt="LynnDoll">
+            <div id="contenido-logo"> 
+              <img id="logolynda" src="/img/anuncios/logolynda.png" class="img-fluid rounded-start" alt="Lyndapolo.co">
+            </div>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 
     <div id="card2" class="card mb-3" style="max-width: 2024px;">
       <div class="row g-0">
@@ -467,7 +484,7 @@
   <!-- FIN DE SECCION DE PUBLICIDAD -->
 
   <!-- banner section -->
-  <section id="aa-banner">
+ <!--  <section id="aa-banner">
     <div class="container">
       <div class="row">
         <div class="col-md-12">        
@@ -479,7 +496,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- popular section -->
 
   <section id="aa-popular-category">
@@ -490,14 +507,14 @@
             <div class="aa-popular-category-area">
               <!-- start prduct navigation -->
              <ul class="nav nav-tabs aa-products-tab">
-                <li class="active"><a href="#popular" data-toggle="tab">Popular</a></li>
-                <li><a href="#featured" data-toggle="tab">Featured</a></li>
-                <li><a href="#latest" data-toggle="tab">Latest</a></li>                    
+                <li class="active"><a href="#masvendido" data-toggle="tab">Mas vendidos</a></li>
+                <li><a href="#popular" data-toggle="tab">Populares</a></li>
+                <li><a href="#lujo" data-toggle="tab">Linea de lujo</a></li>                    
               </ul>
               <!-- Tab panes -->
               <div class="tab-content">
                 <!-- Start men popular category -->
-                <div class="tab-pane fade in active" id="popular">
+                <div class="tab-pane fade in active" id="masvendido">
                   <ul class="aa-product-catg aa-popular-slider">
                     <!-- start single product item -->
                     <li>
@@ -645,7 +662,7 @@
                 <!-- / popular product category -->
                 
                 <!-- start featured product category -->
-                <div class="tab-pane fade" id="featured">
+                <div class="tab-pane fade" id="popular">
                  <ul class="aa-product-catg aa-featured-slider">
                     <!-- start single product item -->
                     <li>
@@ -793,7 +810,7 @@
                 <!-- / featured product category -->
 
                 <!-- start latest product category -->
-                <div class="tab-pane fade" id="latest">
+                <div class="tab-pane fade" id="lujo">
                   <ul class="aa-product-catg aa-latest-slider">
                     <!-- start single product item -->
                     <li>
@@ -801,7 +818,7 @@
                         <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-2.png" alt="polo shirt img"></a>
                         <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                          <figcaption>
-                          <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                          <h4 class="aa-product-title"><a href="#">Vestido Mohana</a></h4>
                           <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
                         </figcaption>
                       </figure>                     
@@ -959,6 +976,7 @@
                 <span class="fa fa-truck"></span>
                 <h4>Envios Nacionales e Internacionales</h4>
                 <P>Te enviamos por los mejores medios de envios nacionales e internacionales.</P>
+                  <img id="logointer" src="/img/anuncios/logo-interrapidisimo.png" alt="">
               </div>
             </div>
             <!-- single support -->

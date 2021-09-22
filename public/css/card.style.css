@@ -14,7 +14,7 @@
 }
 
 #card2{
-    padding: 0.5em;
+    padding: 2em;
     background-color:#F7D1D1;
     color: #5a4c51;
 }
@@ -31,8 +31,13 @@
     max-width: 15em;
 }
 
-#logolynn{
-    max-width: 15em;
+#contenido-logo{
+    display: flex;
+    float: right;
 }
 
+#logointer{
+ height: 100px;
+ width: 200px;
+}
 
