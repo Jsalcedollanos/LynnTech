@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Wompis de Bancolombia -->
-    <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
+    <!-- <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script> -->
 
     <!-- Font awesome -->
     <link href="css/font-awesome.css" rel="stylesheet">
@@ -19,7 +19,9 @@
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
     <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
     <!-- Product view slider -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">    
+    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">  
+    <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
+  <script type="text/javascript" src="js/jquery.simpleLens.js"></script>  
     <!-- slick slider -->
     <link rel="stylesheet" type="text/css" href="css/slick.css">
     <!-- price picker slider -->
@@ -42,6 +44,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
 
+    <!-- FUENTE MERIENDA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+    <!-- FIN DE LA FUENTE -->
     <!-- visual descargado por web -->
   
 
@@ -276,13 +283,27 @@
     </div>
   </section>
   <!-- / menu -->
+
+  <!-- SECCION DE SLAYER DE INSTAGRAM -->
+      <div class="contenido-slayer1">
+        <a href=""><img id="boton-metodo1" src="/img/botones/boton-metodo.png" alt=""></a>
+      </div>
+      <div class="contenido-slayer2">
+        <a href=""><img id="boton-metodo2" src="/img/botones/boton-tienda.png" alt=""></a>
+      </div>
+      <div class="contenido-slayer3">
+        <a href=""><img id="boton-metodo3" src="/img/botones/boton-tienda.png" alt=""></a>
+      </div>
+  <!-- fin -->
+
+
   <!-- Start slider -->
   <section id="aa-slider">
     <div class="aa-slider-area">
       <div id="sequence" class="seq">
         <div class="seq-screen">
           <ul class="seq-canvas">
-               <!-- single slide item -->  
+             
              <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/banner5.png" alt="Trabajo" />
@@ -294,7 +315,7 @@
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li> 
-            <!-- single slide item -->
+         
             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/banner1.png" alt="Men slide img" />
@@ -306,7 +327,7 @@
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li>
-            <!-- single slide item -->
+         
             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/banner2.png" alt="Wristwatch slide img" />
@@ -318,7 +339,7 @@
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">Comprar Ahora</a>
               </div>
             </li>
-            <!-- single slide item -->
+            
             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/banner3.png" alt="Women Jeans slide img" />
@@ -330,7 +351,7 @@
                 <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">Comprar ahora</a>
               </div>
             </li>
-            <!-- single slide item -->           
+                      
             <li>
               <div class="seq-model">
                 <img data-seq src="img/slider/banner4.png" alt="Shoes slide img" />
@@ -365,7 +386,7 @@
               <div class="col-md-5 no-padding">                
                 <div class="aa-promo-left">
                   <div class="aa-promo-banner">                    
-                    <img src="img/promo-vestidotematico.png" alt="img">                    
+                    <img src="img/vestido-tematico.jpg" alt="Vestido Tematico">                    
                     <div class="aa-prom-content">
                       <h4><a href="#">Vestido Tematico</a></h4>                      
                     </div>
@@ -377,7 +398,7 @@
                 <div class="aa-promo-right">
                   <div class="aa-single-promo-right">
                     <div class="aa-promo-banner">                      
-                      <img src="img/promo-tutu.png" alt="img">                      
+                      <img src="img/tutu.jpg" alt="Tutu">                      
                       <div class="aa-prom-content">
                         <h4><a href="#">Tutus</a></h4>                        
                       </div>
@@ -976,7 +997,8 @@
                 <span class="fa fa-truck"></span>
                 <h4>Envios Nacionales e Internacionales</h4>
                 <P>Te enviamos por los mejores medios de envios nacionales e internacionales.</P>
-                  <img id="logointer" src="/img/anuncios/logo-interrapidisimo.png" alt="">
+                  <img id="logointer" src="/img/anuncios/logo-interrapidisimo.png" alt="Interrapidisimo">
+                  <img id="logo-servientrega" src="/img/anuncios/logo-servientrega.png" alt="Servientrega">                  
               </div>
             </div>
             <!-- single support -->
@@ -1018,7 +1040,7 @@
                 <div class="aa-testimonial-single">
                 <img class="aa-testimonial-img" src="img/biografia-perfil.png" alt="testimonial img">
                   <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui!consectetur adipisicing elit. Sunt distinctio omnis possimus, facere, quidem qui.</p>
+                  <p>Mi pasion es diseñar, regalar alegria y felicidad realizando diseños unicos para cada ocacion. mi lema es "Si se confecciona que sea de excelente calidad".</p>
                   <div class="aa-testimonial-info">
                     <p>Lynda Polo</p>
                     <span>Diseñadora de moda</span>
@@ -1062,18 +1084,18 @@
   <!-- / Testimonial -->
 
   <!-- Latest Blog -->
-  <section id="aa-latest-blog">
+  <!-- <section id="aa-latest-blog">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="aa-latest-blog-area">
             <h2>Videos Tutoriales</h2>
             <div class="row">
-              <!-- single latest blog -->
+             
               <div class="col-md-4 col-sm-4">
                 <div class="aa-latest-blog-single">
                   <figure class="aa-blog-img">                    
-                    <a href="#"><iframe width="560" height="315" src="https://www.youtube.com/embed/bnaSHYUGqnw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>  
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/bnaSHYUGqnw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       <figcaption class="aa-blog-img-caption">
                       <span href="#"><i class="fa fa-eye"></i>5K</span>
                       <a href="#"><i class="fa fa-thumbs-o-up"></i>426</a>
@@ -1094,11 +1116,11 @@
                   </div>
                 </div>
               </div>
-              <!-- single latest blog -->
+              
               <div class="col-md-4 col-sm-4">
                 <div class="aa-latest-blog-single">
                   <figure class="aa-blog-img">                    
-                    <a href="#"><iframe width="560" height="315" src="https://www.youtube.com/embed/8u8XgMkDidY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>  
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/8u8XgMkDidY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       <figcaption class="aa-blog-img-caption">
                       <span href="#"><i class="fa fa-eye"></i>5K</span>
                       <a href="#"><i class="fa fa-thumbs-o-up"></i>426</a>
@@ -1118,11 +1140,11 @@
                   </div>
                 </div>
               </div>
-              <!-- single latest blog -->
+              
               <div class="col-md-4 col-sm-4">
                 <div class="aa-latest-blog-single">
                   <figure class="aa-blog-img">                    
-                    <a href="#"><iframe width="560" height="315" src="https://www.youtube.com/embed/QX5V6YRlU8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>  
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/QX5V6YRlU8o?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       <figcaption class="aa-blog-img-caption">
                       <span href="#"><i class="fa fa-eye"></i>5K</span>
                       <a href="#"><i class="fa fa-thumbs-o-up"></i>426</a>
@@ -1147,7 +1169,7 @@
         </div>    
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- / Latest Blog -->
 
   <!-- Client Brand -->
@@ -1157,17 +1179,7 @@
         <div class="col-md-12">
           <div class="aa-client-brand-area">
             <ul class="aa-client-brand-slider">
-              <li><a href="#"><img src="img/client-brand-java.png" alt="java img"></a></li>
-              <li><a href="#"><img src="img/client-brand-jquery.png" alt="jquery img"></a></li>
-              <li><a href="#"><img src="img/client-brand-html5.png" alt="html5 img"></a></li>
-              <li><a href="#"><img src="img/client-brand-css3.png" alt="css3 img"></a></li>
-              <li><a href="#"><img src="img/client-brand-wordpress.png" alt="wordPress img"></a></li>
-              <li><a href="#"><img src="img/client-brand-joomla.png" alt="joomla img"></a></li>
-              <li><a href="#"><img src="img/client-brand-java.png" alt="java img"></a></li>
-              <li><a href="#"><img src="img/client-brand-jquery.png" alt="jquery img"></a></li>
-              <li><a href="#"><img src="img/client-brand-html5.png" alt="html5 img"></a></li>
-              <li><a href="#"><img src="img/client-brand-css3.png" alt="css3 img"></a></li>
-              <li><a href="#"><img src="img/client-brand-wordpress.png" alt="wordPress img"></a></li>
+              <!-- EDICION POR TERMINAR -->
             </ul>
           </div>
         </div>
@@ -1339,39 +1351,10 @@
   <script type="text/javascript" src="js/nouislider.js"></script>
   <!-- Custom js -->
   <script src="js/custom.js"></script> 
- <!--  <script src="js/validarVacios.js"></script> -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
-<!-- EFECTO VISUAL -->
-
-<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/three.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-		<script src="js/hover.js"></script>
-		<script>
-			imagesLoaded( document.querySelectorAll('img'), () => {
-				document.body.classList.remove('loading');
-			});
-
-			Array.from(document.querySelectorAll('.grid__item-img')).forEach((el) => {
-				const imgs = Array.from(el.querySelectorAll('img'));
-				new hoverEffect({
-					parent: el,
-					intensity: el.dataset.intensity || undefined,
-					speedIn: el.dataset.speedin || undefined,
-					speedOut: el.dataset.speedout || undefined,
-					easing: el.dataset.easing || undefined,
-					hover: el.dataset.hover || undefined,
-					image1: imgs[0].getAttribute('src'),
-					image2: imgs[1].getAttribute('src'),
-					displacementImage: el.dataset.displacement
-				});
-			});
-		</script>
-    <!-- FIN DEL EFECTO VISUAL -->
 
   @livewireScripts
   </body>

@@ -38,6 +38,30 @@
 
 #logointer{
  height: 100px;
- width: 200px;
+ width: 2000px;
 }
+
+
+.contenido-slayer1{
+    display: inline-block;
+}
+.contenido-slayer2{
+    display: inline-block;
+}
+.contenido-slayer3{
+    display: inline-block;
+}
+#boton-metodo1{
+    width: 200px;
+    height: 80px;
+}
+#boton-metodo2{
+    width: 200px;
+    height: 80px;
+}
+#boton-metodo3{
+    width: 200px;
+    height: 80px;
+}
+
 

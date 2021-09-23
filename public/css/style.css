@@ -779,7 +779,7 @@ img {
   left: -204px;
   position: absolute;
   top: -5px;
-  transition: all 0.5s ease 0s;
+  transition: all 1.5s ease 0s;
   width: 200px;
   -webkit-animation-name: loader-two-before-transition;
   -webkit-animation-duration: 1.5s;
@@ -797,7 +797,7 @@ img {
   left: 104%;
   position: absolute;
   top: 50%;
-  transition: all 0.5s ease 0s;
+  transition: all 1.5s ease 0s;
   width: 200px;
   -webkit-animation-name: loader-two-after-transition;
   -webkit-animation-duration: 1.5s;
@@ -1014,16 +1014,14 @@ img {
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 {
   color: #fff;
-  font-size: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 30px;  
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 a {
-  color: #E9B30F !important;
+  color: #382f32 !important;
+  font-family: 'Merienda One', cursive;
   background-color: #EEC9C5;
   filter:alpha(opacity=70); 
   -moz-opacity:.70;opacity:.70; 
-  text-decoration: none;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1462,6 +1460,21 @@ img {
   height: 180px;
 }
 
+#aa-support .aa-support-area .aa-support-single #logointer {
+  width: 200px;
+  height: 100px;
+}
+
+#aa-support .aa-support-area .aa-support-single #logo-servientrega {
+  width: 150px;
+  height: 60px;
+}
+
+#aa-support .aa-support-area .aa-support-single #logo-dhl {
+  width: 150px;
+  height: 60px;
+}
+
 /*==================
  TESTIMONIAL SECTION
 ====================*/
@@ -1498,7 +1511,9 @@ img {
   z-index: 99;
 }
 #aa-testimonial .aa-testimonial-area .aa-testimonial-slider .aa-testimonial-single {
-  color: #fff;
+  color: rgb(138, 117, 0);
+  font-family: 'Merienda One', cursive;
+  font-size: 15pt;
   padding: 50px 0;
   position: relative;
 }
@@ -1538,24 +1553,24 @@ img {
   width: 100px;
 }
 #aa-testimonial .aa-testimonial-area .aa-testimonial-slider .aa-testimonial-single .aa-testimonial-quote {
-  color: #fff;
+  color: rgb(138, 117, 0);
   display: block;
   font-size: 35px;
   margin-top: 30px;
 }
 #aa-testimonial .aa-testimonial-area .aa-testimonial-slider .aa-testimonial-single .aa-testimonial-info p {
-  color: #fff;
+  color: rgb(138, 117, 0);
   font-weight: bold;
   letter-spacing: 1px;
   margin-bottom: 0;
 }
 #aa-testimonial .aa-testimonial-area .aa-testimonial-slider .aa-testimonial-single .aa-testimonial-info span {
-  color: #f8f8f8;
+  color: rgb(138, 117, 0);
   display: block;
   letter-spacing: 1px;
 }
 #aa-testimonial .aa-testimonial-area .aa-testimonial-slider .aa-testimonial-single .aa-testimonial-info a {
-  color: #f8f8f8;
+  color: rgb(138, 117, 0);
   letter-spacing: 1px;
 }
 #aa-testimonial .aa-testimonial-area .aa-testimonial-slider .slick-dots li {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
 
 
@@ -39,7 +39,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+  @livewireStyles
   </head>
   <!-- !Important notice -->
   <!-- Only for product page body tag have to added .productPage class -->
@@ -47,7 +47,7 @@
    <!-- wpf loader Two -->
     <div id="wpf-loader-two">          
       <div class="wpf-loader-two-inner">
-        <span>Loading</span>
+        <span>Lynda Polo</span>
       </div>
     </div> 
     <!-- / wpf loader Two -->       
@@ -132,7 +132,7 @@
                 <ul class="aa-head-top-nav-right">
                   <li><a href="{{ route('register') }}">Aun no te has registrado? Que esperas!</a></li>
                 <li><a href="{{ route('register') }}">Registrarme</a></li>
-                  <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="" id="abrirLogin" data-toggle="modal" data-target="#login-modal">Login</a></li>
                   <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
                   <li class="hidden-xs"><a href="{{ route('login') }}">Mi Carrito</a></li>
                 </ul>
@@ -693,6 +693,9 @@
     </div><!-- /.modal-dialog -->
   </div> 
 
+  <!-- Modal de login -->
+  @livewire('form-login')
+  <!-- fin del modal de login -->
   
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -734,6 +737,6 @@
     }); 
     });
   </script>
-
+  @livewireScripts
   </body>
 </html>
