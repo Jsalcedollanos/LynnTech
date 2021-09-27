@@ -4305,6 +4305,56 @@ img {
   color: #EEC9C5;
 }
 
+#proceso .proceso-contenido-titulo-lynn2{
+  font-family: 'Merienda One', cursive; 
+  padding-top: 2em;
+}
+
+
+#proceso .proceso-contenido-bancolombia .proceso-contenido-bancolombia-p{
+  font-family: 'Merienda One', cursive; 
+  text-align: justify;
+  width: 30%;
+  margin-left: 150px;  
+  margin-top: 2em;
+}
+
+#proceso .proceso-contenido-bancolombia-qr{
+  font-family: 'Merienda One', cursive; 
+  text-align: justify;
+  width: 30%;
+  padding-top: 1em;
+  margin-left: 150px;
+}
+
+#proceso .proceso-contenido-bancolombia-qr p{
+  padding-top: 20px;
+  font-size: 25px;
+  color: #EEC9C5;
+}
+
+
+.proceso-contenido-metodos-pago #nequi img{
+  height: 140px;
+  width: 120px;
+  padding-left: 2em;
+  float: left
+}
+.proceso-contenido-metodos-pago #bancolombia img{
+
+  float: left
+}
+
+
+#proceso .proceso-contenido-bancolombia-qr .img-qr{
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  margin-top: 2px;
+}
+
+
+
 
 
 /* FIN DE LA PAGINA DE PROCESO DE COMPRA */

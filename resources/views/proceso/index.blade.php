@@ -70,20 +70,6 @@
             <div class="aa-header-top-area">
               <!-- start header top left -->
               <div class="aa-header-top-left">
-                <!-- start language -->
-                <div class="aa-language">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <img src="img/flag/english.jpg" alt="english flag">Cambiar Idioma
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><img src="img/flag/french.jpg" alt=""></a></li>
-                      <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / language -->
 
                 <!-- start currency -->
                 <div class="aa-currency">
@@ -326,7 +312,31 @@
             <p class="proceso-contenido-parrafo-lynn">
             Recuerda que no puedes pagar sin confirmar la disponibilidad de nuestros insumos.
             </p>
-        </div>  
+        </div> 
+        
+        <div class="proceso-contenido-titulo2"> 
+            <h2 class="proceso-contenido-titulo-lynn2">Metodos de pago (Por canales de redes sociales)</h2>
+        </div>
+
+        <div class="proceso-contenido-bancolombia">
+            <p class="proceso-contenido-bancolombia-p"><span>1. </span>Evita errores escaneando nuestro codigo QR de nuestra cuenta Bancaria:</p>
+        </div>
+
+        <div class="proceso-contenido-bancolombia-qr">
+          <img class="img-qr" src="img/proceso/qr.jpg" alt="Codigo QR Bancolombia">
+            <p>Aceptamos los siguientes metodos de pagos:</p>
+        </div>
+
+        <div class="proceso-contenido-metodos-pago">
+          <div id="bancolombia">
+            <img class="img-qr" src="img/proceso/logo-bancolombia.png" alt="Logo Bancolombia">
+          </div>
+          <div id="nequi">
+            <img src="img/proceso/logo-nequi.png" alt="Logo Nequi">
+          </div>
+        </div>
+
+        
 </section>
 
 
