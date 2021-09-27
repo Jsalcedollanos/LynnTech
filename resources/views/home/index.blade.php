@@ -255,7 +255,8 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="{{ route('home.index') }}">Inicio</a></li>
-              <li><a href="{{ route('tienda.index') }}">Todo los productos</a></li>
+              <li><a href="{{ route('tienda.index') }}">Tienda</a></li>
+              <li><a href="/proceso">Proceso de Compra</a></li>
               <li><a>Vestidos <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
                   <li><a href="{{ route('tienda.index') }}?busqueda=Vestidos de lujo">Vestido de lujo</a></li>
@@ -284,17 +285,7 @@
   </section>
   <!-- / menu -->
 
-  <!-- SECCION DE SLAYER DE INSTAGRAM -->
-      <div class="contenido-slayer1">
-        <a href=""><img id="boton-metodo1" src="/img/botones/boton-metodo.png" alt=""></a>
-      </div>
-      <div class="contenido-slayer2">
-        <a href=""><img id="boton-metodo2" src="/img/botones/boton-tienda.png" alt=""></a>
-      </div>
-      <div class="contenido-slayer3">
-        <a href=""><img id="boton-metodo3" src="/img/botones/boton-tienda.png" alt=""></a>
-      </div>
-  <!-- fin -->
+
 
 
   <!-- Start slider -->

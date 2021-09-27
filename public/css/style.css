@@ -39,7 +39,7 @@
 
 body {
   background-color: #ffffff;
-  font-family: "Lato", sans-serif;
+  font-family: 'Merienda One', cursive;
   color: #333333;
   font-size: 16px;
   overflow-x: hidden;
@@ -68,7 +68,7 @@ a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merienda', cursive;
+  font-family: 'Merienda One', cursive;
 }
 
 h2 {
@@ -229,7 +229,7 @@ img {
   font-size: 10pt;
   display: flex;
   justify-content: center;
-  font-family: 'Merienda', cursive;
+  font-family: 'Merienda One', cursive;
 }
 
 #aa-header .aa-header-top {
@@ -431,7 +431,7 @@ img {
   border: 1px solid #ddd;
   color: #555;
   font-size: 14px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Merienda One', cursive;
   height: 40px;
   padding: 10px 55px 10px 10px;
   width: 100%;
@@ -613,14 +613,14 @@ img {
   float: left;
   font-weight: bold;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: 'Merienda One', cursive; 
   letter-spacing: 0.5px;
 }
 #aa-header .aa-header-bottom .aa-cartbox .aa-cartbox-summary ul li .aa-cartbox-total-price {
   float: right;
   font-weight: bold;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: 'Merienda One', cursive;
   letter-spacing: 0.5px;
 }
 
@@ -629,7 +629,7 @@ img {
 ====================*/
 
 #menu {
-  font-family: 'Merienda', cursive;
+  font-family: 'Merienda One', cursive;
   font-size: 7em;
   display: inline;
   float: left;
@@ -656,7 +656,7 @@ img {
 }
 #menu .menu-area .navbar-default .navbar-nav li a {
   color: #795C64;
-  font-size: 14px;
+  font-size: 12px;
   padding: 10px 15px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -1445,13 +1445,13 @@ img {
 }
 #aa-support .aa-support-area .aa-support-single h4 {
   color: #fff;
-  font-family: "Lato", sans-serif;
+  font-family: 'Merienda One', cursive;
   font-weight: bold;
   letter-spacing: 0.5px;
 }
 #aa-support .aa-support-area .aa-support-single p {
   color: #ccc;
-  font-size: 15px;
+  font-size: 13px;
   margin-bottom: 0;
 }
 
@@ -4239,3 +4239,72 @@ img {
   }
 }
 
+
+/* PAGINA DE PROCESO DE COMPRA */
+#proceso .proceso-contenido-titulo-lynn{
+  font-family: 'Merienda One', cursive; 
+  padding-top: 22em; 
+}
+
+#proceso .proceso-contenido-parrafo{
+  font-family: 'Merienda One', cursive; 
+  text-align: justify;
+  width: 60%;
+  margin-left: 150px;
+}
+#proceso .proceso-contenido-parrafo span{
+  font-size: 50px;
+  color: #EEC9C5;
+}
+#proceso .proceso-contenido-imagen{
+  float: right;
+}
+.proceso-contenido-imagen .proceso-contenido-imagen-uno{
+  width: 330px;
+  height: 300px;
+  margin-top: -300px;
+}
+#proceso .proceso-contenido-imagen2{
+  float: right;
+}
+.proceso-contenido-imagen2 .proceso-contenido-imagen-dos{
+  width: 330px;
+  height: 300px;
+  margin-top: -100px;
+}
+#proceso .proceso-contenido-parrafo2 {
+  font-family: 'Merienda One', cursive; 
+  text-align: justify;
+  width: 60%;
+  margin-left: 150px;
+}
+#proceso .proceso-contenido-parrafo2 span{
+  font-size: 50px;
+  color: #EEC9C5;
+}
+
+#proceso .proceso-contenido-parrafo3 {
+  font-family: 'Merienda One', cursive; 
+  text-align: justify;
+  width: 60%;
+  margin-left: 150px;
+}
+#proceso .proceso-contenido-parrafo3 span{
+  font-size: 50px;
+  color: #EEC9C5;
+}
+
+#proceso .proceso-contenido-parrafo4 {
+  font-family: 'Merienda One', cursive; 
+  text-align: justify;
+  width: 60%;
+  margin-left: 150px;
+}
+#proceso .proceso-contenido-parrafo4 span{
+  font-size: 50px;
+  color: #EEC9C5;
+}
+
+
+
+/* FIN DE LA PAGINA DE PROCESO DE COMPRA */

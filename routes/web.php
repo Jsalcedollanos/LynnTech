@@ -23,6 +23,10 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('/proceso', function () {
+    return view('proceso.index');
+});
+
 Route::get('/producto/index', function () {
     return view('producto.index');
 });
