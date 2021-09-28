@@ -328,11 +328,17 @@
         </div>
 
         <div class="proceso-contenido-metodos-pago">
-          <div id="bancolombia">
+          <div class="bancolombia">
             <img class="img-qr" src="img/proceso/logo-bancolombia.png" alt="Logo Bancolombia">
           </div>
-          <div id="nequi">
+          <div class="nequi">
             <img src="img/proceso/logo-nequi.png" alt="Logo Nequi">
+          </div>
+          <div class="efecty">
+            <img src="img/proceso/logo-efecty.png" alt="Logo Efecty">
+          </div>
+          <div class="supergiro">
+            <img src="img/proceso/logo-supergiros.png" alt="Logo superGiros">
           </div>
         </div>
 
