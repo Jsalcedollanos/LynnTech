@@ -27,6 +27,10 @@
     padding: 1em;
 }
 
+.card-text h4{
+    color: red;
+}
+
 #logolynda{
     max-width: 15em;
 }

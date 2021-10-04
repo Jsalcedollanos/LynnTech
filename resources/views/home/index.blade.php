@@ -90,7 +90,7 @@
               <!-- start header top left -->
               <div class="aa-header-top-left">
                 <!-- start language -->
-                <div class="aa-language">
+                <!-- <div class="aa-language">
                   <div class="dropdown">
                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <img src="img/flag/english.jpg" alt="english flag">Cambiar Idioma
@@ -101,7 +101,7 @@
                       <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
                     </ul>
                   </div>
-                </div>
+                </div> -->
                 <!-- / language -->
 
                 <!-- start currency -->
@@ -112,7 +112,7 @@
                       <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><i class="fa fa-euro"></i>COP (Pesos Colombianos)</a></li>
+                      <li><a href="#"><i class="fa fa-cop"></i>COP (Pesos Colombianos)</a></li>
                       <li><a href="#"><i class="fa fa-jpy"></i>USD (Dolares)</a></li>
                     </ul>
                   </div>
@@ -121,6 +121,9 @@
                 <!-- start cellphone -->
                 <div class="cellphone hidden-xs">
                   <p><span class="fa fa-phone"></span>+57 3013163026</p>
+                </div>
+                <div class="cellphone hidden-xs">
+                  <p><span class="fa fa-phone"></span>+57 3158160180</p>
                 </div>
                 <!-- / cellphone -->
               </div>

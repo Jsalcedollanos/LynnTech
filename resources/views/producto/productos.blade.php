@@ -67,7 +67,7 @@
               <!-- start header top left -->
               <div class="aa-header-top-left">
                 <!-- start language -->
-                <div class="aa-language">
+                <!-- <div class="aa-language">
                   <div class="dropdown">
                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <img src="img/flag/english.jpg" alt="english flag">ENGLISH
@@ -78,19 +78,19 @@
                       <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
                     </ul>
                   </div>
-                </div>
+                </div> -->
                 <!-- / language -->
 
                 <!-- start currency -->
                 <div class="aa-currency">
                   <div class="dropdown">
                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <i class="fa fa-usd"></i>USD
+                      <i class="fa fa-usd"></i>Convertir Moneda
                       <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
-                      <li><a href="#"><i class="fa fa-jpy"></i>YEN</a></li>
+                      <li><a href="#"><i class="fa fa-cop"></i>COP (Colombiano)</a></li>
+                      <li><a href="#"><i class="fa fa-jpy"></i>USD (Dolares)</a></li>
                     </ul>
                   </div>
                 </div>
@@ -98,6 +98,9 @@
                 <!-- start cellphone -->
                 <div class="cellphone hidden-xs">
                   <p><span class="fa fa-phone"></span>+57 3003746338</p>
+                </div>
+                <div class="cellphone hidden-xs">
+                  <p><span class="fa fa-phone"></span>+57 3158160180</p>
                 </div>
                 <!-- / cellphone -->
               </div>
@@ -228,32 +231,31 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="{{ route('home.index') }}">Inicio</a></li>
-              <li><a href="{{ route('tienda.index')}}">Todo los productos</a></li>
+              <li><a href="/proceso">Proceso de Compra</a></li>
               <li><a>Vestidos <span class="caret"></span></a>
                 <ul class="dropdown-menu">                
-                  <li><a href="{{ route('tienda.index')}}?busqueda=Vestidos de lujo">Vestido de lujo</a></li>
-                  <li><a href="{{ route('tienda.index')}}?busqueda=Vestido Sencillo">Vestido Sencillo</a></li>
+                  <li><a href="{{ route('tienda.index') }}?busqueda=Vestidos de lujo">Vestido de lujo</a></li>
+                  <li><a href="{{ route('tienda.index') }}?busqueda=Vestido Sencillo">Vestido Sencillo</a></li>
                   </li>
                 </ul>
               </li>
               <li><a>Batolas <span class="caret"></span></a>
               <ul class="dropdown-menu">                
-                  <li><a href="{{ route('tienda.index')}}?busqueda=Batola lisa">Batola lisa</a></li>
-                  <li><a href="{{ route('tienda.index')}}?busqueda=Batola Campana">Batola Campana</a></li>
+                  <li><a href="{{ route('tienda.index') }}?busqueda=Batola lisa">Batola lisa</a></li>
+                  <li><a href="{{ route('tienda.index') }}?busqueda=Batola Campana">Batola Campana</a></li>
                   </li>
                 </ul>
               </li>
-              <li><a href="{{ route('tienda.index')}}?busqueda=Conjunto">Conjuntos</a></li>
-              <li><a href="{{ route('tienda.index')}}?busqueda=Mi muñeca y Yo">Mi muñeca y Yo</a></li>
-              <li><a href="{{ route('tienda.index')}}?busqueda=Tutu">Tutus</a></li>
-              <li><a href="{{ route('tienda.index')}}?busqueda=Accesorios">Accesorios</a></li>
-              <li><a href="{{ route('tienda.index')}}?busqueda=Lenceria Infantil">Lenceria Infantil</a></li>
-              <li><a href="{{ route('tienda.index')}}?busqueda=Calzado">Calzado</a></li>
+              <li><a href="{{ route('tienda.index') }}?busqueda=Conjunto">Conjuntos</a></li>
+              <li><a href="{{ route('tienda.index') }}?busqueda=Mi muñeca y Yo">Mi muñeca y Yo</a></li>
+              <li><a href="{{ route('tienda.index') }}?busqueda=Tutu">Tutus</a></li>
+              <li><a href="{{ route('tienda.index') }}?busqueda=Accesorios">Accesorios</a></li>
+              <li><a href="{{ route('tienda.index') }}?busqueda=Lenceria Infantil">Lenceria Infantil</a></li>
+              <li><a href="{{ route('tienda.index') }}?busqueda=Calzado">Calzado</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
-      </div> 
-      </div>
+      </div>       
     </div>
   </section>
   <!-- / menu -->  
@@ -576,8 +578,8 @@
   </section>
   <!-- / Subscribe section -->
 
-  <!-- footer -->  
-  <footer id="aa-footer">
+<!-- footer -->  
+<footer id="aa-footer">
     <!-- footer bottom -->
     <div class="aa-footer-top">
      <div class="container">
@@ -587,26 +589,26 @@
             <div class="row">
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
-                  <h3>Main Menu</h3>
+                  <h3>Menu Principal</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Our Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Organiza tu pedido</a></li>
+                    <li><a href="#">Todos los productos</a></li>
+                    <li><a href="#">Soporte de pago</a></li>
+                    <li><a href="#">Contactanos</a></li>
                   </ul>
                 </div>
               </div>
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
                   <div class="aa-footer-widget">
-                    <h3>Knowledge Base</h3>
+                    <h3>Productos</h3>
                     <ul class="aa-footer-nav">
-                      <li><a href="#">Delivery</a></li>
-                      <li><a href="#">Returns</a></li>
-                      <li><a href="#">Services</a></li>
-                      <li><a href="#">Discount</a></li>
-                      <li><a href="#">Special Offer</a></li>
+                      <li><a href="#">Descuentos</a></li>
+                      <li><a href="#">Cotizacion</a></li>
+                      <li><a href="#">Servicios</a></li>
+                      <li><a href="#">Temporadas</a></li>
+                      <li><a href="#">Ofertas Especiales</a></li>
                     </ul>
                   </div>
                 </div>
@@ -614,12 +616,11 @@
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
                   <div class="aa-footer-widget">
-                    <h3>Useful Links</h3>
+                    <h3>Desarrolla tu tienda virtual</h3>
                     <ul class="aa-footer-nav">
-                      <li><a href="#">Site Map</a></li>
-                      <li><a href="#">Search</a></li>
-                      <li><a href="#">Advanced Search</a></li>
-                      <li><a href="#">Suppliers</a></li>
+                      <li><a href="#">Createch</a></li>
+                      <li><a href="#">createch@outlook.es</a></li>
+                      <li><a href="#">Contactame</a></li>
                       <li><a href="#">FAQ</a></li>
                     </ul>
                   </div>
@@ -628,11 +629,11 @@
               <div class="col-md-3 col-sm-6">
                 <div class="aa-footer-widget">
                   <div class="aa-footer-widget">
-                    <h3>Contact Us</h3>
+                    <h3>Contactame</h3>
                     <address>
-                      <p> 25 Astor Pl, NY 10003, USA</p>
-                      <p><span class="fa fa-phone"></span>+1 212-982-4589</p>
-                      <p><span class="fa fa-envelope"></span>dailyshop@gmail.com</p>
+                      <p> Linea de venta</p>
+                      <p><span class="fa fa-phone"></span>+57 3013163026</p>
+                      <p><span class="fa fa-envelope"></span>lyndapolo.co@gmail.com</p>
                     </address>
                     <div class="aa-footer-social">
                       <a href="#"><span class="fa fa-facebook"></span></a>
@@ -655,7 +656,7 @@
         <div class="row">
         <div class="col-md-12">
           <div class="aa-footer-bottom-area">
-            <p>Designed by <a href="http://www.markups.io/">MarkUps.io</a></p>
+            <p>Desarrollado por: <a href="http://www.markups.io/">Createch</a></p>
             <div class="aa-footer-payment">
               <span class="fa fa-cc-mastercard"></span>
               <span class="fa fa-cc-visa"></span>

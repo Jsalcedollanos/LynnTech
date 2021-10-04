@@ -4322,9 +4322,14 @@ img {
 #proceso .proceso-contenido-bancolombia-qr{
   font-family: 'Merienda One', cursive; 
   text-align: justify;
-  width: 30%;
+  width: 20%;
   padding-top: 1em;
   margin-left: 150px;
+}
+
+#proceso .proceso-contenido-bancolombia-qr img{
+  width: 300px;
+  height: 300px;
 }
 
 #proceso .proceso-contenido-bancolombia-qr p{
@@ -4349,12 +4354,17 @@ float: left;
 .proceso-contenido-metodos-pago .efecty img{ 
 float: left;
 height: 140px;
-width: 220px;
+width: 260px;
 }
 .proceso-contenido-metodos-pago .supergiro img{ 
+float: left;
+height: 140px;
+width: 220px;
+}
+.proceso-contenido-metodos-pago .baloto img{ 
   float: left;
   height: 140px;
-  width: 220px;
+  width: 320px;
   }
 
 

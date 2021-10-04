@@ -340,6 +340,9 @@
           <div class="supergiro">
             <img src="img/proceso/logo-supergiros.png" alt="Logo superGiros">
           </div>
+          <div class="baloto">
+            <img src="img/proceso/logo-baloto.png" alt="Logo Baloto">
+          </div>
         </div>
 
         
