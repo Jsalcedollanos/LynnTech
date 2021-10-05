@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Lyndapolo | Home</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -430,90 +430,7 @@
       </div>
     </div>
   </section>
-   
-  <!-- SECCION DE PUBLICIDAD -->
-  <div id="card1" class="card mb-3" style="max-width: 2024px;">
-      <div class="row g-0">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h3 class="card-title">Linea de lujo LyndaPolo.co</h5>
-            <p class="card-text">
-              Cuando requieras algo de buena calidad, no piences en el precio, piensa en su calidad y lo diferente
-              que va ser tu producto, en LyndaPolo.co nos encargamos de llevar tu prenda a otro nivel, garantizandote calidad, durabilidad
-              y lo mas importante el producto es 100% echo por nuestro propio taller de confeccion. <br><br>
-              - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
-              - Nuestra linea de lujo es exclusiva. Detallada y sobre todo sus accesorios son acorde a los lujos que lleva el vestido.
-            </p>
-          </div>
-          <button>Cotiza tu vestido YA!</button>
-        </div>
-        <div class="col-md-4">
-              <img src="/img/anuncios/vestido-flores.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
-            </div>
-      </div>
-    </div>
-  </div>
-</div>    
-
-
-
-  <div id="card1" class="card mb-3" style="max-width: 2024px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="/img/anuncios/vestido-princesa-disney.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h3 class="card-title">Vestidos tematicos exclusivos LyndaPolo.co</h5>
-            <p class="card-text">Nuestros productos son 100% propios, diseñados con tela de excelente calidad. diseño de artes textiles a su gusto. <br><br>
-              - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
-              - Los vestidos y demas prendas de vestir son planchados a vapor, para poder llegar a una textura fina libre de contaminacion.
-            </p>
-            <div id="contenido-logo"> 
-              <img id="logolynda" src="/img/anuncios/logolynda.png" class="img-fluid rounded-start" alt="Lyndapolo.co">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <div id="card2" class="card mb-3" style="max-width: 2024px;">
-      <div class="row g-0">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h3 class="card-title">Como tomar medidas </h3>
-            <p class="card-text"> <h4>Busto:</h4>Gira alrededor con la cinta metrica a la altura del pecho sin apretar.
-                                  <h4>Cintura:</h4>Gira alrededor con la cinta metrica en el abdomen por la altura del ombligo sin apretar. <br>
-                                  <h4>Altura de talle:</h4>Verticalmente desde el hombro hasta arriba del ombligo
-                                  <h4>Largo de vestido:</h4>Verticalmente desde el hombro hasta el largo deseado.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <img src="/img/anuncios/tallas.png" class="img-fluid rounded-start" alt="...">
-        </div>
-      </div>
-    </div>
-
-  <!-- FIN DE SECCION DE PUBLICIDAD -->
-
-  <!-- banner section -->
- <!--  <section id="aa-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">        
-          <div class="row">
-            <div class="aa-banner-area">
-            <a href="#"><img src="img/banner-oferta.png" alt="fashion banner img"></a>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- popular section -->
-
+  
   <section id="aa-popular-category">
     <div class="container">
       <div class="row">
@@ -979,6 +896,95 @@
     </div>
   </section>
   <!-- / popular section -->
+
+  <!-- SECCION DE PUBLICIDAD -->
+  <section id="aa-publicidad">
+    <div class="aa-publicidad-contenedor">
+      <div id="card1" class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">Linea de lujo LyndaPolo.co</h5>
+                <p class="card-text">
+                  Cuando requieras algo de buena calidad, no piences en el precio, piensa en su calidad y lo diferente
+                  que va ser tu producto, en LyndaPolo.co nos encargamos de llevar tu prenda a otro nivel, garantizandote calidad, durabilidad
+                  y lo mas importante el producto es 100% echo por nuestro propio taller de confeccion. <br><br>
+                  - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
+                  - Nuestra linea de lujo es exclusiva. Detallada y sobre todo sus accesorios son acorde a los lujos que lleva el vestido.
+                </p>
+                  
+              </div>
+              <button>Cotiza tu vestido YA!</button>
+            </div>
+                  <div class="col-md-4">
+                    <img src="/img/anuncios/vestido-flores.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
+                  </div>
+          </div>
+        </div>
+      </div>
+       
+
+
+
+      <div id="card1" class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="/img/anuncios/vestido-princesa-disney.jpeg" class="img-fluid rounded-start" alt="Vestido de princesas de disney esclusivo">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">Vestidos tematicos exclusivos LyndaPolo.co</h5>
+                <p class="card-text">Nuestros productos son 100% propios, diseñados con tela de excelente calidad. diseño de artes textiles a su gusto. <br><br>
+                  - Contamos con maquinaria profesional para brindar un producto de excelente calidad. <br><br>
+                  - Los vestidos y demas prendas de vestir son planchados a vapor, para poder llegar a una textura fina libre de contaminacion.
+                </p>
+                <div id="contenido-logo"> 
+                  <img id="logolynda" src="/img/anuncios/logolynda.png" class="img-fluid rounded-start" alt="Lyndapolo.co">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+        <div id="card2" class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">Como tomar medidas </h3>
+                <p class="card-text"> <h4>Busto:</h4>Gira alrededor con la cinta metrica a la altura del pecho sin apretar.
+                                      <h4>Cintura:</h4>Gira alrededor con la cinta metrica en el abdomen por la altura del ombligo sin apretar. <br>
+                                      <h4>Altura de talle:</h4>Verticalmente desde el hombro hasta arriba del ombligo
+                                      <h4>Largo de vestido:</h4>Verticalmente desde el hombro hasta el largo deseado.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <img src="/img/anuncios/tallas.png" class="img-fluid rounded-start" alt="...">
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- FIN DE SECCION DE PUBLICIDAD -->
+
+  <!-- banner section -->
+ <!--  <section id="aa-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">        
+          <div class="row">
+            <div class="aa-banner-area">
+            <a href="#"><img src="img/banner-oferta.png" alt="fashion banner img"></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- popular section -->
+
+  
   <!-- Support section -->
   <section id="aa-support">
     <div class="container">

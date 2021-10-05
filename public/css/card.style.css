@@ -1,19 +1,39 @@
 /* HOja de estilos para anuncios y ublicidad */
+#aa-publicidad{
+    display: inline;
+    float: left;
+    width: 100%;
+    justify-content: center;
+}
 
+#aa-publicidad .aa-publicidad-contenedor{
+    display: inline;
+    float: left;
+    padding: 30px 0;
+    width: 100%;
+}
 
 #card1{
+    display: inline;
+    float: left;
+    width: 100%;
     padding: 1em;
     background-color:#F7D1D1;
     color: #5a4c51;
 }
 
 .card-title{
-    display: flex;
-    justify-content: center;
+    display: inline;
+    width: 100%;
+    float: left;
+    text-align: center;
     font-size: 3em;
 }
 
 #card2{
+    display: inline;
+    float: left;
+    width: 100%;
     padding: 2em;
     background-color:#F7D1D1;
     color: #5a4c51;
@@ -21,13 +41,24 @@
 
 .card-body{
     font-family: 'Merienda One', cursive;
+    display: inline;
+    width: 100%;
+    float: left;
+    justify-content: center;
 }
 
 .card-text{
+    display: inline;
+    width: 100%;
+    float: left;
+    
     padding: 1em;
 }
 
 .card-text h4{
+    display: inline;
+    float: left;
+    width: 100%;
     color: red;
 }
 
