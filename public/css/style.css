@@ -265,7 +265,7 @@ img {
   min-width: 110px;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-language .dropdown-menu a {
-  font-size: 12px;
+  font-size: 20px;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-language .dropdown-menu a img {
   height: 10px;
@@ -300,11 +300,11 @@ img {
   float: left;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-currency .btn {
-  font-size: 12px;
+  font-size:8px;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-currency .btn i {
   display: inline;
-  font-size: 12px;
+  font-size: 8px;
   margin-right: 3px;
 }
 #aa-header .aa-header-top .aa-header-top-left .aa-currency .dropdown-menu {
@@ -1815,7 +1815,7 @@ img {
   width: 100%;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(255, 199, 14, 0.5); */
   bottom: 0;
   left: 0;
   position: absolute;
@@ -1831,7 +1831,7 @@ img {
   width: 100%;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content h2 {
-  color: #fff;
+  color: rgb(29, 18, 18);
   font-size: 35px;
   font-weight: bold;
   padding: 0;
@@ -1840,9 +1840,10 @@ img {
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb {
   border-radius: 0;
   background-color: transparent;
+  color: #000;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb a {
-  color: white;
+  color: rgb(29, 18, 18);
 }
 #aa-product-category {
   display: inline;
@@ -2943,7 +2944,7 @@ img {
   color: #fff;
 }
 #aa-blog-archive .aa-blog-archive-area .aa-blog-archive-pagination .pagination .active a {
-  color: #fff;
+  color: rgb(36, 22, 22);
 }
 #aa-blog-archive .aa-blog-archive-2 .aa-blog-content {
   margin-top: 10px;
@@ -4322,22 +4323,24 @@ img {
 #proceso .proceso-contenido-bancolombia-qr{
   font-family: 'Merienda One', cursive; 
   text-align: justify;
-  width: 20%;
   padding-top: 1em;
-  margin-left: 150px;
 }
 
 #proceso .proceso-contenido-bancolombia-qr img{
   width: 300px;
   height: 300px;
+  margin-left: 150px; 
+  justify-content: center;
 }
 
 #proceso .proceso-contenido-bancolombia-qr p{
   padding-top: 20px;
-  font-size: 25px;
+  font-size: 30px;
   color: #EEC9C5;
 }
-
+.proceso-contenido-metodos-pago{
+  padding-top: 6em;
+}
 .proceso-contenido-metodos-pago .bancolombia img{
   
 float: left;
@@ -4373,7 +4376,7 @@ width: 220px;
 
 
 
-}
+
 
 
 

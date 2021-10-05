@@ -59,6 +59,9 @@
   <!-- Start header section -->
   <header id="aa-header">
     <!-- start header top  -->
+    <div class="aa-header-oferta">
+      <li><a href="">Por compras superiores a $250.000 envios gratis, aplica solo para Colombia</a></li>
+    </div>
     <div class="aa-header-top">
       <div class="container">
         <div class="row">
@@ -86,7 +89,6 @@
                   <div class="dropdown">
                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <i class="fa fa-usd"></i>Convertir Moneda
-                      <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <li><a href="#"><i class="fa fa-cop"></i>COP (Colombiano)</a></li>
@@ -264,7 +266,7 @@
 
 
   <section id="aa-catg-head-banner">
-   <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+   <img src="img/tienda/banner-tienda.png" alt="Productos LyndaPolo.co">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">

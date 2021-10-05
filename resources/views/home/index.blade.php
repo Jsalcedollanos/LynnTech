@@ -79,7 +79,7 @@
   <!-- Start header section -->
   <header id="aa-header">
     <div class="aa-header-oferta">
-    <li><a href="">Por compras superiores a $250.000 envios gratis, aplica solo para Colombia</a></li>
+      <li><a href="">Por compras superiores a $250.000 envios gratis, aplica solo para Colombia</a></li>
     </div>
     <!-- start header top  -->
     <div class="aa-header-top">
@@ -109,7 +109,7 @@
                   <div class="dropdown">
                     <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       <i class="fa fa-usd"></i>Convertir Moneda
-                      <span class="caret"></span>
+                      
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <li><a href="#"><i class="fa fa-cop"></i>COP (Pesos Colombianos)</a></li>
