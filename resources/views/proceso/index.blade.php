@@ -56,156 +56,10 @@
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
 
+  <!-- Header section -->
+  @include('layouts.header')
+  <!-- /Header section -->
 
-   <!-- Start header section -->
-   <header id="aa-header">
-    <div class="aa-header-oferta">
-    <li><a href="">Por compras superiores a $250.000 envios gratis, aplica solo para Colombia</a></li>
-    </div>
-    <!-- start header top  -->
-    <div class="aa-header-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="aa-header-top-area">
-              <!-- start header top left -->
-              <div class="aa-header-top-left">
-
-                <!-- start currency -->
-                <div class="aa-currency">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <i class="fa fa-usd"></i>Convertir Moneda
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><i class="fa fa-euro"></i>COP (Pesos Colombianos)</a></li>
-                      <li><a href="#"><i class="fa fa-jpy"></i>USD (Dolares)</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / currency -->
-                <!-- start cellphone -->
-                <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span>+57 3013163026</p>
-                </div>
-                <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span>+57 3158160180</p>
-                </div>
-                <!-- / cellphone -->
-              </div>
-
-              <!-- / header con validacion de session + funciones addicionales -->
-          @if (auth()->check()) 
-              @if(Auth::user()->role =="user")
-              <div class="aa-header-top-right">
-                <ul class="aa-head-top-nav-right">
-               
-                  <li><a>Hola, {{Auth::user()->name}} un gusto saludarte.</a></li>            
-                  <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
-                  <li class="hidden-xs"><a href="{{ route('carrito.index') }}">Mi Carrito</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#sesion-modal">Salir</a></li>
-                </ul>
-              </div>
-              @endif
-              @if(Auth::user()->role =="admin")
-              <div class="aa-header-top-right">
-                <ul class="aa-head-top-nav-right">
-                  <li><a>Hola, {{Auth::user()->name}} un gusto saludarte.</a></li>
-                  <li class="hidden-xs"><a href="{{route('admin.index')}}">Administrar mi Pagina</a></li>            
-                  <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
-                  <li class="hidden-xs"><a href="{{ route('carrito.index') }}">Mi Carrito</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#sesion-modal">Salir</a></li>
-                </ul>
-              </div>
-              @endif 
-              @else
-            <div class="aa-header-top-right">
-                <ul class="aa-head-top-nav-right">
-                  <li><a href="{{ route('register') }}">Aun no te has registrado? Que esperas!</a></li>
-                <li><a href="{{ route('register') }}">Registrarme</a></li>
-                  <!-- <li><a class="hidden-xs"><a href="{{ route('login') }}">Login</a></li> -->
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                  <li class="hidden-xs"><a href="#">Lista de deseo</a></li>
-                  <li class="hidden-xs"><a href="{{ route('login') }}">Mi Carrito</a></li>
-                </ul>
-              </div>
-            </div>
-          @endif
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / header final de este bloque  -->
-
-    <!-- start header bottom  -->
-    <div class="aa-header-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="aa-header-bottom-area">
-              <!-- logo  -->
-              <div class="aa-logo">
-                <!-- Text based logo -->
-                <a href="{{ route('home.index') }}">
-                  
-            <!--img based logo -->
-               <a href="{{ route('home.index') }}"><img class="logo" src="img/logolynda.png" alt="logo img"></a> 
-              </div>
-              <!-- / logo  -->
-               <!-- cart box -->
-              <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
-                  <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">Carrito de Compra</span>
-                  <span class="aa-cart-notify">0</span>
-                </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                </div>
-              </div>
-              <!-- / cart box -->
-              <!-- search box -->
-              <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Ejemplo 'Vestido de lujo' ">
-                  <button type="submit"><span class="fa fa-search"></span></button>
-                </form>
-              </div>
-              <!-- / search box -->             
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / header bottom  -->
-  </header>
-  <!-- / header section -->
   <!-- menu -->
   <section id="menu">
     <div class="container">
@@ -351,124 +205,18 @@
 </section>
 
 
-
-  <!-- Subscribe section -->
-  <section id="aa-subscribe">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="aa-subscribe-area">
-            <h3> Subscribete Ya! </h3>
-            <p>Te enviaremos novedades de mis productos para que no te pierdas de maravillasas ofertas</p>
-            <form action="" class="aa-subscribe-form">
-              <input type="email" name="" id="" placeholder="Ingresa tu Correo">
-              <input type="submit" value="Subscribete">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- / Subscribe section -->
-
-  <!-- footer -->  
-  <footer id="aa-footer">
-    <!-- footer bottom -->
-    <div class="aa-footer-top">
-     <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-          <div class="aa-footer-top-area">
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <h3>Menu Principal</h3>
-                  <ul class="aa-footer-nav">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Organiza tu pedido</a></li>
-                    <li><a href="#">Todos los productos</a></li>
-                    <li><a href="#">Soporte de pago</a></li>
-                    <li><a href="#">Contactanos</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Productos</h3>
-                    <ul class="aa-footer-nav">
-                      <li><a href="#">Descuentos</a></li>
-                      <li><a href="#">Cotizacion</a></li>
-                      <li><a href="#">Servicios</a></li>
-                      <li><a href="#">Temporadas</a></li>
-                      <li><a href="#">Ofertas Especiales</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Desarrolla tu tienda virtual</h3>
-                    <ul class="aa-footer-nav">
-                      <li><a href="#">Createch</a></li>
-                      <li><a href="#">createch@outlook.es</a></li>
-                      <li><a href="#">Contactame</a></li>
-                      <li><a href="#">FAQ</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="aa-footer-widget">
-                  <div class="aa-footer-widget">
-                    <h3>Contactame</h3>
-                    <address>
-                      <p> Linea de venta</p>
-                      <p><span class="fa fa-phone"></span>+57 3013163026</p>
-                      <p><span class="fa fa-envelope"></span>lyndapolo.co@gmail.com</p>
-                    </address>
-                    <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
-                      <a href="#"><span class="fa fa-google-plus"></span></a>
-                      <a href="#"><span class="fa fa-youtube"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-     </div>
-    </div>
-    <!-- footer-bottom -->
-    <div class="aa-footer-bottom">
-      <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-          <div class="aa-footer-bottom-area">
-            <p>Desarrollado por: <a href="http://www.markups.io/">Createch</a></p>
-            <div class="aa-footer-payment">
-              <span class="fa fa-cc-mastercard"></span>
-              <span class="fa fa-cc-visa"></span>
-              <span class="fa fa-paypal"></span>
-              <span class="fa fa-cc-discover"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </footer>
-  <!-- / footer -->
+  <!-- Footer section -->
+  @include('layouts.footer')
+  <!-- /Footer section -->
+      
 
   <!-- Login Modal -->  
   @include('login.index')
   <!-- Fin de Modal de login -->
   
-
+  <!-- Login Modal -->  
+  @include('layouts.finalizarSesion')
+  <!-- Fin de Modal de login -->
 
    <!-- Validacion REGISTRO  -->
    <script src="js/validacionRegistro.js"></script>
