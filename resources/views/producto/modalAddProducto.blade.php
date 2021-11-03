@@ -28,17 +28,18 @@
         
         <form enctype="multipart/form-data" id="addProducto" name="addProducto" method="post">
         @csrf
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Codigo:</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Codigo</span>
             <input readonly type="text" value="<?php echo $CH?>" class="form-control" id="codigo" name="codigo" tabindex="1">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Nombre:</label>
+            <span class="input-group-text" id="basic-addon2">Nombre</span>
             <input type="text" class="form-control" id="nombre" name="nombre" tabindex="2">
             <span class="text-danger" id="nombreError"></span><br>
           </div>
-          <div class="mb-3">
-          <label for="">Categoria:</label>
+          <div class="input-group mb-3">
+            
+          </div>
+          <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon2">Categoria</span>
                   <select name="categoria" id="categoria" class="form-control form-control-lg" tabindex="3">
                   <option value="Vestido de lujo" >Vestido de lujo</option>
                   <option value="Vestido tematico" >Vestido tematico</option>
@@ -55,41 +56,40 @@
                   <option value="Accesorios" >Accesorios</option>
                   </select>
                   <span class="text-danger" id="categoriaError"></span><br>
+
+                  <span class="input-group-text" id="basic-addon2">Color</span>
+                    <select name="color" id="color" class="form-control form-control-lg" tabindex="4">
+                      <option value="Rojo" >Rojo</option>
+                      <option value="Azul" >Azul</option>
+                      <option value="Amarillo" >Amarillo</option>
+                      <option value="Vinotinto" >Vinotinto</option>
+                      <option value="Verde" >Verde</option>
+                      <option value="Multicolor" >Multi-Color</option>
+                      <option value="Negro" >Negro</option>
+                      <option value="Blanco" >Blanco</option>
+                      <option value="Naranja" >Naranja</option>
+                      <option value="Rosado" >Rosado</option>
+                      <option value="Morado" >Morado</option>
+                      <option value="Rosado Pastel" >Rosado Pastel</option>
+                      <option value="Morado Pastel" >Morado Pastel</option>
+                      <option value="Azul Pastel" >Azul Pastel</option>
+                      <option value="Amarillo" >Amarillo</option>
+                    </select>
+                        <span class="text-danger" id="colorError"></span><br>
           </div>
-          <div class="mb-3">
-            <label for="">Color:</label>
-          <select name="color" id="color" class="form-control form-control-lg" tabindex="4">
-                  <option value="Rojo" >Rojo</option>
-                  <option value="Azul" >Azul</option>
-                  <option value="Amarillo" >Amarillo</option>
-                  <option value="Vinotinto" >Vinotinto</option>
-                  <option value="Verde" >Verde</option>
-                  <option value="Negro" >Negro</option>
-                  <option value="Blanco" >CBlanco</option>
-                  <option value="Naranja" >Naranja</option>
-                  <option value="Rosado" >Rosado</option>
-                  <option value="Morado" >Morado</option>
-                  <option value="Rosado Pastel" >Rosado Pastel</option>
-                  <option value="Morado Pastel" >Morado Pastel</option>
-                  <option value="Azul Pastel" >Azul Pastel</option>
-                  <option value="Amarillo" >Amarillo</option>
-                  </select>
-                  <span class="text-danger" id="colorError"></span><br>
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Cantidad:</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Cantidad</span>
             <input  maxlength="3" onkeypress="return valideKey(event);" id="cantidad" name="cantidad" class="form-control form-control-lg" type="text" placeholder="" tabindex="5">
             <span class="text-danger" id="cantidadError"></span><br>
-          </div>
-          <label for="message-text" class="col-form-label">Valor:</label>
-          <div class="input-group mb-3">
+
             <span class="input-group-text" id="basic-addon1">$</span>
             <input  maxlength="7" onkeypress="return valideKey(event);" id="valor" name="valor" class="form-control form-control-lg" type="text" placeholder="" tabindex="6">
             <span class="text-danger" id="valorError"></span><br>
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Descripcion:</label>
-            <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="255"></textarea>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Descripcion</span>
+            <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="1100"></textarea>
             <span class="text-danger" id="descripcionError"></span><br>
           </div>
           <label for="mb-3">Imagen Pequeña</label>

@@ -17,7 +17,7 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->integer('codigo')->unique();
             $table->string('nombre',40);
-            $table->string('descripcion',255);
+            $table->string('descripcion',1100);
             $table->string('categoria');
             $table->string('color');
             $table->integer('cantidad');

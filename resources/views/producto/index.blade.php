@@ -39,7 +39,7 @@
 
 
 <!-- Tabla de productos -->
-<table class="table table-dark" id="productos">
+<table class="table table-striped table-bordered table-dark" id="productos">
   <thead>
     <tr>
       <th scope="col" >ID</th>
@@ -149,6 +149,15 @@ $(document).ready( function () {
       $('#cantidad').val("");
       $('#valor').val("");
       $('#descripcion').val("");
+      $('#color').val("");
+      $('#imagenPequeña').val("");
+      $('#imagenGrande').val("");
+      $('#nombreError').text("");
+      $('#cantidadError').text("");
+      $('#valorError').text("");
+      $('#descripcionError').text("");
+      $('#imagenError').text("");
+      $('#imagenGrandeError').text("");
     /* fin de este bloque */
     $('#addModal').modal('show');
       $('#addProducto').submit(function(e){

@@ -170,7 +170,7 @@
                   <div class="aa-product-hvr-content">
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Agregar a lista de deseo"><span class="fa fa-heart-o"></span></a>
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Comparar"><span class="fa fa-exchange"></span></a>
-                    <a data-toggle2="tooltip" data-placement="top" title="Vista Rapida" id="vista"><span class="fa fa-search"></span></a>
+                    <a data-toggle2="tooltip" data-placement="top" title="Vista Rapida" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
 
                   </div>
                   <!-- product badge -->
@@ -210,7 +210,7 @@
                             <h3>{{($producto->nombre)}}</h3>
                             <div class="aa-price-block">
                               <span class="aa-product-view-price">$ {{($producto->valor)}}COP </span>
-                              <p class="aa-product-avilability">Disponible: <span>Cantidad en bodega: {{($producto->cantidad)}}</span></p>
+                              <p class="aa-product-avilability">Disponible: <span>Sobre pedido</span></p>
                             </div>
                             <p>{{($producto->descripcion)}}</p>
                             <h4>Size</h4>
@@ -226,12 +226,16 @@
                               <form action="">
                               <h4>Cantidad</h4>
                                 <select name="" id="">
-                                  <option value="0" selected="1">1</option>
-                                  <option value="1">2</option>
-                                  <option value="2">3</option>
-                                  <option value="3">4</option>
-                                  <option value="4">5</option>
-                                  <option value="5">6</option>
+                                  <option value="1" selected="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
                                 </select>
                               </form>
                               <p class="aa-prod-category">
