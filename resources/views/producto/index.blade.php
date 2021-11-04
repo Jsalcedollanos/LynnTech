@@ -46,10 +46,12 @@
       <th scope="col">Codigo</th>
       <th scope="col">Producto</th>
       <th scope="col">Descripcion</th>
+      <th scope="col">Etiqueta</th>
       <th scope="col">Categoria</th>
       <th scope="col">Color</th>
       <th scope="col">Catidad</th>
       <th scope="col">Valor</th>
+      <th scope="col">Descuento</th>
       <th scope="col">Imagen</th>
       <th scope="col">Editar</th>
       <th scope="col">Eliminar</th>
@@ -109,7 +111,9 @@ $(document).ready( function () {
 
             {data:'nombre'},
 
-            {data:'descripcion'}, 
+            {data:'descripcion'},
+
+            {data:'etiqueta'}, 
 
             {data:'categoria'},            
 
@@ -118,6 +122,8 @@ $(document).ready( function () {
             {data:'cantidad'},
 
             {data:'valor'},
+
+            {data:'descuento'},
 
             {data:'imagen',
                 name:'imagen',
@@ -149,6 +155,8 @@ $(document).ready( function () {
       $('#cantidad').val("");
       $('#valor').val("");
       $('#descripcion').val("");
+      $('#etiqueta').val("");
+      $('#descuento').val("");
       $('#color').val("");
       $('#imagenPequeña').val("");
       $('#imagenGrande').val("");

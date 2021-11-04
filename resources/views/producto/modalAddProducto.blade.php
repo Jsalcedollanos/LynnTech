@@ -88,10 +88,23 @@
           </div>
 
           <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Etiqueta</span>
+            <select name="etiqueta" id="etiqueta" class="form-control form-control-lg" tabindex="8">
+              <option value="De lujo">De lujo</option>
+              <option value="Mas vendido">Mas vendido</option>
+              <option value="Super promo">Super promo</option>
+            </select>
+
+            <span class="input-group-text" id="basic-addon2">Descuento</span>
+            <input  maxlength="7" onkeypress="return valideKey(event);" id="descuento" name="descuento" class="form-control form-control-lg" type="text" placeholder="" tabindex="9">
+          </div>
+
+          <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">Descripcion</span>
             <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="1100"></textarea>
             <span class="text-danger" id="descripcionError"></span><br>
           </div>
+          
           <label for="mb-3">Imagen Pequeña</label>
                 <div class="input-group mb-3">
                 <input type="file" name="imagen" id="imagen" accept="image/*" tabindex="8">

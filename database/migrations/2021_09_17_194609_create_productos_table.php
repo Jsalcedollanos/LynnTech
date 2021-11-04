@@ -18,10 +18,12 @@ class CreateProductosTable extends Migration
             $table->integer('codigo')->unique();
             $table->string('nombre',40);
             $table->string('descripcion',1100);
+            $table->string('etiqueta',100)->default(null);
             $table->string('categoria');
             $table->string('color');
             $table->integer('cantidad');
             $table->decimal('valor',8,3);
+            $table->decimal('descuento',8,3)->default(0);
             $table->string('imagen',255);
             $table->string('imagenGrande',255);
             $table->timestamps();

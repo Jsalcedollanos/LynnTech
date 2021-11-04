@@ -22,7 +22,7 @@ class ProductoController extends Controller
     public function index(Request $request)
     {
 
-        $producto = Producto::select('id','codigo','nombre','descripcion','categoria','color','cantidad','valor','imagen')->get();
+        $producto = Producto::select('id','codigo','nombre','descripcion','etiqueta','descuento','categoria','color','cantidad','valor','imagen')->get();
         return datatables()->of($producto)
         
         ->toJson();
@@ -88,9 +88,11 @@ class ProductoController extends Controller
             $producto->nombre = $request->post('nombre');
             $producto->cantidad = $request->post('cantidad');
             $producto->valor = $request->post('valor');
+            $producto->descuento = $request->post('descuento');
             $producto->categoria = $request->post('categoria');
             $producto->color = $request ->post('color');
             $producto->descripcion = $request->post('descripcion');
+            $producto->etiqueta = $request->post('etiqueta');
 
         if ($request->hasfile('imagen')) {
         $file = $request->file('imagen');

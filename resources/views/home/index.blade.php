@@ -221,7 +221,7 @@
                   <div class="aa-promo-banner">                    
                     <img src="img/vestido-tematico.jpg" alt="Vestido Tematico">                    
                     <div class="aa-prom-content">
-                      <h4><a href="#">Vestido Tematico</a></h4>                      
+                      <h4><a href="{{ route('tienda.index') }}?busqueda=Vestido tematico">Vestido Tematico</a></h4>                      
                     </div>
                   </div>
                 </div>
@@ -233,7 +233,7 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/tutu.jpg" alt="Tutu">                      
                       <div class="aa-prom-content">
-                        <h4><a href="#">Tutus</a></h4>                        
+                        <h4><a href="{{route('tienda.index')}}?busqueda=Tutus">Tutus</a></h4>                        
                       </div>
                     </div>
                   </div>
@@ -241,7 +241,7 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/promo-calzado.png" alt="img">                      
                       <div class="aa-prom-content">
-                        <h4><a href="#">Calzado</a></h4>                        
+                        <h4><a href="{{route('tienda.index')}}?busqueda=Calzado">Calzado</a></h4>                        
                       </div>
                     </div>
                   </div>
@@ -249,7 +249,7 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/promo-batola.png" alt="img">                      
                       <div class="aa-prom-content">
-                        <h4><a href="#">Batolas</a></h4>                        
+                        <h4><a href="{{route('tienda.index')}}?busqueda=Batolas">Batolas</a></h4>                        
                       </div>
                     </div>
                   </div>
@@ -257,7 +257,7 @@
                     <div class="aa-promo-banner">                      
                       <img src="img/promo-muñecas.png" alt="img">                      
                       <div class="aa-prom-content">
-                        <h4><a href="#">Muñecas</a></h4>                        
+                        <h4><a href="{{route('tienda.index')}}?busqueda=Muñecas">Muñecas</a></h4>                        
                       </div>
                     </div>
                   </div>
