@@ -8,5 +8,15 @@
     margin-top: 3rem;
   
 }
+table th{
+    color: rgb(255, 154, 210);
+}
+table tr{
+    color: rgb(255, 154, 210);
+    
+}
 
+.descripcion{
+    width: 400px;
+}
 

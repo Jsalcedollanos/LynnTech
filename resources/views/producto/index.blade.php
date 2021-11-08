@@ -39,13 +39,14 @@
 
 
 <!-- Tabla de productos -->
-<table class="table table-striped table-bordered table-dark" id="productos">
+<div class="table-responsive">
+<table class="table table-bordered table-dark" id="productos">
   <thead>
     <tr>
       <th scope="col" >ID</th>
       <th scope="col">Codigo</th>
       <th scope="col">Producto</th>
-      <th scope="col">Descripcion</th>
+      <th> <div class="descripcion">Descripcion</div> </th>
       <th scope="col">Etiqueta</th>
       <th scope="col">Categoria</th>
       <th scope="col">Color</th>
@@ -58,7 +59,7 @@
     </tr>
   </thead>
 </table>
-
+</div>
 <!-- Fin de tabla de productos -->
 
 
