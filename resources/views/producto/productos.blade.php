@@ -26,11 +26,15 @@
     <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
     <!-- Main style sheet -->
-    <link href="css/style.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">     
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -111,7 +115,7 @@
 
 
   <section id="aa-catg-head-banner">
-   <img src="img/tienda/banner-tienda.png" alt="Productos LyndaPolo.co">
+   <img src="img/banner-paginas/banner-pagina.png" alt="Productos LyndaPolo.co">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
@@ -138,8 +142,7 @@
               <div class="aa-product-catg-head-left">
                 <form action="" class="aa-sort-form">
                 <div class="container-fluid">
-   
-  </div>
+                </div>
                 
               </div>
               <div class="aa-product-catg-head-right">
@@ -213,7 +216,8 @@
                               <span class="aa-product-view-price">$ {{($producto->valor)}}COP </span>
                               <p class="aa-product-avilability">Disponible: <span>Sobre pedido</span></p>
                             </div>
-                            <p>{{($producto->descripcion)}}</p>
+                            <p class="aa-product-avilability">Color: <span>{{$producto->color}}</span></p>
+                            <p>{{($producto->descripcion)}}</p> 
                             <h4>Size</h4>
                             <div class="aa-prod-view-size">
                               <a href="#">Talla 16 meses</a>

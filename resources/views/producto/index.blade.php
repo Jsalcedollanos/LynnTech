@@ -196,6 +196,7 @@ $(document).ready( function () {
               toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!', 'Atencion', {timeOut: 10000});
               $('#nombreError').text(response.responseJSON.errors.nombre);
               $('#cantidadError').text(response.responseJSON.errors.cantidad);
+              $('#descuentoError').text(response.responseJSON.errors.descuento);
               $('#valorError').text(response.responseJSON.errors.valor);
               $('#descripcionError').text(response.responseJSON.errors.descripcion);
               $('#imagenError').text(response.responseJSON.errors.imagen);

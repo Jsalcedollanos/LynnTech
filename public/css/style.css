@@ -346,7 +346,7 @@ img {
   float: left;
 }
 #aa-header .aa-header-top .aa-header-top-left .cellphone p {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 0;
   padding: 5px 10px;
 }
@@ -368,8 +368,8 @@ img {
   display: inline-block;
   color: #333333;
   border-right: 1px solid #ddd;
-  font-size: 14px;
-  padding: 5px 8px;
+  font-size: 13px;
+  padding: 2px 8px;
 }
 
 #aa-header .aa-header-bottom {
@@ -1213,11 +1213,11 @@ img {
 .aa-product-catg li .aa-product-price {
   font-weight: bold;
   letter-spacing: 0.5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .aa-product-catg li .aa-product-price {
   margin-left: 5px;
-  color: rgb(253, 174, 211);
+  color: #BD8916;
 }
 .aa-product-catg li .aa-product-hvr-content {
   left: 0;
@@ -1832,7 +1832,7 @@ img {
   width: 100%;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content h2 {
-  color: rgb(29, 18, 18);
+  color: #3D343F;
   font-size: 35px;
   font-weight: bold;
   padding: 0;
@@ -1845,6 +1845,9 @@ img {
 }
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb a {
   color: rgb(29, 18, 18);
+}
+#aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb .active {
+  color: #BD8916;
 }
 #aa-product-category {
   display: inline;

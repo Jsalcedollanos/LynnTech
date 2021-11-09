@@ -79,6 +79,7 @@ class ProductoController extends Controller
         'cantidad' => 'required',
         'valor' => 'required',
         'categoria' => 'required',
+        'descuento' => 'required',
         'color' => 'required',
         'descripcion' => 'required',
         'imagen' => 'required|mimes:jpeg, png',
