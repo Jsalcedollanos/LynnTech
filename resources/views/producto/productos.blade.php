@@ -354,24 +354,24 @@
               <div class="aa-recently-views">
                 <ul>
                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="mohana" src="img/vistos-recientemente/mohana.png"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Masha y el oso</a></h4>
-                      <p>$180.000</p>
+                      <h4><a href="#">Conjunto Mohana</a></h4>
+                      <p>$90.000</p>
                     </div>                    
                   </li>
                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="vestido esmeralda" src="img/vistos-recientemente/vestido-esmeralda.png"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Vestido Cenicienta</a></h4>
-                      <p>$220.000</p>
+                      <h4><a href="#">Vestido Esmeralda</a></h4>
+                      <p>$240.000</p>
                     </div>                    
                   </li>
                    <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="muñeca de lujo" src="img/vistos-recientemente/muñeca.png"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Cojines y lenceria</a></h4>
-                      <p>Packete fiesta</p>
+                      <h4><a href="#">Muñeca de lujo</a></h4>
+                      <p>$100.000</p>
                     </div>                    
                   </li>                                      
                 </ul>
@@ -383,24 +383,24 @@
               <div class="aa-recently-views">
                 <ul>
                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="Vestido Sirena" src="img/top-productos/vestido-sirena.png"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Vestido tematico</a></h4>
-                      <p>entre $180.000 a $220.000</p>
+                      <h4><a href="#">Vestido Sirena</a></h4>
+                      <p>$220.000</p>
                     </div>                    
                   </li>
                   <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-1.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="Vestido Pajesita" src="img/top-productos/vestido-pajesita.png"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Vestido Unicornio</a></h4>
+                      <h4><a href="#">Vestido Primera Comunion</a></h4>
                       <p>$160.000</p>
                     </div>                    
                   </li>
                    <li>
-                    <a href="#" class="aa-cartbox-img"><img alt="img" src="img/woman-small-2.jpg"></a>
+                    <a href="#" class="aa-cartbox-img"><img alt="vestido flor de otoño" src="img/top-productos/vestido-rosa.png"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Disfraz Halloween</a></h4>
-                      <p>$140.000</p>
+                      <h4><a href="#">Vestido Flor de Otoño</a></h4>
+                      <p>$220.000</p>
                     </div>                    
                   </li>                                      
                 </ul>

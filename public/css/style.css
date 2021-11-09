@@ -127,7 +127,7 @@ img {
   display: inline-block;
   font-size: 16px;
   padding: 12px 18px;
-  color: #fff;
+  color: #dbad33;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -685,7 +685,8 @@ img {
 /*scrol to top*/
 .scrollToTop {
   bottom: 60px;
-  color: #EEC9C5;
+  color: rgb(0, 0, 0);
+  background-color: rgb(219,173,51);
   display: none;
   font-size: 23px;
   height: 50px;
@@ -705,7 +706,7 @@ img {
 
 .scrollToTop:hover,
 .scrollToTop:focus {
-  background-color: #FFF;
+  background-color: rgb(236,204,196);
   text-decoration: none;
   outline: none;
 }
@@ -1815,6 +1816,12 @@ img {
   position: relative;
   width: 100%;
 }
+#aa-catg-head-banner img{
+  display: inline;
+  float: left;
+  position: relative;
+  width: 100%;
+}
 #aa-catg-head-banner .aa-catg-head-banner-area {
   /* background-color: rgba(255, 199, 14, 0.5); */
   bottom: 0;
@@ -1842,6 +1849,7 @@ img {
   border-radius: 0;
   background-color: transparent;
   color: #000;
+  justify-content: center;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb a {
   color: rgb(29, 18, 18);
