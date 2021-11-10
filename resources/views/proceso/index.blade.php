@@ -18,8 +18,6 @@
     <link rel="stylesheet" type="text/css" href="css/slick.css">
     <!-- price picker slider -->
     <link rel="stylesheet" type="text/css" href="css/nouislider.css">
-    <!-- Estilos proceso -->
-    <link rel="stylesheet" href="css/proceso.style.css" type="text/css">
     <!-- Theme color -->
     <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet">
     <!-- Top Slider CSS -->
@@ -127,81 +125,29 @@
 
 <!-- Contenido proceso de compras -->
 <section id="proceso">
-    
-        <div class="proceso-contenido-titulo">
-            <h2 class="proceso-contenido-titulo-lynn">Proceso de Compra lyndaPolo.co (Canales por redes sociales)</h2>
-        </div>
-        <div class="proceso-contenido-parrafo">
-        <span>1</span>
-            <p class="proceso-contenido-parrafo-lynn">
-                 Captura imagen de tu diseño y envianos via whatsapp con su talla, diseño textil
-                 (Personaje) color y detalles. Con nuestra ayuda complementamos tu idea 
-                 (No audio ni video llamada). Todo debidamente escrito. <br> <br>
-                 Los precio de nuestros diseños estan publicados al pie de la publicacion
-                 de nuestro post. Pero si al diseño le agregas mas detalles el precio puede aumentar.
-            </p>
-        </div>
-        <div class="proceso-contenido-imagen">
-                <img class="proceso-contenido-imagen-uno" src="/img/proceso/metodo-pago1.png" alt="">
-        </div>
-        
-        <div class="proceso-contenido-parrafo2">
-        <span>2</span>
-            <p class="proceso-contenido-parrafo-lynn">
-            Los precio de nuestros diseños estan publicados al pie de la publicacion de nuestro post. <br>
-            Pero si al diseño le agregas mas detalles el precio puede aumentar.
-            </p>
-        </div>
-        <div class="proceso-contenido-imagen2">
-                <img class="proceso-contenido-imagen-dos" src="/img/proceso/metodo-pago2.png" alt="">
-        </div>
+  <div class="proceso-contenedor">
+      <div class="proceso-titulo">
+        <h2>Proceso de pago en canales de redes sociales</h2>
+      </div>
 
-        <div class="proceso-contenido-parrafo3">
-        <span>3</span>
-            <p class="proceso-contenido-parrafo-lynn">
-            Si vas a realizar un cambio a tu diseño debes enviarnos nuevamente el pedido organizado desde cero.
-            </p>
-        </div>  
+      <div class="proceso-parrafo-1">
+        <p>Captura imagen de tu diseño y envianos via whatsapp con su talla, diseño textil
+        (Personaje) color y detalles. Con nuestra ayuda complementamos tu idea 
+        (No audio ni video llamada). Todo debidamente escrito.
+        Los precio de nuestros diseños estan publicados al pie de la publicacion
+        de nuestro post. Pero si al diseño le agregas mas detalles el precio puede aumentar.
+        </p>
+      </div>
 
-        <div class="proceso-contenido-parrafo4">
-        <span>4</span>
-            <p class="proceso-contenido-parrafo-lynn">
-            Recuerda que no puedes pagar sin confirmar la disponibilidad de nuestros insumos.
-            </p>
-        </div> 
-        
-        <div class="proceso-contenido-titulo2"> 
-            <h2 class="proceso-contenido-titulo-lynn2">Metodos de pago (Por canales de redes sociales)</h2>
-        </div>
-
-        <div class="proceso-contenido-bancolombia">
-            <p class="proceso-contenido-bancolombia-p"><span>1. </span>Evita errores escaneando nuestro codigo QR de nuestra cuenta Bancaria:</p>
-        </div>
-
-        <div class="proceso-contenido-bancolombia-qr">
-          <img class="img-qr" src="img/proceso/qr.jpg" alt="Codigo QR Bancolombia">
-            <p>Aceptamos los siguientes metodos de pagos:</p>
-        </div>
-
-        <div class="proceso-contenido-metodos-pago">
-          <div class="bancolombia">
-            <img class="img-qr" src="img/proceso/logo-bancolombia.png" alt="Logo Bancolombia">
-          </div>
-          <div class="nequi">
-            <img src="img/proceso/logo-nequi.png" alt="Logo Nequi">
-          </div>
-          <div class="efecty">
-            <img src="img/proceso/logo-efecty.png" alt="Logo Efecty">
-          </div>
-          <div class="supergiro">
-            <img src="img/proceso/logo-supergiros.png" alt="Logo superGiros">
-          </div>
-          <div class="baloto">
-            <img src="img/proceso/logo-baloto.png" alt="Logo Baloto">
-          </div>
-        </div>
-
-        
+      <div class="proceso-parrafo-2">
+        <p>Captura imagen de tu diseño y envianos via whatsapp con su talla, diseño textil
+        (Personaje) color y detalles. Con nuestra ayuda complementamos tu idea 
+        (No audio ni video llamada). Todo debidamente escrito.
+        Los precio de nuestros diseños estan publicados al pie de la publicacion
+        de nuestro post. Pero si al diseño le agregas mas detalles el precio puede aumentar.
+        </p>
+      </div>
+    </div>
 </section>
 
 

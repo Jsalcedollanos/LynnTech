@@ -146,8 +146,8 @@
                 
               </div>
               <div class="aa-product-catg-head-right">
-                <a id="grid-catg" href="#"><span class="fa fa-th"></span> Vista Normal</a>
-                <a id="list-catg" href="#"><span class="fa fa-list"></span> Vista Completa</a>
+                <!-- <a id="grid-catg" href="#"><span class="fa fa-th"></span> Vista Normal</a>
+                <a id="list-catg" href="#"><span class="fa fa-list"></span> Vista Completa</a> -->
               </div>
             </div>
 

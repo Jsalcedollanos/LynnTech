@@ -105,7 +105,7 @@
 
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">Descripcion</span>
-            <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="1100"></textarea>
+            <textarea  id="descripcion" name="descripcion" class="form-control form-control-lg" type="text" placeholder="" tabindex="7" maxlength="551"></textarea>
             <span class="text-danger" id="descripcionError"></span><br>
           </div>
           

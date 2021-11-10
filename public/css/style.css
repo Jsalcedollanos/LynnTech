@@ -1175,12 +1175,12 @@ img {
   transition: all 0.5s;
 }
 .aa-product-catg li figure .aa-add-card-btn {
-  background: #000 none repeat scroll 0 0;
-  bottom: 0;
-  color: #fff;
+  background: rgb(0, 0, 0) none repeat scroll 0 0;
+  bottom: 0px;
+  color: rgb(219,172,58);
   font-size: 16px;
   font-weight: bold;
-  left: 0;
+  left: 0;  
   padding: 12px 10px;
   position: absolute;
   right: 0;
@@ -4250,148 +4250,34 @@ img {
   #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {   
     padding: 5px 2px;
   }
+
 }
 
-
-/* PAGINA DE PROCESO DE COMPRA */
-#proceso .proceso-contenido-titulo-lynn{
-  font-family: 'Merienda One', cursive; 
-  padding-top: 22em; 
-}
-
-#proceso .proceso-contenido-parrafo{
-  font-family: 'Merienda One', cursive; 
-  text-align: justify;
-  width: 60%;
-  margin-left: 150px;
-}
-#proceso .proceso-contenido-parrafo span{
-  font-size: 50px;
-  color: #EEC9C5;
-}
-#proceso .proceso-contenido-imagen{
-  float: right;
-}
-.proceso-contenido-imagen .proceso-contenido-imagen-uno{
-  width: 330px;
-  height: 300px;
-  margin-top: -300px;
-}
-#proceso .proceso-contenido-imagen2{
-  float: right;
-}
-.proceso-contenido-imagen2 .proceso-contenido-imagen-dos{
-  width: 330px;
-  height: 300px;
-  margin-top: -100px;
-}
-#proceso .proceso-contenido-parrafo2 {
-  font-family: 'Merienda One', cursive; 
-  text-align: justify;
-  width: 60%;
-  margin-left: 150px;
-}
-#proceso .proceso-contenido-parrafo2 span{
-  font-size: 50px;
-  color: #EEC9C5;
-}
-
-#proceso .proceso-contenido-parrafo3 {
-  font-family: 'Merienda One', cursive; 
-  text-align: justify;
-  width: 60%;
-  margin-left: 150px;
-}
-#proceso .proceso-contenido-parrafo3 span{
-  font-size: 50px;
-  color: #EEC9C5;
-}
-
-#proceso .proceso-contenido-parrafo4 {
-  font-family: 'Merienda One', cursive; 
-  text-align: justify;
-  width: 60%;
-  margin-left: 150px;
-}
-#proceso .proceso-contenido-parrafo4 span{
-  font-size: 50px;
-  color: #EEC9C5;
-}
-
-#proceso .proceso-contenido-titulo-lynn2{
-  font-family: 'Merienda One', cursive; 
-  padding-top: 2em;
-}
-
-
-#proceso .proceso-contenido-bancolombia .proceso-contenido-bancolombia-p{
-  font-family: 'Merienda One', cursive; 
-  text-align: justify;
-  width: 30%;
-  margin-left: 150px;  
-  margin-top: 2em;
-}
-
-#proceso .proceso-contenido-bancolombia-qr{
-  font-family: 'Merienda One', cursive; 
-  text-align: justify;
-  padding-top: 1em;
-}
-
-#proceso .proceso-contenido-bancolombia-qr img{
-  width: 300px;
-  height: 300px;
-  margin-left: 150px; 
-  justify-content: center;
-}
-
-#proceso .proceso-contenido-bancolombia-qr p{
-  padding-top: 20px;
-  font-size: 30px;
-  color: #EEC9C5;
-}
-.proceso-contenido-metodos-pago{
-  padding-top: 6em;
-}
-.proceso-contenido-metodos-pago .bancolombia img{
-  
-float: left;
-}
-
-.proceso-contenido-metodos-pago .nequi img{
-  height: 140px;
-  width: 120px;
-  padding-left: 2em;
+#proceso{
+  display: inline;
   float: left;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+#proceso .proceso-contenedor{
+  display: inline;
+  float: left;
+  width: 100%;
+}
+.proceso-titulo h2{
+  padding: 20px;
+  float: left;
+  display: inline;
+  position: relative;
+  width: 100%;
   
 }
-
-.proceso-contenido-metodos-pago .efecty img{ 
-float: left;
-height: 140px;
-width: 260px;
-}
-.proceso-contenido-metodos-pago .supergiro img{ 
-float: left;
-height: 140px;
-width: 220px;
-}
-.proceso-contenido-metodos-pago .baloto img{ 
+.proceso-parrafo-1{
   float: left;
-  height: 140px;
-  width: 320px;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* FIN DE LA PAGINA DE PROCESO DE COMPRA */
+  width: 30%
+}
+.proceso-parrafo-2{
+  float: left;
+  width: 30%
+}
