@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use Response;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -18,9 +20,12 @@ class UserController extends Controller
 
 
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('home.index');
+        $categoria = $request->get('busqueda');
+        $productos = Producto::where('categoria','like',"%$categoria%")->paginate(5);
+        return view('home.index',compact('productos'));
+        /* return view('home.index'); */
     }
 
     /**
