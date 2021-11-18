@@ -165,8 +165,8 @@
                     <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Agregar al carrito</a>
                     <figcaption>
                       <h4 class="aa-product-title"><a href="#">{{$producto->nombre}}</a></h4>
-                      <span class="aa-product-price">Valor: ${{$producto->valor}}</span><br>
-                      <span class="aa-product-price">Descuento: ${{$producto->descuento}}</span>
+                      <span class="aa-product-price">Precio: ${{$producto->valor}}</span><br>
+                      <span class="aa-product-price">Antes: <del>${{$producto->descuento}}</del></span>
                       <p class="aa-product-descrip">{{$producto->descripcion}}</p>
                       <p class="aa-product-descrip">Categoria: {{$producto->categoria}}</p>
                     </figcaption>

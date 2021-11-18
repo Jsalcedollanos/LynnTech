@@ -34,7 +34,7 @@ class TiendaproductoController extends Controller
     {
         
         $categoria = $request->get('busqueda');
-        $productos = Producto::where('categoria','like',"%$categoria%")->paginate(5);
+        $productos = Producto::where('categoria','like',"%$categoria%")->paginate(10);
         return view('producto.productos',compact('productos'));
 
        /*  $producto = Producto::select('id','codigo','nombre','descripcion','categoria','color','cantidad','valor','imagen')->get();

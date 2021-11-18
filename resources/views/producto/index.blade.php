@@ -150,6 +150,11 @@ $(document).ready( function () {
 
    /* Bloque de Guardar producto */
    $('#add').on('click',function(){
+    <?php
+                  $caracteres = "1234567890";
+                  $desordenada = str_shuffle($caracteres);
+                  $CH = substr($desordenada, 1, 4);
+              ?>
     /* resetear campos al abrir modal nuevamente */
       /* $('#codigo').val(""); */
       $('#nombre').val("");
@@ -159,9 +164,10 @@ $(document).ready( function () {
       $('#etiqueta').val("");
       $('#descuento').val("");
       $('#color').val("");
-      $('#imagenPequeña').val("");
+      $('#imagen').val("");
       $('#imagenGrande').val("");
       $('#nombreError').text("");
+      $('#descuentoError').text("");
       $('#cantidadError').text("");
       $('#valorError').text("");
       $('#descripcionError').text("");
@@ -170,38 +176,44 @@ $(document).ready( function () {
     /* fin de este bloque */
     $('#addModal').modal('show');
       $('#addProducto').submit(function(e){
+        
           e.preventDefault(); 
           $.ajax({               
             url: '{{route("producto.create")}}',
             type: "POST",
             headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            
             },   
             data: new FormData(this),
             contentType: false,
             cache: false,
             processData: false,
             dataType: 'json',
-         
+            
             success:function(data){
               
                 setTimeout(function(){
                   $('#addModal').modal('hide');
-                  
+                  $('#codigo').val("<?php echo $CH?>");
                   toastr.success('El producto se ha guardado satifactoriamente', 'Guardado!', {timeOut: 5000});
                   table.ajax.reload();                 
                 }, 20);  
             },
             error:function(response){
+              
               toastr.error('Opps Algunos errores no permiten guardar tu producto, Corrigelos!', 'Atencion', {timeOut: 10000});
+              $('#codigo').val("<?php echo $CH?>");
               $('#nombreError').text(response.responseJSON.errors.nombre);
               $('#cantidadError').text(response.responseJSON.errors.cantidad);
               $('#descuentoError').text(response.responseJSON.errors.descuento);
               $('#valorError').text(response.responseJSON.errors.valor);
               $('#descripcionError').text(response.responseJSON.errors.descripcion);
               $('#imagenError').text(response.responseJSON.errors.imagen);
-              $('#imagenGrandeError').text(response.responseJSON.errors.imagenGrande);   
+              $('#imagenGrandeError').text(response.responseJSON.errors.imagenGrande);
+              
             }
+            
         })
     });
 });    

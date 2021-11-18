@@ -93,12 +93,13 @@
               <option value="De lujo">De lujo</option>
               <option value="Mas vendido">Mas vendido</option>
               <option value="Super promo">Super promo</option>
+              <option value="Popular">Popular</option>
               <option value="Hermoso">Hermoso</option>
               <option value="Exclusivo">Exclusivo</option>
               <option value="Divino">Divino</option>
             </select>
 
-            <span class="input-group-text" id="basic-addon2">Descuento</span>
+            <span class="input-group-text" id="basic-addon2">Valor Antes</span>
             <input maxlength="7" onkeypress="return valideKey(event);" id="descuento" name="descuento" class="form-control form-control-lg" type="text" tabindex="9">
             <span class="text-danger" id="descuentoError"></span><br>
           </div>
